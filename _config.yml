@@ -130,7 +130,6 @@ backup:
   repository: 
     github: git@github.com:jomeswang/jomeswang.github.io.git,master
     coding: git@e.coding.net:jomeswang/jomeswang.git,master
-- type: baidu_url_submitter ## 添加这里内容即可
 
 
 plugin:
