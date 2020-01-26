@@ -128,8 +128,8 @@ backup:
   theme: next
   message: Back up my blog
   repository: 
-    github: git@github.com:jomeswang/jomeswang.github.io.git,master
-    coding: git@e.coding.net:jomeswang/jomeswang.git,master
+    github: git@github.com:jomeswang/jomeswang.github.io.git,backup
+    coding: git@e.coding.net:jomeswang/jomeswang.git,backup
 
 
 plugin:
