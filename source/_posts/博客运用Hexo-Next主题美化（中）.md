@@ -505,24 +505,20 @@ tag_generator:
 
 ### 6，1：优化全：
 
-1，
+1，[hexo博客之主题配置篇](https://zealot.top/Hexo-Github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A22.html#more)
 
- [https://zealot.top/Hexo-Github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A22.html#more](https://zealot.top/Hexo-Github搭建自己的博客2.html#more) 
-
-2， https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html
+2，[Hexo Next 主题启用及相关设置](https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html)
 
 ### 6，2：基础
 
-​	1， https://www.jianshu.com/p/b20fc983005f 	
-
-​	2， https://www.cnblogs.com/zhangxiaochn/p/Hexo_Theme_Next.html 
+​	1，[Hexo设置主题以及Next主题个性设置]( https://www.jianshu.com/p/b20fc983005f 	)
 
 ### 6，3：其他
 
-​	1，博客人物： https://itrhx.blog.csdn.net/article/details/85420403 
+​	1，[博客人物]( https://itrhx.blog.csdn.net/article/details/85420403 )：
 
-​	2，fork me on the github: https://blog.csdn.net/fly_wt/article/details/86674138 
+​	2，f[ork me on the github](  https://blog.csdn.net/fly_wt/article/details/86674138  ):
 
-​	3，Hexo博客NexT主题美化之显示当前浏览进度: https://blog.csdn.net/weixin_34342905/article/details/88218109 	
+​	3，[Hexo博客NexT主题美化之显示当前浏览进度](https://blog.csdn.net/weixin_34342905/article/details/88218109 ): 	
 
-​	4，更换网站图标： https://blog.csdn.net/Olivia_Vang/article/details/92976637 
+​	4，[更换网站图标]( https://blog.csdn.net/Olivia_Vang/article/details/92976637 )：

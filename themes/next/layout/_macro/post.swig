@@ -366,6 +366,11 @@
       {% endif %}
     </div>
 
+     <!-- 相关文章推荐 -->
+    {% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
+        {% include 'post-related.swig' with { post: post } %}
+    {% endif %}
+
     <footer class="post-footer">
       {% if post.tags and post.tags.length and not is_index %}
         <div class="post-tags">
@@ -443,10 +448,7 @@
     </footer>
   </div>
 
- <!-- 相关文章推荐 -->
-{% if theme.related_posts.enable and (theme.related_posts.display_in_home or not is_index) %}
-     {% include 'post-related.swig' with { post: post } %}
-{% endif %}
+
 
   {######################}
   {### END POST BLOCK ###}
