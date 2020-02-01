@@ -12,6 +12,8 @@ date: 2020-01-28 13:38:20
 
 ## 一：开发者的解决方案
 
+<!-- more -->
+
 Hexo 的 GitHub 项目里，有人提出了类似的需求：
 
  [hexo开发者的解决方案](https://github.com/hexojs/hexo/issues/1007) 
