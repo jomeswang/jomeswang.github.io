@@ -24,7 +24,8 @@ date: 2020-02-07 15:02:22
 #### 2.1.1 npm安装
 
 ```
-npm i element-ui -S
+npm i element-ui -S  \\或者
+vue add element  \\如果使用这种方法，那么无须手动文件引入，直接用就可以了
 ```
 
 #### 2.1.2CDN安装
