@@ -56,7 +56,7 @@ Vue.use(VueJsonp)
 
   
 
-## URL.
+#### URL.
 
 ```
 '/url?{callbackQuery}={callbackName}&...'
@@ -65,7 +65,11 @@ Vue.use(VueJsonp)
 '/url?callback=jsonp_RANDOM_STRING&...'
 ```
 
-## Assign callback query name.
+#### Assign callback query name.
+
+（注意这一点）回调函数的回调查询名称默认是**“callback”**如果访问资源的名字不是callback的话要改成相对应的名字
+
+举个例子 `[http://suggestion.baidu.com/su?wd=%E5%89%8D%E7%AB%AF&p=3&cb=window.bdsug.sug](http://suggestion.baidu.com/su?wd=前端&p=3&cb=window.bdsug.sug)` 这是百度提示词的访问url，它的查询名为cb，那么我们就要加上下面的那一句话。
 
 ```
 this.$jsonp('/url', {
@@ -75,7 +79,7 @@ this.$jsonp('/url', {
 // Then URL will be: '/url?cb=jsonp_aws84739ssu8e3'
 ```
 
-## Assign callback function name.
+#### Assign callback function name.
 
 ```
 this.$jsonp('/url', {
@@ -85,7 +89,7 @@ this.$jsonp('/url', {
 // Then URL will be: '/url?callback=jsonpFunc'
 ```
 
-## Example.
+#### Example.
 
 ```
  // If you want to setup the global timeout, just:
@@ -117,7 +121,9 @@ Vue.jsonp('http://www.some-site.com/data', {
 })
 ```
 
-总而言之使用就是
+#### 总而言之使用就是
+
+​	(注意回调函数的方式)
 
 ```
 //访问地址'url?q=123'
