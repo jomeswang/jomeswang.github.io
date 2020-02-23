@@ -894,6 +894,10 @@ fplans:
 
 - time: 2020.1.20
   plan: 百度，谷歌收录
+
+- time: 2020.2.23
+  plan: 将hexo博客部署到自有服务器上
+  
 #未办事项
 uplans: 
 
