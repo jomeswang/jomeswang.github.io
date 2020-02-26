@@ -2,15 +2,14 @@
 title: Linux 科普背景2
 top: false
 comments: true
-date: 2020-02-24 22:16:34
 categories:
-- Linux
+  - Linux
 tags:
--Linux
--科普
+  - Linux
+  - 科普
+abbrlink: e3bd03ae
+date: 2020-02-24 22:16:34
 ---
-
-# 操作系统的发展史（科普章节）
 
 ## 目标
 
@@ -20,7 +19,7 @@ tags:
 
 - 知道 Linux 的应用领域
 
-  <!-- more -->s
+  <!-- more -->
 
 ## 01. 操作系统的发展历史
 

@@ -1,12 +1,13 @@
 ---
 title: Linux 终端命令格式
 top: false
-comments: tree
-date: 2020-02-26 09:55:48
+comments: true
 categories:
-- Linux
+  - Linux
 tags:
--Linux
+  - Linux
+abbrlink: '78412606'
+date: 2020-02-26 09:55:48
 ---
 
 ## 目标
