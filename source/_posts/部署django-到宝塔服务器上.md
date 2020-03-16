@@ -37,6 +37,8 @@ yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_
 
 ![img](https:////upload-images.jianshu.io/upload_images/1248713-cd98074a49511678.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
 
+
+
 ## 二、安装环境包
 
 宝塔的基础设置搞完了，接下来我们安装环境部署的一些必要软件程序：python、nginx、mysql（如果用到了就安装）
@@ -61,6 +63,8 @@ image
 注：python 2.7.5 显示已安装，这是系统自带的，我们不用管他。
 
 ![img](https:////upload-images.jianshu.io/upload_images/1248713-4c673b264ef5cf4e.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/638/format/webp)
+
+
 
 ## 三、上传项目文件并创建python项目
 
@@ -119,6 +123,10 @@ wsgi-file = 你的文件路径
 有时会造成这里改了端口，而nginx那里没有改，出现上面的错误。
 
 这时只要保证二者的端口一致就可以了。
+
+
+
+
 
 ## 四、创建并同步数据库
 
@@ -187,21 +195,12 @@ DATABASES = {
  
 ＃构建并安装
 [root@djangoServer ~]# cd sqlite-autoconf-3270200
-[root@djangoServer sqlite-autoconf-3270200]# ./configure --prefix=/usr/local
+[root@djangoServer sqlite-autoconf-3270200]# ./configure --prefix=/usr/local/sqlite
 [root@djangoServer sqlite-autoconf-3270200]# make && make install
-
- 
-＃不必要的文件，目录删除
-[root@djangoServer sqlite-autoconf-3270200]# cd ~
-[root@djangoServer ~]# ls
-anaconda-ks.cfg  sqlite-autoconf-3270200  sqlite-autoconf-3270200.tar.gz
-[root@djangoServer ~]# 
-[root@djangoServer ~]# rm -rf sqlite-autoconf-3270200.tar.gz
-[root@djangoServer ~]# rm -rf sqlite-autoconf-3270200
  
 ＃检查版本
 ## 最新安装的sqlite3版本
-[root@djangoServer ~]# /usr/local/bin/sqlite3 --version
+[root@djangoServer ~]# /usr/local/sqlite/bin/sqlite3 --version
 3.27.2 2019-02-25 16:06:06 bd49a8271d650fa89e446b42e513b595a717b9212c91dd384aab871fc1d0f6d7
 [root@djangoServer ~]# 
  
@@ -219,7 +218,7 @@ anaconda-ks.cfg  sqlite-autoconf-3270200  sqlite-autoconf-3270200.tar.gz
 [root@djangoServer ~]# mv /usr/bin/sqlite3  /usr/bin/sqlite3_old
  
 ## 软链接将新的sqlite3设置到/usr/bin目录下
-[root@djangoServer ~]# ln -s /usr/local/bin/sqlite3   /usr/bin/sqlite3
+[root@djangoServer ~]# ln -s /usr/local/sqlite/bin/sqlite3   /usr/bin/sqlite3
  
 ## 查看当前全局sqlite3的版本
 [root@djangoServer ~]# sqlite3 --version
@@ -228,23 +227,38 @@ anaconda-ks.cfg  sqlite-autoconf-3270200  sqlite-autoconf-3270200.tar.gz
  
 ＃将路径传递给共享库
 # 设置开机自启动执行，可以将下面的export语句写入 ~/.bashrc 文件中，如果如果你想立即生效，可以执行source 〜/.bashrc 将在每次启动终端时执行
-[root@djangoServer ~]# export LD_LIBRARY_PATH="/usr/local/lib"
- 
-＃检查Python的SQLite3版本（此步很重要）
-[root@djangoServer ~]# ipython3
-Python 3.7.1 (default, May  3 2019, 09:55:04) 
-Type 'copyright', 'credits' or 'license' for more information
-IPython 7.5.0 -- An enhanced Interactive Python. Type '?' for help.
- 
-In [1]: import sqlite3                                                     
- 
-In [2]: sqlite3.sqlite_version                                             
-Out[2]: '3.27.2'
- 
-In [3]: exit                                                               
-[root@djangoServer ~]# 
+[root@djangoServer ~]# export LD_LIBRARY_PATH=/usr/local/sqlite/lib
+[root@djangoServer ~]# vim ~/.bashrc
 
+    # .bashrc
+
+    # User specific aliases and functions
+
+    alias rm='rm -i'
+    alias cp='cp -i'
+    alias mv='mv -i'
+
+    # Source global definitions
+    if [ -f /etc/bashrc ]; then
+            . /etc/bashrc
+    fi
+    . "/root/.acme.sh/acme.sh.env"
+    # 在这里加上这一行，位置要对
+    export LD_LIBRARY_PATH="/usr/local/sqlite/lib"
+    export PATH=~/.pyenv/bin:$PATH
+    
+ [root@djangoServer ~]# source ~/.bashrc
+ [root@djangoServer ~]# python3
+Python 3.6.8 (default, Aug  7 2019, 17:28:10) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sqlite3
+>>> sqlite3.sqlite_version
+'3.27.2'
+# 成功完成，踩坑许多，特来记录
 ```
+
+
 
 ## 五、检查项目是否运行成功
 
@@ -292,6 +306,8 @@ STATIC_ROOT = '/home/xxx_static/static/'
 ```
 
 这里也有一个坑，我之前弄好之后，访问网站老是提示：Bad Request (400)，后来一检查，才发现自己的ALLOWED_HOSTS这里设置有问题。修改之后，在python项目管理器中重启一下就好了。
+
+
 
 ## 六、设置网站服务，并配置nginx代理
 
@@ -352,6 +368,8 @@ python manage.py collectstatic
 ```powershell
 uwsgi -d --ini /www/wwwroot/ThreatScan/uwsgi.ini -w ThreatScan.wsgi.application
 ```
+
+
 
 [Django+Nginx+uWSGI部署到服务器Django admin后台样式消失](https://blog.csdn.net/qq_31024823/article/details/87703974)
 
