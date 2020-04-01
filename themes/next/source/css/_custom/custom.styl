@@ -41,10 +41,11 @@ code {
 
 // Custom styles.
 body { 
-    background-image: url(https://s2.ax1x.com/2020/01/02/lttGJU.jpg);
+    background-image: url(https://api.ixiaowai.cn/gqapi/gqapi.php);
     background-attachment: fixed; // 不随屏幕滚动而滚动
-    background-repeat: repeat; // 如果背景图不够屏幕大小则重复铺，改为no-repeat则表示不重复铺
-    background-size: contain; // 等比例铺满屏幕
+    background-repeat: no-repeat; // 如果背景图不够屏幕大小则重复铺，改为no-repeat则表示不重复铺
+    // background-size: contain; // 等比例铺满屏幕
+    background-size: 100% 100%; //   铺满屏幕
 }
 
 .main-inner {
@@ -207,6 +208,7 @@ div.post-block.tag .collection-title h2 {
     font-size: 18px;
   }
 }
+//分类页样式
 .category-list-link:hover{
   transform: scale(1.1);
   box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);
@@ -215,7 +217,7 @@ div.post-block.tag .collection-title h2 {
   margin-left: 5px;
   font-size: 16px;
   transition-duration: 0.15s;
-  //display:flex;
+  display:flex;
 }
 /* 归档页样式 end */
 
@@ -255,52 +257,54 @@ ul.popular-posts .popular-posts-item .popular-posts-title a {
   }
 }
 
-.site-title{
-  background-image: linear-gradient(
-    to right,
-    orangered,
-    orange,
-    gold,
-    lightgreen,
-    cyan,
-    dodgerblue,
-    mediumpurple,
-    hotpink,
-    orangered
-  );
-  background-size: 110vw;
-  -webkit-background-clip: text;
-  color: rgba(0,0,0,0.1); /* transparent IE 不支持 */
-  animation: sliding 30s linear infinite;
-}
-@keyframes sliding{
-  to{
-    background-position:  -2000vw;
-  }
-}
 
-.site-meta,
+//炫彩logo
+.site-title{
+  // background-image: linear-gradient(
+  //   to right,
+  //   orangered,
+  //   orange,
+  //   gold,
+  //   lightgreen,
+  //   cyan,
+  //   dodgerblue,
+  //   mediumpurple,
+  //   hotpink,
+  //   orangered
+  // );
+  // background-size: 110vw;
+  -webkit-background-clip: text;
+  color: black; /* transparent IE 不支持 */
+  // animation: sliding 30s linear infinite;
+}
+// @keyframes sliding{
+//   to{
+//     background-position:  -2000vw;
+//   }
+// }
+
+
 .site-subtitle {
-  color: rgba(0,0,0,0.1); /* transparent IE 不支持 */
+  color: black; /* transparent IE 不支持 */
   animation: hue 1.5s linear infinite;
-  background-image: linear-gradient(to right bottom, rgb(255,0,0), rgb(255,128,0), rgb(255,255,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255), rgb(0,0,255), rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));
+  // background-image: linear-gradient(to right bottom, rgb(255,0,0), rgb(255,128,0), rgb(255,255,0), rgb(0,255,0), rgb(0,255,128), rgb(0,255,255), rgb(0,128,255), rgb(0,0,255), rgb(128,0,255), rgb(255,0,255), rgb(255,0,128));
   -webkit-background-clip: text;
 }
-@keyframes hue {
-  from {
-      filter: hue-rotate(0);
-  }
-  to {
-      filter: hue-rotate(-360deg);
-  }
-}
+// @keyframes hue {
+//   from {
+//       filter: hue-rotate(0);
+//   }
+//   to {
+//       filter: hue-rotate(-360deg);
+//   }
+// }
 
 .site-meta{
-  background: #ecf9f8;
-  +mobile(){
-    padding: 10px 0;
-    background-image: linear-gradient(90deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%)!important;
-  }
+  background: white;
+//   +mobile(){
+//     padding: 10px 0;
+//     // background-image: linear-gradient(90deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%)!important;
+//   }
 }
 
 // 圆角设置

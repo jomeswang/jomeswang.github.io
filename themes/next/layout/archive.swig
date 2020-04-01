@@ -31,7 +31,7 @@
 
       {% for post in page.posts %}
 
-        {# Show year #}55555555555555555555555555555555555555555555555555
+        {# Show year #}
         {% set year %}
         {% set post.year = date(post.date, 'YYYY') %}
 

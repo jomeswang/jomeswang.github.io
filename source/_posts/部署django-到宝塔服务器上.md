@@ -124,13 +124,9 @@ wsgi-file = 你的文件路径
 
 这时只要保证二者的端口一致就可以了。
 
-
-
-
-
 ## 四、创建并同步数据库
 
-### 4.1 MYSQL 数据库
+### 	4.1 MYSQL 数据库
 
 ​	在宝塔面板左边菜单选择数据库，然后添加一个数据库：
 
@@ -173,11 +169,11 @@ DATABASES = {
 }
 ```
 
-### 4.2.sqlite3数据库
+### 	4.2.sqlite3数据库
 
  发现服务器本身的sqlite3数据库版本较低，为3.7 但django2.2版本以上的最低sqlite3版本为3.8以上，所以有两种方法解决
 
-#### 4.2.1 降django版本
+#### 	4.2.1 降django版本
 
 ```
 卸载django:   pip uninstall django
@@ -258,8 +254,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 # 成功完成，踩坑许多，特来记录
 ```
 
-
-
 ## 五、检查项目是否运行成功
 
 经过上面的操作之后，项目已经在本地服务器运行起来了，这个时候先检查一下项目运行的状况，是否有报错。
@@ -283,7 +277,7 @@ version = Database.version_info
 
 继续观察日志，直到没有新的报错日志出现就说明项目运行成功了！
 
-## 五、关闭DEBUG模式，调整静态设置
+## 六、关闭DEBUG模式，调整静态设置
 
 现在我们通过 侧边栏 文件 菜单 进入项目文件，找到 [setting.py](https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2Fsetting.py) 文件，进行编辑。
 
@@ -307,9 +301,7 @@ STATIC_ROOT = '/home/xxx_static/static/'
 
 这里也有一个坑，我之前弄好之后，访问网站老是提示：Bad Request (400)，后来一检查，才发现自己的ALLOWED_HOSTS这里设置有问题。修改之后，在python项目管理器中重启一下就好了。
 
-
-
-## 六、设置网站服务，并配置nginx代理
+## 七、设置网站服务，并配置nginx代理
 
 上述操作，我们已经在内部启动了，接下来就是设置成网站服务，提供外部访问，并设置 nginx 代理加载静态文件。
 

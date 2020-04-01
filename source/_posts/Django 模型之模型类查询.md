@@ -15,17 +15,17 @@ Django 模型之模型类查询
 
 <!-- more -->
 
-## **1.** ***\*查询集\****
+## **1.** ***查询集***
 
 all, filter, exclude, order_by调用这些函数会产生一个查询集，QuerySet类对象可以继续调用上面的所有函数。
 
-### ***\*1.1\**** ***\*查询集特性\****
+### 1.1查询集特性
 
 1） 惰性查询：只有在实际使用查询集中的数据的时候才会发生对数据库的真正查询。
 
 2） 缓存：当使用的是同一个查询集时，第一次使用的时候会发生实际数据库的查询，然后把结果缓存起来，之后再使用这个查询集时，使用的是缓存中的结果。
 
-### ***\*2.2\**** ***\*限制查询集\****
+### 2.2限制查询集
 
 可以对一个查询集进行取下标或者切片操作来限制查询集的结果。
 
@@ -38,9 +38,9 @@ all, filter, exclude, order_by调用这些函数会产生一个查询集，Query
 | b[0]         | 如果b[0]不存在，会抛出IndexError异常             |
 | b[0:1].get() | 如果b[0:1].get()不存在，会抛出DoesNotExist异常。 |
 
-***\*exists:判断一个查询集中是否有数据。True False\****
+***exists:判断一个查询集中是否有数据。True False***
 
-## **2.** ***\*模型类关系\****
+## 2.模型类关系
 
 ### 1） 一对多关系 
 
@@ -60,9 +60,9 @@ models.ManyToManyField() 定义在哪个类中都可以。
 
 models.OneToOneField定义在哪个类中都可以。
 
-## **3.** 关联查询（一对多）
+## 3. 关联查询（一对多）
 
-### ***\*11.1 查询和对象关联的数据\****
+### 11.1 查询和对象关联的数据
 
 在一对多关系中，一对应的类我们把它叫做一类，多对应的那个类我们把它叫做多类，我们把多类中定义的建立关联的类属性叫做关联属性。
 
@@ -72,7 +72,7 @@ models.OneToOneField定义在哪个类中都可以。
 
 ​	b.heroinfo_set.all()
 
-***\*通过模型类查询：\****
+通过模型类查询：
 
 ​	HeroInfo.objects.filter(hbook__id=1)
 
@@ -82,13 +82,13 @@ models.OneToOneField定义在哪个类中都可以。
 
 ​	h.hbook
 
-***\*通过模型类查询：\****
+通过模型类查询：
 
 ​	BookInfo.objects.filter(heroinfo__id=1)
 
-***\*格式：\****
+格式：
 
-![img](file:///C:\Users\Administrator\AppData\Local\Temp\ksohtml9048\wps2.jpg) 
+![](http://photo.jomeswang.top/20200331171856.png)
 
 由一类的对象查询多类的时候：
 
@@ -102,9 +102,9 @@ models.OneToOneField定义在哪个类中都可以。
 
 ​	多类的对象. 关联属性_id
 
-### ***\*11.2\**** ***\*通过模型类实现关联查询\****
+### 11.2通过模型类实现关联查询
 
-[![8CbAY9.md.png](https://s2.ax1x.com/2020/03/10/8CbAY9.md.png)](https://imgchr.com/i/8CbAY9) 
+![](http://photo.jomeswang.top/20200331171950.png)
 
 例：查询图书信息，要求图书关联的英雄的描述包含'八'。
 
@@ -132,15 +132,15 @@ HeroInfo.objects.filter(hbook__btitle='天龙八部')
 
 ​	`多类名.objects.filter(关联属性__一类属性名__条件名)`
 
-## **4.** ***\*插入、更新和删除\****
+## 4.插入、更新和删除
 
 调用一个模型类对象的save方法的时候就可以实现对模型类对应数据表的插入和更新。
 
 调用一个模型类对象的delete方法的时候就可以实现对模型类对应数据表数据的删除。
 
-## **5.** ***\*自关联\****
+## 5.自关联
 
-[![8CbZS1.png](https://s2.ax1x.com/2020/03/10/8CbZS1.png)](https://imgchr.com/i/8CbZS1) 
+![](http://photo.jomeswang.top/20200331172048.png)
 
 自关联是一种特殊的一对多的关系。
 
@@ -161,7 +161,7 @@ class AreaInfo(models.Model):
     aParent=models.ForeignKey('self',null=True,blank=True)#关系
 ```
 
-## **6.** ***\*管理器\****
+## 6.管理器
 
 BookInfo.objects.all()->objects是一个什么东西呢？
 
@@ -169,13 +169,13 @@ BookInfo.objects.all()->objects是一个什么东西呢？
 
 objects是models.Manger类的一个对象。自定义管理器之后Django不再帮我们生成默认的objects管理器。
 
-### ***\*14.1 自定义模型管理器类\****
+### 14.1 自定义模型管理器类
 
 1) 自定义一个管理器类，这个类继承models.Manger类。
 
 2) 再在具体的模型类里定义一个自定义管理器类的对象。
 
-### ***\*14.2\**** ***\*自定义管理器类的应用场景\****
+### 14.2自定义管理器类的应用场景
 
 1） 改变查询的结果集。
 
@@ -224,9 +224,9 @@ c）调用语法如下：
 调用：book=BookInfo.books.create_book("abc",date(1980,1,1))
 ```
 
-***\*小结:\****
+小结:
 
-[![8CbKeO.png](https://s2.ax1x.com/2020/03/10/8CbKeO.png)](https://imgchr.com/i/8CbKeO) 
+![](http://photo.jomeswang.top/20200331172201.png)
 
 ## 7.元选项
 

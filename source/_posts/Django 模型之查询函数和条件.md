@@ -210,8 +210,9 @@ BookInfo.objects.filter(id__gt=3).count()
 
 小结:
 
-[![8CIC6O.png](https://s2.ax1x.com/2020/03/10/8CIC6O.png)](https://imgchr.com/i/8CIC6O) 
+![](http://photo.jomeswang.top/20200331171513.png)
 
-***\*参考文档：\****
+***参考文档：***
 
 ​	http://python.usyiyi.cn/translate/django_182/ref/models/querysets.html
+

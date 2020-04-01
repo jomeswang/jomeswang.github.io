@@ -75,7 +75,7 @@ footer:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -578,7 +578,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: True
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -698,7 +698,7 @@ pace: true
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-center-atom
+pace_theme: pace-theme-corner-indicator
 
 # Canvas-nest
 canvas_nest: false
@@ -861,11 +861,6 @@ mylinks:
   site: https://www.liaofuzhan.com
   info: 因心造境，风云由我！
   
-- nickname: AnFrank
-  avatar: https://github.com/enfangzhong/enfangzhong.github.io/blob/master/images/avatar.jpg
-  site: https://enfangzhong.github.io/
-  info: Stay Hungry Stay Foolish
-
 - nickname: 小丁的个人博客
   site: https://tding.top
   info: 世间所有的相遇，都是久别重逢

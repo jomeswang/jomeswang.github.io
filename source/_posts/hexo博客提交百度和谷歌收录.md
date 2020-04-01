@@ -65,13 +65,13 @@ hexo d
 
 选择添加站点：
 
-![img](https:////upload-images.jianshu.io/upload_images/5635196-9bca3b38a6c1685d.png?imageMogr2/auto-orient/strip|imageView2/2/w/982/format/webp)
+[![GEjB5T.png](https://s1.ax1x.com/2020/03/29/GEjB5T.png)](https://imgchr.com/i/GEjB5T)
 
 ### 2.2	验证站点
 
 进行站点验证：
 
-![img](https:////upload-images.jianshu.io/upload_images/5635196-51233e024040d8d7.png?imageMogr2/auto-orient/strip|imageView2/2/w/982/format/webp)
+[![GEjwV0.png](https://s1.ax1x.com/2020/03/29/GEjwV0.png)](https://imgchr.com/i/GEjwV0)
 
 这里我们选择`文件验证`，下载验证文件到本地，放置在`themes/next/source`目录下。执行生成和部署命令：
 
@@ -158,7 +158,7 @@ deploy:
 
 我们之前已经说过如何生成sitemap文件，这时就需要我们生成的sitemap文件了。
 
-![img](https:////upload-images.jianshu.io/upload_images/5635196-cfb7e4bd12e2deb8.png?imageMogr2/auto-orient/strip|imageView2/2/w/981/format/webp)
+[![GEj7xH.png](https://s1.ax1x.com/2020/03/29/GEj7xH.png)](https://imgchr.com/i/GEj7xH)
 
 输入以下内容到输入框里：
 
@@ -176,13 +176,13 @@ http://fengdi.org/baidusitemap.xml
 
 登录[Google网站站长](https://link.jianshu.com?t=https://www.google.com/webmasters/#?modal_active=none)，进入`Search Console`，点击`添加属性`进行站点添加：
 
-![img](https:////upload-images.jianshu.io/upload_images/5635196-9a7ce99e3aaaf1a9.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+[![GEjIPO.png](https://s1.ax1x.com/2020/03/29/GEjIPO.png)](https://imgchr.com/i/GEjIPO)
 
 ### 3.2	验证站点
 
 同百度平台一样，下载Google验证文件，放到source下`themes/next/source`目录中：
 
-![img](https:////upload-images.jianshu.io/upload_images/5635196-2a7e8f527d0b1b42.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+[![GEjIPO.png](https://s1.ax1x.com/2020/03/29/GEjIPO.png)](https://imgchr.com/i/GEjIPO)
 
 重新生成和部署：
 
@@ -197,7 +197,7 @@ hexo d
 
 在`抓取`里面，点击`站点地图`，进行添加：
 
-![img](https:////upload-images.jianshu.io/upload_images/5635196-7071aa22f10e2c28.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+[![GEjsGF.png](https://s1.ax1x.com/2020/03/29/GEjsGF.png)](https://imgchr.com/i/GEjsGF)
 
 ## 4	总结
 

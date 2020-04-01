@@ -25,7 +25,30 @@
 </div>
 
 
+
+
+<div id="denglu" style="vertical-align:middle;margin:0 auto;justify-content: center;
+display: flex" > 
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<a style="display: flex" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" >
+<img src="https://s1.ax1x.com/2020/03/29/GEe5sP.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50" height="65" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
+"> 
+<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style="color: #ffd700; margin-left:5px">又拍云CDN支持</a> 
+</a>
+</div> 
+<style>
+@media only screen and (max-width: 600px) {
+#denglu
+img{
+  height:6vw !important
+}
+#denglu{
+  font-size: 8px !important
+}
+}
+
+</style>
+
 <script>
     var now = new Date(); 
     function createtime() { 
@@ -42,6 +65,7 @@
     } 
 setInterval("createtime()",250);
 </script>
+
 
 
 <!--
@@ -64,6 +88,9 @@ setInterval("createtime()",250);
 #}</div>
 {% endif %}
 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#
   #}{{ theme.footer.custom_text }}{#
