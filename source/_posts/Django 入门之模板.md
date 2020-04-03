@@ -29,7 +29,7 @@ date: 2020-03-11 19:56:24
 
 为应用booktest下的视图index创建模板index.html，目录结构如下图：
 
-[![8CFmxU.png](https://s2.ax1x.com/2020/03/09/8CFmxU.png)](https://imgchr.com/i/8CFmxU)
+![](http://photo.jomeswang.top/20200401144747.png)
 
 设置查找模板的路径：打开test1/settings.py文件，设置TEMPLATES的DIRS值
 
@@ -37,7 +37,7 @@ date: 2020-03-11 19:56:24
 'DIRS': [os.path.join(BASE_DIR, 'templates')],
 ```
 
-[![8CFuMF.png](https://s2.ax1x.com/2020/03/09/8CFuMF.png)](https://imgchr.com/i/8CFuMF)
+![](http://photo.jomeswang.top/20200401144812.png)
 
 #### 定义模板
 
@@ -94,7 +94,7 @@ def index(request):
 
 打开浏览器刷新页面，显示效果如下图：
 
-[![8CFKr4.png](https://s2.ax1x.com/2020/03/09/8CFKr4.png)](https://imgchr.com/i/8CFKr4)
+![](http://photo.jomeswang.top/20200401144834.png)
 
 #### 视图调用模板简写
 
@@ -113,3 +113,4 @@ def index(request):
     context={'title':'图书列表','list':range(10)}
     return render(request,'booktest/index.html',context)
 ```
+

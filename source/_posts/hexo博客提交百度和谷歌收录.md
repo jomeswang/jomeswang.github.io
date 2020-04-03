@@ -65,13 +65,13 @@ hexo d
 
 选择添加站点：
 
-[![GEjB5T.png](https://s1.ax1x.com/2020/03/29/GEjB5T.png)](https://imgchr.com/i/GEjB5T)
+![](http://photo.jomeswang.top/20200401152602.png)
 
 ### 2.2	验证站点
 
 进行站点验证：
 
-[![GEjwV0.png](https://s1.ax1x.com/2020/03/29/GEjwV0.png)](https://imgchr.com/i/GEjwV0)
+![](http://photo.jomeswang.top/20200401152628.png)
 
 这里我们选择`文件验证`，下载验证文件到本地，放置在`themes/next/source`目录下。执行生成和部署命令：
 
@@ -158,7 +158,7 @@ deploy:
 
 我们之前已经说过如何生成sitemap文件，这时就需要我们生成的sitemap文件了。
 
-[![GEj7xH.png](https://s1.ax1x.com/2020/03/29/GEj7xH.png)](https://imgchr.com/i/GEj7xH)
+![](http://photo.jomeswang.top/20200401152659.png)
 
 输入以下内容到输入框里：
 
@@ -176,13 +176,13 @@ http://fengdi.org/baidusitemap.xml
 
 登录[Google网站站长](https://link.jianshu.com?t=https://www.google.com/webmasters/#?modal_active=none)，进入`Search Console`，点击`添加属性`进行站点添加：
 
-[![GEjIPO.png](https://s1.ax1x.com/2020/03/29/GEjIPO.png)](https://imgchr.com/i/GEjIPO)
+![](http://photo.jomeswang.top/20200401152732.png)
 
 ### 3.2	验证站点
 
 同百度平台一样，下载Google验证文件，放到source下`themes/next/source`目录中：
 
-[![GEjIPO.png](https://s1.ax1x.com/2020/03/29/GEjIPO.png)](https://imgchr.com/i/GEjIPO)
+![](http://photo.jomeswang.top/20200401152748.png)
 
 重新生成和部署：
 
@@ -197,7 +197,7 @@ hexo d
 
 在`抓取`里面，点击`站点地图`，进行添加：
 
-[![GEjsGF.png](https://s1.ax1x.com/2020/03/29/GEjsGF.png)](https://imgchr.com/i/GEjsGF)
+![](http://photo.jomeswang.top/20200401152848.png)
 
 ## 4	总结
 

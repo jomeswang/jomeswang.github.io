@@ -95,4 +95,4 @@ http://127.0.0.1:8000/
 
 网页显示效果如下图，视图被成功执行了。
 
-[![8CienH.png](https://s2.ax1x.com/2020/03/09/8CienH.png)](https://imgchr.com/i/8CienH)
+![](http://photo.jomeswang.top/20200401151250.png)

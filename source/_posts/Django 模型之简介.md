@@ -24,7 +24,7 @@ ORM，全拼Object-Relation Mapping，中文意为对象-关系映射，是随�
 
 Django框架中ORM示意图如下：
 
-[![8CKEm6.png](https://s2.ax1x.com/2020/03/10/8CKEm6.png)](https://imgchr.com/i/8CKEm6)
+![](http://photo.jomeswang.top/20200401144407.png)
 
 # 创建项目test2
 
@@ -38,7 +38,7 @@ django-admin startproject test2
 
 打开test2/settings.py文件，找到DATABASES项，默认使用SQLite3数据库
 
-[![8CKQ1A.md.png](https://s2.ax1x.com/2020/03/10/8CKQ1A.md.png)](https://imgchr.com/i/8CKQ1A)
+![](http://photo.jomeswang.top/20200401144442.png)
 
 修改为使用MySQL数据库，代码如下:
 
@@ -72,4 +72,5 @@ python manage.py startapp booktest
 'booktest',
 ```
 
-[![8CKV0K.png](https://s2.ax1x.com/2020/03/10/8CKV0K.png)](https://imgchr.com/i/8CKV0K)
+![](http://photo.jomeswang.top/20200401144502.png)
+
