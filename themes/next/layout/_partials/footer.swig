@@ -26,12 +26,11 @@
 
 
 
-
 <div id="denglu" style="vertical-align:middle;margin:0 auto;justify-content: center;
 display: flex" > 
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <a style="display: flex" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" >
-<img src="https://s1.ax1x.com/2020/03/29/GEe5sP.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50" height="65" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
+<img src="http://photo.jomeswang.top/20200404100532.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50" height="65" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
 "> 
 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style="color: #ffd700; margin-left:5px">又拍云CDN支持</a> 
 </a>
