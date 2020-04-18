@@ -24,13 +24,13 @@ date: 2020-03-06 23:45:11
 
 　　在显示的环境列表中，当前环境以星号（*）突出显示。
 
-　　![img](https://img2018.cnblogs.com/blog/1349745/201904/1349745-20190419013755932-748786427.png)
+　　![](http://photo.jomeswang.top/20200410110708.png)
 
 　　2、激活环境
 
 　　`conda activate d:\Tools\Anaconda2`
 
-　![img](https://img2018.cnblogs.com/blog/1349745/201904/1349745-20190419013927885-962235478.png)
+　![](http://photo.jomeswang.top/20200410110802.png)
 
 法二：
 

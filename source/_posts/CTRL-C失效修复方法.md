@@ -8,7 +8,7 @@ categories:
 tags:
 ---
 
-方法一：重新注册以下DLL文件。 
+方法一：在运行窗口重新注册以下DLL文件。 
 regsvr32 Shdocvw.dll 
 regsvr32 Shell32.dll （注意这个命令，先不用输） 
 regsvr32 Oleaut32.dll 

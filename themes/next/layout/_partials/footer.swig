@@ -30,19 +30,27 @@
 display: flex" > 
 <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <a style="display: flex" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" >
-<img src="http://photo.jomeswang.top/20200404100532.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50" height="65" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
+<img src="http://photo.jomeswang.top/20200404100532.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50px" height="28px" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
 "> 
 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style="color: #ffd700; margin-left:5px">又拍云CDN支持</a> 
 </a>
 </div> 
 <style>
+img{
+  height: 28px !important
+}
+#denglu{
+  font-size: 8px !important;
+  height: 28px !important
+}
 @media only screen and (max-width: 600px) {
 #denglu
 img{
-  height:6vw !important
+  height: 28px !important
 }
 #denglu{
-  font-size: 8px !important
+  font-size: 8px !important;
+  height: 28px !important
 }
 }
 

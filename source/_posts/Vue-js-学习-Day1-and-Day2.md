@@ -31,18 +31,12 @@ tags:
 
 
 
-
-
 ### 1.2	为什么要学习流行框架
  + 企业为了提高开发效率：在企业中，时间就是效率，效率就是金钱；
   - 企业中，使用框架，能够提高开发的效率；
 
-
-
  + 提高开发效率的发展历程：原生JS -> Jquery之类的类库 -> 前端模板引擎 -> Angular.js / Vue.js（能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念【通过框架提供的指令，我们前端程序员只需要关心数据的业务逻辑，不再关心DOM是如何渲染的了】）
  + 在Vue中，一个核心的概念，就是让用户不再操作DOM元素，解放了用户的双手，让程序员可以更多的时间去关注业务逻辑；
-
-
 
  + 增强自己就业时候的竞争力
   - 人无我有，人有我优
@@ -50,21 +44,13 @@ tags:
 
 ### 1.3框架和库的区别
 
-
-
  + 框架：是一套完整的解决方案；对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。
 
   - node 中的 express；
 
-
-
  + 库（插件）：提供某一个小功能，对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其它库实现需求。
   - 1. 从Jquery 切换到 Zepto
   - 2. 从 EJS 切换到 art-template
-
-
-
-
 
 
 
@@ -77,7 +63,7 @@ tags:
 
 
 
-### 1.5	Vue.js 基本代码 和 MVVM 之间的对应关系:[![1ASPy9.md.png](https://s2.ax1x.com/2020/01/22/1ASPy9.md.png)](https://imgchr.com/i/1ASPy9)
+### 1.5	Vue.js 基本代码 和 MVVM 之间的对应关系:![](http://photo.jomeswang.top/20200410152739.png)
 
 ## 二：正式学习Vue
 
@@ -96,23 +82,19 @@ tags:
 ### 2.3	Vue指令之`v-bind`的三种用法
 
 1. 直接使用指令`v-bind`
-
 2. 使用简化指令`:`
-
 3. 在绑定的时候，拼接绑定内容：`:title="btnTitle + ', 这是追加的内容'"`
 
-4. ```html
-     <!-- v-bind: 是 Vue中，提供的用于绑定属性的指令 -->
-       <input type="button" value="按钮" v-bind:title="mytitle + '123'">
-       <!-- 注意： v-bind: 指令可以被简写为 :要绑定的属性 -->
-       <!-- v-bind 中，可以写合法的JS表达式 -->
-   ```
+```
+<!-- v-bind: 是 Vue中，提供的用于绑定属性的指令 -->
+<input type="button" value="按钮" v-bind:title="mytitle + '123'">
+<!-- 注意： v-bind: 指令可以被简写为 :要绑定的属性 -->
+<!-- v-bind 中，可以写合法的JS表达式 -->
+```
 
 
 
 ### 2.4	Vue指令之`v-on`和`跑马灯效果`
-
-
 
 ##### 跑马灯效果
 
@@ -208,10 +190,6 @@ tags:
 
 
 ### 2.6	Vue指令之`v-model`和`双向数据绑定`
-
-
-
-
 
 #### 简易计算器案例
 
@@ -401,27 +379,15 @@ data: {
 
 ```
 
-
-
 > 2.2.0+ 的版本里，**当在组件中使用** v-for 时，key 现在是必须的。
 
-
-
 当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用 “**就地复用**” 策略。如果数据项的顺序被改变，Vue将**不是移动 DOM 元素来匹配数据项的顺序**， 而是**简单复用此处每个元素**，并且确保它在特定索引下显示已被渲染过的每个元素。
-
-
 
 为了给 Vue 一个提示，**以便它能跟踪每个节点的身份，从而重用和重新排序现有元素**，你需要为每项提供一个唯一 key 属性。
 
 
 
-
-
-
-
 ### 2.9	Vue指令之`v-if`和`v-show`
-
-
 
 > 一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。
 
@@ -492,10 +458,6 @@ search(name) {
 ## 三：Vue调试工具`vue-devtools`的安装步骤和使用
 
 [Vue.js devtools - 翻墙安装方式 - 推荐](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=zh-CN)
-
-
-
-
 
 ## 四：过滤器
 
@@ -625,7 +587,7 @@ Vue.filter('dataFormat', function (input, pattern = '') {
 
 ## 五：键盘修饰符以及自定义键盘修饰符
 
-### 
+
 
 ### 5.1	[2.x中自定义键盘修饰符](https://cn.vuejs.org/v2/guide/events.html#键值修饰符)
 
@@ -701,6 +663,8 @@ Vue.config.keyCodes.f2 = 113;
 
 ```
 
+
+
 ## 七：	[vue实例的生命周期](https://cn.vuejs.org/v2/guide/instance.html#实例生命周期)
 
 + 什么是生命周期：从Vue实例创建、运行、到销毁期间，总是伴随着各种各样的事件，这些事件，统称为生命周期！
@@ -726,9 +690,13 @@ Vue.config.keyCodes.f2 = 113;
 
   + destroyed：Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
 
-    [![1EurdK.md.png](https://s2.ax1x.com/2020/01/22/1EurdK.md.png)](https://imgchr.com/i/1EurdK)
+
+![](http://photo.jomeswang.top/20200410153241.png)
+
+
 
 ## 八：	相关文章
+
 1. [vue.js 1.x 文档](https://v1-cn.vuejs.org/)
 2. [vue.js 2.x 文档](https://cn.vuejs.org/)
 3. [String.prototype.padStart(maxLength, fillString)](http://www.css88.com/archives/7715)

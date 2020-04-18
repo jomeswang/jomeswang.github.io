@@ -43,7 +43,7 @@ V全拼为View，用于封装结果，生成页面展示的html内容。
 
 C全拼为Controller，用于接收请求，处理业务逻辑，与Model和View交互，返回结果。
 
-[![3zjAPA.png](https://s2.ax1x.com/2020/03/08/3zjAPA.png)](https://imgchr.com/i/3zjAPA)
+![](http://photo.jomeswang.top/20200410110449.png)
 
 #### Django简介
 
@@ -65,5 +65,5 @@ T全拼为Template，与MVC中的V功能相同，负责封装构造要返回的h
 
 - 差异就在于黑线黑箭头标识出来的部分
 
-[![3zjF5d.png](https://s2.ax1x.com/2020/03/08/3zjF5d.png)](https://imgchr.com/i/3zjF5d)
+![](http://photo.jomeswang.top/20200410110522.png)
 

@@ -10,7 +10,7 @@ abbrlink: fd1e545c
 date: 2019-12-31 23:27:13
 ---
 
-​																				转载-- https://zhuanlan.zhihu.com/p/60578464 
+​														转载-- https://zhuanlan.zhihu.com/p/60578464 
 
  本文就详细介绍下如何使用 Hexo + GitHub 搭建免费个人博客网站的教程。 
 
@@ -20,33 +20,7 @@ date: 2019-12-31 23:27:13
 
 ​		请留足时间来处理哦，下载npm东西是真的慢，可安装淘宝镜像安装法见常见问题。之后用cnpm代替npm。
 
-**内容目录：**
 
-1. 准备：环境搭建
-   1.1. 注意事项
-   1.2. 环境搭建
-
-2. 连接 Github
-
-3. 创建 Github Pages 仓库
-
-4. 本地安装 Hexo 博客程序
-   4.1. 安装 Hexo
-   4.2. Hexo 初始化和本地预览
-
-5. 部署 Hexo 到 GitHub Pages
-
-6. 绑定域名（可选）
-
-7. 开始使用
-   7.1. 发布文章
-   7.2. 网站设置
-   7.3. 更换主题
-   7.4. 常用代码
-
-8. 常见问题
-
-   
 
 ## 1. 准备
 
@@ -99,9 +73,11 @@ Title 随便取个名字，粘贴复制的 id_rsa.pub 内容到 Key 中，点击
 
 打开 Git Bash，输入 `ssh -T git@github.com` 出现 “Are you sure……”，输入 yes 回车确认。
 
-![img](https://pic3.zhimg.com/80/v2-b4c7524a2451f4ab42f9c22ea3c7b6be_hd.jpg)
+![](http://photo.jomeswang.top/20200410104018.png)
 
 显示 “Hi xxx! You've successfully……” 即连接成功。
+
+
 
 ## 3. 创建 Github Pages 仓库
 
@@ -116,6 +92,8 @@ GitHub 主页右上角加号 -> New repository：
 ![img](https://pic2.zhimg.com/80/v2-67a8165154f4c5f4a6333e76e78ed815_hd.jpg)
 
 创建后默认自动启用 HTTPS，博客地址为：`https://用户名.github.io`
+
+
 
 ## 4. 本地安装 Hexo 博客程序
 
@@ -200,7 +178,7 @@ deploy:
 
 按上面教程注册并解析域名，在 DNS 设置部分，删除自带的记录，然后添加 CNAME 记录将 www 域名解析指向 `用户名.github.io`。
 
-![img](https://pic3.zhimg.com/80/v2-d5d37c8ad523d8ab5c7c200fabc9585e_hd.jpg)
+![](http://photo.jomeswang.top/20200410104214.png)
 
 ### **# 6.2 绑定域名到 Hexo 博客**
 

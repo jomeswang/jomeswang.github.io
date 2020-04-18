@@ -73,7 +73,7 @@
         {% elif page.type === 'about' %}
             {% include 'about.swig' %}
 
-         <!-- 友情链接-->
+         <!-- 阅读排行榜-->
         {% elif page.type === 'top' %}
             {% include 'top.swig' %}
 

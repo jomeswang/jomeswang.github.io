@@ -1,7 +1,7 @@
 ---
 title: Python 爬虫入门 requests lxml bs4
 top: false
-comments: false
+comments: true
 categories:
   - python 爬虫
 tags:
@@ -53,7 +53,7 @@ print('相应内容:',  html.text)
 
 ![](http://photo.jomeswang.top/20200404200053.png)
 
-### 2.2 解析所需要的HTML代码
+### 2.2 解析所需要的HTML代码(beautifulsoup 和lxml是两种解析方式，推荐lxml方式，简单快速)
 
 #### 2.2.1 使用BeautifulSoup来解析
 
@@ -71,16 +71,16 @@ pip install bs4
 
 方法：
 
-1.find(name,attrs,recursive,text,**wargs)	  Find(‘p’)即寻找第一个匹配的p节点
+1.find(name,attrs,recursive,text,**wargs)	  find(‘p’)即寻找第一个匹配的p节点
 
- 2.Find_all(name,attrs,recursive,text,**wargs)  Find_all(‘p’)即寻找所有p节点
+ 2.find_all(name,attrs,recursive,text,**wargs)  find_all(‘p’)即寻找所有p节点
 
 attrs
 有两种情况则要用到参数attrs:一是标签字符中带有-，比如data-custom;二是class不能看作标签属性。解决的办法是在attrs属性用字典进行传递参数
 
 css选择器 select()
 
-![image-20200404202523924](C:\Users\Admin-Jumper\AppData\Roaming\Typora\typora-user-images\image-20200404202523924.png)
+![](http://photo.jomeswang.top/20200409201905.png)
 
 实例解析：
 
@@ -101,7 +101,7 @@ print(b)
 
 ![](http://photo.jomeswang.top/20200404203544.png)
 
-![image-20200404203736713](C:\Users\Admin-Jumper\AppData\Roaming\Typora\typora-user-images\image-20200404203736713.png)
+![](http://photo.jomeswang.top/20200409201938.png)
 
 #### 2.2.2  使用lxml来解析
 
@@ -129,7 +129,7 @@ print(t)
 
 效果：
 
-![image-20200404211803440](C:\Users\Admin-Jumper\AppData\Roaming\Typora\typora-user-images\image-20200404211803440.png)
+![](http://photo.jomeswang.top/20200409203535.png)
 
 如何获取xpath：
 

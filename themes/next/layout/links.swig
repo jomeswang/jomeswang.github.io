@@ -131,8 +131,11 @@
             </div>
             <hr>
 
-            <div class="note success"><p><strong class="cf-tweet-this cf-tt-target cf-tt-abutted cf-tt-abutted-top cf-tt-out-of-bounds cf-tt-out-of-bounds-bottom cf-tt-element-attached-bottom cf-tt-element-attached-center cf-tt-target-attached-top cf-tt-target-attached-center">友链格式</strong><br>名称：传道士<br>描述：三生万物，万物归一<br>网址：<a href="http://kjtpeh.coding-pages.com/">http://kjtpeh.coding-pages.com/</a><br>头像：<a href="https://s2.ax1x.com/2020/01/01/lJeqtP.jpg">https://s2.ax1x.com/2020/01/01/lJeqtP.jpg</a></p></div>
-            <div class="note danger"><p><strong>申请要求</strong><br>谷歌、百度等搜索引擎收录<br>无广告推广，头像外链不 403<br>仅限 HTTPS 的个人域名非商业网站</p></div>
+            <div class="note success"><p><strong class="cf-tweet-this cf-tt-target cf-tt-abutted cf-tt-abutted-top cf-tt-out-of-bounds cf-tt-out-of-bounds-bottom cf-tt-element-attached-bottom cf-tt-element-attached-center cf-tt-target-attached-top cf-tt-target-attached-center">友链格式</strong>
+            <br>名称：传道士<br>描述：三生万物，万物归一<br>网址：<a href="https://hexo.jomeswang.top">https://hexo.jomeswang.top</a>
+            <br>头像：<a href="http://photo.jomeswang.top/20200405170507.png">http://photo.jomeswang.top/20200405170507.png</a></p></div>
+            <div class="note danger"><p><strong>申请要求</strong>
+            <br>谷歌、百度等搜索引擎收录<br>无广告推广，头像外链不 403<br>个人域名非商业网站</p></div>
         </div>
 
   {##########################}

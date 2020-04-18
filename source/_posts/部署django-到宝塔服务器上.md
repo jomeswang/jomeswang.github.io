@@ -29,13 +29,13 @@ yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_
 
 安装成功后，控制台会显示出宝塔面板的登录地址、用户名、密码。如下图所示，将内容记录好。
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-f5c8bf38460ceeb3.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/540/format/webp)
+![](http://photo.jomeswang.top/20200406220250.png)
 
 进行登录后，会提示推荐安装套件，直接关闭即可。然后点击左侧菜单栏中的面板设置，调整面板的 端口、安全入口、用户名及密码。修改完成后，记得点击最下方的保存。
 
 注：安全入口：是拼接在登录地址之后的。之前系统会自动设置一个随机字符，更改安全入口后，将登录地址中的随机字符换成你更改后的内容。例如：安装后的登录地址为： [http://10.10.10.10:8888/f5165b61](https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2F10.10.10.10%3A8888%2Ff5165b61) 修改安全入口的内容为： /btmb 以后宝塔面板的登录地址变为：[http://10.10.10.10:8888/btmb](https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2F10.10.10.10%3A8888%2Fbtmb)
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-cd98074a49511678.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
+![](http://photo.jomeswang.top/20200406220325.png)
 
 
 
@@ -46,23 +46,21 @@ yum install -y wget && wget -O install.sh http://download.bt.cn/install/install_
 
 在宝塔左侧菜单栏 点击 软件商店，第一页我们就可以看到nginx，点击安装选择急速安装即可。
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-82a00d7cbc462b39.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
-
-image
+![](http://photo.jomeswang.top/20200406220341.png)
 
 与此同时，我们选择 宝塔插件 类别，在该类别下 选择 Python项目管理器 进行安装
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-14a092586035b065.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
+![](http://photo.jomeswang.top/20200406220400.png)
 
 安装成功后，会有一个 首页显示 的开关，我们打开这个开关，记得nginx也要打开这个哦。这个时候 我们在首页就可以看到了，因为后面我们会经常使用，所以最好要展示在首页。
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-05d30d0034d11623.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
+![](http://photo.jomeswang.top/20200406220416.png)
 
 接下来，我们该安装 python 了，在首页点击 python项目管理器，会出现一个弹窗，点击版本管理，选择一下你项目开发时使用的 python 版本。我使用的是 python 3.6.5 所以我安装这个版本。
 
 注：python 2.7.5 显示已安装，这是系统自带的，我们不用管他。
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-4c673b264ef5cf4e.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/638/format/webp)
+![](http://photo.jomeswang.top/20200406220427.png)
 
 
 
@@ -77,19 +75,21 @@ pip freeze > requirements.txt
 
 会生成一个 requirements.txt 文件，里面就会包含我们当前环境下所有的python包。
 
-接下来，打开宝塔面板，点击 文件 ，此时注意路径需要在/www/wwwroot/下
+接下来，打开宝塔面板，点击 文件 ，
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-e3506e4e780b0fd2.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/455/format/webp)
+此时注意路径需要在/www/wwwroot/下
+
+![](http://photo.jomeswang.top/20200406220446.png)
 
 点击上传按钮，选择目录，将我们项目的整个目录都上传上来*（可以不用上传venv目录，这个是虚拟环境目录，会自动生成）。* 我的项目在电脑路径为D:/xzbcx_1.11，此时上传就选择django_test目录。上传弹窗需要加载一会才能展示出文件,之后点击弹窗底部的开始上传，在右上角有一个进度条，等上传完成后就可以关闭该弹窗。
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-ce3665cfff136b54.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/662/format/webp)
+![](http://photo.jomeswang.top/20200406220500.png)
 
 项目文件大的话上传时间就会比较长，是的，我上传了三十多分钟。
 
 好了，现在我们开始创建 python 项目。打开首页的 python 项目管理器，点击 添加项目。填充数据：
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-cc9758b3bb51c0b6.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+![](http://photo.jomeswang.top/20200406220520.png)
 
 - 项目名称： 自定义就行，你开心就好
 - 路径： 定位到项目目录即可
@@ -115,7 +115,7 @@ pip freeze > requirements.txt
 wsgi-file = 你的文件路径
 ```
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-dad0cae950f39605.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
+![](http://photo.jomeswang.top/20200406220630.png)
 
 `502 Bad Gateway nginx错误的解决方法：`
 
@@ -173,7 +173,7 @@ DATABASES = {
 
  发现服务器本身的sqlite3数据库版本较低，为3.7 但django2.2版本以上的最低sqlite3版本为3.8以上，所以有两种方法解决
 
-#### 	4.2.1 降django版本
+#### 	4.2.1 降django版本（最简单的方法）
 
 ```
 卸载django:   pip uninstall django
@@ -260,7 +260,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 在面板中Python项目管理器 ，点击右侧的日志选项，查看你项目的运行状况，我这边项目的日志如下：
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-705b70f4f4ed76ee.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+![](http://photo.jomeswang.top/20200406221116.png)
 
 发现有报错，查阅资料发现是Django2.2之后内部的一个版本限制在作怪，相关文章在[这里](https://links.jianshu.com/go?to=https%3A%2F%2Fblog.csdn.net%2Fweixin_45476498%2Farticle%2Fdetails%2F100098297)查看，解决方案如下：
 
@@ -309,8 +309,6 @@ STATIC_ROOT = '/home/xxx_static/static/'
 
 在网站中点击我们刚才映射出的域名或ip，会出现一个弹窗，选择 反向代理-》配置文件
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-31047bfe2aac98cc.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/720/format/webp)
-
 找个缝隙，来添加静态文件和媒体资源的配置。
 
 关于静态文件：就是存放css，js文件的位置。django框架中以static命名的。
@@ -329,7 +327,7 @@ location /media/ {
 
 按照文件路径设置即可，只需要替换红色框内的，换成你的路径，其他的不用动。如果保存的时候出现报错，就把空格啥的删除一下。
 
-![img](https:////upload-images.jianshu.io/upload_images/1248713-5b71ba33b4f5bd3b.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+![](http://photo.jomeswang.top/20200406230854.png)
 
 完成之后需要在项目中执行以下如下命名收集admin后台的静态文件，不然通过`uwsgi`服务启动的django服务，会找不到admin的样式文件导致样式失效。
 
@@ -358,7 +356,7 @@ python manage.py collectstatic
 如果不行尝试在虚拟环境下手动执行：
 
 ```powershell
-uwsgi -d --ini /www/wwwroot/ThreatScan/uwsgi.ini -w ThreatScan.wsgi.application
+newsgirl-d --ini /www/wwwroot/boxdata/uwsgi.ini -w boxdata.wsgi.application
 ```
 
 

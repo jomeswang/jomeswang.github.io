@@ -12,7 +12,7 @@ abbrlink: 42fa127b
 date: 2020-01-03 10:32:35
 ---
 
-​																												--转载链接见最下方
+​																								--转载链接见最下方
 
 ## 1，前言
 
@@ -27,14 +27,14 @@ date: 2020-01-03 10:32:35
 ### 		2.1，在线评论
 
 ​			设置效果：
-[![img](http://xmzcl.changeip.com:8089/images/blog_hexo46.jpg)](http://xmzcl.changeip.com:8089/images/blog_hexo46.jpg)
+![](http://photo.jomeswang.top/20200410190922.png)
 
 设置方法：
 
 1. 首先要先去[LeanCloud](https://leancloud.cn/)注册一个帐号.然后再创建一个应用.
-   [![img](http://xmzcl.changeip.com:8089/images/blog_hexo48.jpg)](http://xmzcl.changeip.com:8089/images/blog_hexo48.jpg)
+   ![](http://photo.jomeswang.top/20200410191013.png)
    进入应用->设置->应用key,获取你的`appid` 和 `appkey` 如图所示：
-   [![img](http://xmzcl.changeip.com:8089/images/blog_hexo47.jpg)](http://xmzcl.changeip.com:8089/images/blog_hexo47.jpg)
+   ![](http://photo.jomeswang.top/20200410191207.png)
 
 2. 拿到`appid`和`appkey`之后，打开`themes/next/_config.yml`主题配置文件，查找`valine`，填入`appid` 和 `appkey`
    我的配置:
@@ -55,7 +55,7 @@ valine:
 
 3. 最后！记得在`Leancloud -> 设置 -> 安全中心 -> Web 安全域名` 把你的域名加进去．
 
-   刷新一下~ 是不是就能看到评论框了？
+   刷新一下~ 是不是就能看到评论框了？还可以设置邮箱提醒哦[看这里](https://hexo.jomeswang.top/posts/84c51fe9/)
 
 ### 			2.2，字数统计，访客统计
 
@@ -122,8 +122,7 @@ busuanzi_count:
 ------
 
 效果图：
-[![img](https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/read02.png)](https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/read02.png)
-[![img](https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/read01.png)](https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/read01.png)
+![](http://photo.jomeswang.top/20200410190028.png)
 
 #### 			2.2.2,LeanCloud阅读次数统计
 
@@ -201,7 +200,7 @@ leancloud_visitors:
 
    当你配置部分完成之后，初始的文章统计量显示为0，但是这个时候我们LeanCloud对应的应用的`Counter`表中并没有相应的记录，只是单纯的显示为0而已，当博客文章在配置好阅读量统计服务之后第一次打开时，便会自动向服务器发送数据来创建一条数据，该数据会被记录在对应的应用的`Counter`表中。
 
-[![后台管理](https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/read03.png)](https://yfzhou.oss-cn-beijing.aliyuncs.com/blog/img/read03.png)
+![](http://photo.jomeswang.top/20200410191401.png)
 
 ​		我们可以修改其中的`time`字段的数值来达到修改某一篇文章的访问量的目的（博客文章访问量快递提升人气的装逼利器）。双击具体的数值，修改之后回车即可保存。
 
