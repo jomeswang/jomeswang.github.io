@@ -35,7 +35,8 @@ display: flex" >
 <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style="color: #ffd700; margin-left:5px">又拍云CDN支持</a> 
 </a>
 </div> 
-<style>
+<style scoped>
+#denglu
 img{
   height: 28px !important
 }
