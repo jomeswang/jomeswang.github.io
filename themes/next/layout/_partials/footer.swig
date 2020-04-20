@@ -41,8 +41,7 @@ img{
   height: 28px !important
 }
 #denglu{
-  font-size: 8px !important;
-  height: 28px !important
+   height: 28px !important
 }
 @media only screen and (max-width: 600px) {
 #denglu
