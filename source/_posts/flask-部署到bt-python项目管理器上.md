@@ -42,7 +42,7 @@ date: 2020-05-05 08:44:48
 
 ![](http://photo.jomeswang.top/20200505085142.png)
 
-### 2.1 上传文件
+### 2.2 上传文件
 
 1. 新建server_test目录
 
@@ -57,23 +57,24 @@ date: 2020-05-05 08:44:48
 ![](http://photo.jomeswang.top/20200505085857.png)
 
 4. 在里面上传.py文件和 requirements.txt
-5. 进入python项目管理器
+
+### 2.3 进入python项目管理器
 
 ![](http://photo.jomeswang.top/20200505090116.png)
 
-6. 添加python项目
+1. 添加python项目
 
 ![](http://photo.jomeswang.top/20200505095711.png)
 
-7. 映射域名
+2. 映射域名
 
 ![](http://photo.jomeswang.top/20200505095919.png)
 
-8. 改变端口号
+3. 改变端口号
 
 ![](http://photo.jomeswang.top/20200505100211.png)
 
-9. 成功啦
+4. 成功啦
 
 ![](http://photo.jomeswang.top/20200505100716.png)
 
