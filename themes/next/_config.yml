@@ -866,6 +866,12 @@ mylinks:
   info: 世间所有的相遇，都是久别重逢
   avatar: https://tding.top/images/avatar.webp
 
+- nickname: AnFrank
+  site: https://enfangzhong.github.io/
+  info: Stay Hungry Stay Foolish
+  avatar: https://github.com/enfangzhong/enfangzhong.github.io/blob/master/images/avatar.jpg
+
+
 #已办事项
 fplans: 
 
@@ -896,11 +902,8 @@ fplans:
 #未办事项
 uplans: 
 
-- plan: 评论添加分享功能，并添加博主提醒功能，
 - plan: 更新next 版本
-- plan: 域名绑定
-- plan: coding page 分流
-- plan: 排行榜优化
+- plan: 博客内容框太窄了需要变大
 
 recent_posts_title: 近期文章
 recent_posts_layout: block
