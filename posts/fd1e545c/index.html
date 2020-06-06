@@ -106,24 +106,24 @@
 <meta property="og:url" content="https://hexo.jomeswang.top/posts/fd1e545c/index.html">
 <meta property="og:site_name" content="传道士|万物归一">
 <meta property="og:description" content="​                                                        转载– https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;60578464   本文就详细介绍下如何使用 Hexo + GitHub 搭建免费个人博客网站的教程。  ​        为了照顾小白用户（第一次使用 GitHub 和 Hexo），尽可能详细，包括常见的坑和问题都有">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-27b47b5ae479ce7987851292a67774b0_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-9125065afd24332d7cd84feb6a350730_hd.jpg">
+<meta property="og:image" content="http://photo.jomeswang.top/20200606161052.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200606161127.png">
 <meta property="og:image" content="http://photo.jomeswang.top/20200410104018.png">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-67a8165154f4c5f4a6333e76e78ed815_hd.jpg">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-01e7fc8bb9280437deb437bf73a190a1_hd.jpg">
+<meta property="og:image" content="http://photo.jomeswang.top/20200606161149.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200606161224.png">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-1c3baeecf1ef3bec5c8ef3f14639f68b_hd.jpg">
-<meta property="og:image" content="https://pic1.zhimg.com/80/v2-264c75c0e493ae8cc5f283567c64ff2c_hd.jpg">
+<meta property="og:image" content="http://photo.jomeswang.top/20200606161243.png">
 <meta property="og:image" content="http://photo.jomeswang.top/20200410104214.png">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-54f8744afc9746884e6b3acecfc5f8cf_hd.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-45701cf120ca77e6733ad30b40666f33_hd.jpg">
 <meta property="article:published_time" content="2019-12-31T15:27:13.000Z">
-<meta property="article:modified_time" content="2020-06-06T06:36:26.549Z">
+<meta property="article:modified_time" content="2020-06-06T08:14:13.677Z">
 <meta property="article:author" content="Jomeswang">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="webinit">
 <meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-27b47b5ae479ce7987851292a67774b0_hd.jpg">
+<meta name="twitter:image" content="http://photo.jomeswang.top/20200606161052.png">
 
 
 
@@ -590,7 +590,7 @@
 </ul>
 <p>下载 Node.js 和 Git 程序并安装，一路点 “下一步” 按默认配置完成安装。</p>
 <p>安装完成后，Win+R 输入 cmd 并打开，依次输入 <code>node -v</code>、<code>npm -v</code> 和 <code>git --version</code> 并回车，如下图出现程序版本号即可。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-27b47b5ae479ce7987851292a67774b0_hd.jpg" alt="img"></p>
+<p><img src="http://photo.jomeswang.top/20200606161052.png" alt=""></p>
 <h2 id="2-连接-Github"><a href="#2-连接-Github" class="headerlink" title="2. 连接 Github"></a>2. 连接 Github</h2><p>使用邮箱注册 <a href="https://link.zhihu.com/?target=https%3A//github.com/">GitHub</a> 账户，选择免费账户（Free），并完成邮件验证。</p>
 <p>右键 -&gt; Git Bash Here，<strong>设置用户名和邮箱</strong>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;GitHub 用户名&quot;</span><br><span class="line">git config --global user.email &quot;GitHub 邮箱&quot;</span><br></pre></td></tr></table></figure>
@@ -601,7 +601,7 @@
 <p>进入 [C:\Users\用户名.ssh] 目录（要勾选显示“隐藏的项目”），用记事本打开公钥 id_rsa.pub 文件并复制里面的内容。</p>
 <p>登陆 GitHub ，进入 Settings 页面，选择左边栏的 SSH and GPG keys，点击 New SSH key。</p>
 <p>Title 随便取个名字，粘贴复制的 id_rsa.pub 内容到 Key 中，点击 Add SSH key 完成添加。</p>
-<p><img src="https://pic1.zhimg.com/80/v2-9125065afd24332d7cd84feb6a350730_hd.jpg" alt="img"></p>
+<p><img src="http://photo.jomeswang.top/20200606161127.png" alt=""></p>
 <p><strong>验证连接：</strong></p>
 <p>打开 Git Bash，输入 <code>ssh -T git@github.com</code> 出现 “Are you sure……”，输入 yes 回车确认。</p>
 <p><img src="http://photo.jomeswang.top/20200410104018.png" alt=""></p>
@@ -613,17 +613,17 @@
 <li>Description 选填</li>
 </ul>
 <p>填好后点击 Create repository 创建。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-67a8165154f4c5f4a6333e76e78ed815_hd.jpg" alt="img"></p>
+<p><img src="http://photo.jomeswang.top/20200606161149.png" alt=""></p>
 <p>创建后默认自动启用 HTTPS，博客地址为：<code>https://用户名.github.io</code></p>
 <h2 id="4-本地安装-Hexo-博客程序"><a href="#4-本地安装-Hexo-博客程序" class="headerlink" title="4. 本地安装 Hexo 博客程序"></a>4. 本地安装 Hexo 博客程序</h2><p>新建一个文件夹用来存放 Hexo 的程序文件，如 Hexo-Blog。打开该文件夹，右键 -&gt; Git Bash Here。</p>
 <h3 id="4-1-安装-Hexo"><a href="#4-1-安装-Hexo" class="headerlink" title="# 4.1 安装 Hexo"></a><strong># 4.1 安装 Hexo</strong></h3><p>使用 npm 一键安装 Hexo 博客程序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli --registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>Mac 用户需要管理员权限（sudo），运行这条命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
 
 <p>安装时间有点久（真的很慢！），界面也没任何反应，<strong>耐心等待</strong>，安装完成后如下图。</p>
-<p><img src="https://pic2.zhimg.com/80/v2-01e7fc8bb9280437deb437bf73a190a1_hd.jpg" alt="img"></p>
+<p><img src="http://photo.jomeswang.top/20200606161224.png" alt=""></p>
 <h3 id="4-2-Hexo-初始化和本地预览"><a href="#4-2-Hexo-初始化和本地预览" class="headerlink" title="# 4.2 Hexo 初始化和本地预览"></a><strong># 4.2 Hexo 初始化和本地预览</strong></h3><p><strong>初始化并安装所需组件：</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init      # 初始化</span><br><span class="line">npm install    # 安装组件</span><br></pre></td></tr></table></figure>
 
@@ -634,10 +634,10 @@
 <p><img src="https://pic4.zhimg.com/80/v2-1c3baeecf1ef3bec5c8ef3f14639f68b_hd.jpg" alt="img"></p>
 <p><strong>Tips：</strong>如果出现页面加载不出来，可能是端口被占用了。Ctrl+C 关闭服务器，运行 <code>hexo server -p 5000</code> 更改端口号后重试。</p>
 <p>Hexo 博客文件夹目录结构如下：</p>
-<p><img src="https://pic1.zhimg.com/80/v2-264c75c0e493ae8cc5f283567c64ff2c_hd.jpg" alt="img"></p>
+<p><img src="http://photo.jomeswang.top/20200606161243.png" alt=""></p>
 <h2 id="5-部署-Hexo-到-GitHub-Pages"><a href="#5-部署-Hexo-到-GitHub-Pages" class="headerlink" title="5. 部署 Hexo 到 GitHub Pages"></a>5. 部署 Hexo 到 GitHub Pages</h2><p>本地博客测试成功后，就是上传到 GitHub 进行部署，使其能够在网络上访问。</p>
 <p>首先<strong>安装 hexo-deployer-git</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save  --registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>然后<strong>修改 _config.yml</strong> 文件末尾的 Deployment 部分，修改成如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:用户名&#x2F;用户名.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
@@ -945,7 +945,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">115</span>
+                  <span class="site-state-item-count">119</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1014,23 +1014,23 @@
                 
                 
                   <li>
+                    <a href="/posts/1d9a2b3e/" title="yarn 的安装和换源" target="_blank">yarn 的安装和换源</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/e9ec5064/" title="python 和pycharm的安装和使用" target="_blank">python 和pycharm的安装和使用</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/921d30fb/" title="hexo 迁移电脑" target="_blank">hexo 迁移电脑</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/5c417394/" title="C语言环境配置和vscode" target="_blank">C语言环境配置和vscode</a>
+                  </li>
+                
+                  <li>
                     <a href="/posts/73e70778/" title="node.js 配置和 npm 换源" target="_blank">node.js 配置和 npm 换源</a>
-                  </li>
-                
-                  <li>
-                    <a href="/posts/4a17b156/" title="Hello World" target="_blank">Hello World</a>
-                  </li>
-                
-                  <li>
-                    <a href="/posts/d48495b1/" title="First 推文KO  " target="_blank">First 推文KO  </a>
-                  </li>
-                
-                  <li>
-                    <a href="/posts/adfcc4bd/" title="竞选。。。" target="_blank">竞选。。。</a>
-                  </li>
-                
-                  <li>
-                    <a href="/posts/f93d83c7/" title="520, 我又想你们啦" target="_blank">520, 我又想你们啦</a>
                   </li>
                 
               </ul>
@@ -1097,7 +1097,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">132.4k</span>
+    <span title="Site words total count">134.9k</span>
   
 </div>
 
