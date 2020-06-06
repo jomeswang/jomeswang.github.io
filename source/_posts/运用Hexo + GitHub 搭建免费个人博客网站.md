@@ -42,7 +42,7 @@ Hexo 基于 Node.js，搭建过程中还需要使用 npm（Node.js 已带） 和
 
 安装完成后，Win+R 输入 cmd 并打开，依次输入 `node -v`、`npm -v` 和 `git --version` 并回车，如下图出现程序版本号即可。
 
-![img](https://pic1.zhimg.com/80/v2-27b47b5ae479ce7987851292a67774b0_hd.jpg)
+![](http://photo.jomeswang.top/20200606161052.png)
 
 ## 2. 连接 Github
 
@@ -67,7 +67,7 @@ git config --global user.email "GitHub 邮箱"
 
 Title 随便取个名字，粘贴复制的 id_rsa.pub 内容到 Key 中，点击 Add SSH key 完成添加。
 
-![img](https://pic1.zhimg.com/80/v2-9125065afd24332d7cd84feb6a350730_hd.jpg)
+![](http://photo.jomeswang.top/20200606161127.png)
 
 **验证连接：**
 
@@ -89,7 +89,7 @@ GitHub 主页右上角加号 -> New repository：
 
 填好后点击 Create repository 创建。
 
-![img](https://pic2.zhimg.com/80/v2-67a8165154f4c5f4a6333e76e78ed815_hd.jpg)
+![](http://photo.jomeswang.top/20200606161149.png)
 
 创建后默认自动启用 HTTPS，博客地址为：`https://用户名.github.io`
 
@@ -104,7 +104,7 @@ GitHub 主页右上角加号 -> New repository：
 使用 npm 一键安装 Hexo 博客程序：
 
 ```text
-npm install -g hexo-cli
+npm install -g hexo-cli --registry https://registry.npm.taobao.org 
 ```
 
 Mac 用户需要管理员权限（sudo），运行这条命令：
@@ -115,7 +115,7 @@ sudo npm install -g hexo-cli
 
 安装时间有点久（真的很慢！），界面也没任何反应，**耐心等待**，安装完成后如下图。
 
-![img](https://pic2.zhimg.com/80/v2-01e7fc8bb9280437deb437bf73a190a1_hd.jpg)
+![](http://photo.jomeswang.top/20200606161224.png)
 
 ### **# 4.2 Hexo 初始化和本地预览**
 
@@ -141,7 +141,7 @@ hexo s   # 启动预览
 
 Hexo 博客文件夹目录结构如下：
 
-![img](https://pic1.zhimg.com/80/v2-264c75c0e493ae8cc5f283567c64ff2c_hd.jpg)
+![](http://photo.jomeswang.top/20200606161243.png)
 
 ## 5. 部署 Hexo 到 GitHub Pages
 
@@ -150,7 +150,7 @@ Hexo 博客文件夹目录结构如下：
 首先**安装 hexo-deployer-git**：
 
 ```text
-npm install hexo-deployer-git --save
+npm install hexo-deployer-git --save  --registry https://registry.npm.taobao.org 
 ```
 
 然后**修改 _config.yml** 文件末尾的 Deployment 部分，修改成如下：
