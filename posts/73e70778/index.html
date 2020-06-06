@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="环境配置,教程," />
 
 
 
@@ -100,16 +100,34 @@
 
 
 
-<meta name="description" content="每一天都要开心，快乐哦！">
+<meta name="description" content="node.js 配置和 npm 换源">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js 配置和 npm 换源">
 <meta property="og:url" content="https://hexo.jomeswang.top/posts/73e70778/index.html">
 <meta property="og:site_name" content="传道士|万物归一">
-<meta property="og:description" content="每一天都要开心，快乐哦！">
+<meta property="og:description" content="node.js 配置和 npm 换源">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605153121.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605153254.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605153350.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605153513.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605153634.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605185454.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605154103.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605172552.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605172609.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605173825.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605210534.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605173856.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605211101.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605174800.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200605212022.png">
 <meta property="article:published_time" content="2020-06-06T07:09:56.000Z">
-<meta property="article:modified_time" content="2020-06-06T07:09:56.305Z">
+<meta property="article:modified_time" content="2020-06-06T07:18:21.119Z">
 <meta property="article:author" content="Jomeswang">
+<meta property="article:tag" content="环境配置">
+<meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://photo.jomeswang.top/20200605153121.png">
 
 
 
@@ -447,6 +465,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index">
+                    <span itemprop="name">环境配置</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
 
@@ -482,7 +522,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0字
+                  1.1k字
                 </span>
               
 
@@ -498,7 +538,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1分钟
+                  4分钟
                 </span>
               
             </div>
@@ -519,7 +559,81 @@
       
 
       
-        
+        <h1 id="node-js-配置和-npm-换源"><a href="#node-js-配置和-npm-换源" class="headerlink" title="node.js 配置和 npm 换源"></a>node.js 配置和 npm 换源</h1><a id="more"></a>
+
+<h2 id="一：下载node-js"><a href="#一：下载node-js" class="headerlink" title="一：下载node.js"></a>一：下载node.js</h2><p>进入官网：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a></p>
+<p>就会出现下图：</p>
+<p><img src="http://photo.jomeswang.top/20200605153121.png" alt=""></p>
+<h2 id="二：安装node-js"><a href="#二：安装node-js" class="headerlink" title="二：安装node.js"></a>二：安装node.js</h2><p>点击刚刚下载的文件。</p>
+<p>会出现如下的页面点击Next </p>
+<p><img src="http://photo.jomeswang.top/20200605153254.png" alt=""></p>
+<p>之后</p>
+<p><img src="http://photo.jomeswang.top/20200605153350.png" alt=""></p>
+<p>选择安装路径：  这里我选择的是  <code>D:\Program Files\nodejs\</code></p>
+<p><img src="http://photo.jomeswang.top/20200605153513.png" alt=""></p>
+<p><img src="http://photo.jomeswang.top/20200605153634.png" alt=""></p>
+<p>​    <img src="http://photo.jomeswang.top/20200605185454.png" alt=""></p>
+<p>之后点击安装即可。</p>
+<p>等待安装完成后是如下模样。</p>
+<p><img src="http://photo.jomeswang.top/20200605154103.png" alt=""></p>
+<h2 id="三：测试安装是否成功"><a href="#三：测试安装是否成功" class="headerlink" title="三：测试安装是否成功"></a>三：测试安装是否成功</h2><p>安装完成后打开 cmd(或powershell)，输入命令 <code>node -v</code> 或者 <code>npm -v</code> 来查看node当前版本号或者npm当前版本。（cmd 可以在文件地址栏敲cmd 回车就会出现）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; node -v</span><br><span class="line">v13.1.0</span><br><span class="line">&gt; npm -v</span><br><span class="line">6.12.1</span><br></pre></td></tr></table></figure>
+
+<h2 id="四：配置环境"><a href="#四：配置环境" class="headerlink" title="四：配置环境"></a>四：配置环境</h2><blockquote>
+<p>说明：这里的环境配置主要配置的是npm安装的全局模块所在的路径，以及缓存cache的路径，之所以要配置，是因为以后在执行类似：npm install express [-g] （后面的可选参数-g，g代表global全局安装的意思）的安装语句时，会将安装的模块安装到【C:\Users\用户名\AppData\Roaming\npm】路径中，占C盘空间。</p>
+</blockquote>
+<p>所以我希望将全模块所在路径和缓存路径放在我node.js安装的文件夹中，则在我安装的文件夹<code>D:\Program Files\nodejs</code>下创建两个文件夹<code>【node_global】及【node_cache】</code></p>
+<p>创建完两个空文件夹之后，打开cmd命令窗口，输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix “D:\Program Files\nodejs\node_global”</span><br><span class="line">npm config set cache “D:\Program Files\nodejs\node_cache”</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://photo.jomeswang.top/20200605172552.png" alt=""></p>
+<p>接下来设置环境变量，关闭cmd窗口，“我的电脑”-右键-“属性”-“高级系统设置”-“高级”-“环境变量”</p>
+<p><img src="http://photo.jomeswang.top/20200605172609.png" alt=""></p>
+<p>选择用户环境变量：备注：<br>环境变量Path的作用：path是路径变量，它的作用是告诉系统在当前目录找不到所需文件时，就按path指定的路径查找</p>
+<p><img src="http://photo.jomeswang.top/20200605173825.png" alt=""></p>
+<p>在cmd中.查看nodeJS全局安装路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config ls</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="http://photo.jomeswang.top/20200605210534.png" alt=""></p>
+<p>将这个<code>prefix</code> 的值替换成下方所要替换的路径</p>
+<p><img src="http://photo.jomeswang.top/20200605173856.png" alt=""></p>
+<p>即变为：<img src="http://photo.jomeswang.top/20200605211101.png" alt=""></p>
+<p>点确定就完成了。</p>
+<h2 id="五：npm换源"><a href="#五：npm换源" class="headerlink" title="五：npm换源"></a>五：npm换源</h2><p>因为npm源在国外，所以国内就有人将这个仓库把他拷到国内，所以我们就要将这个地址替换掉原来的地址</p>
+<h3 id="5-1-直接换源法"><a href="#5-1-直接换源法" class="headerlink" title="5.1 直接换源法"></a>5.1 直接换源法</h3><p>npm查看源和换源：</p>
+<p>在cmd中输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry  &#x2F;&#x2F; 查看npm当前镜像源</span><br><span class="line"></span><br><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;  &#x2F;&#x2F; 设置npm镜像源为淘宝镜像</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://photo.jomeswang.top/20200605174800.png" alt=""></p>
+<p>镜像源地址部分如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm --- https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</span><br><span class="line"></span><br><span class="line">cnpm --- https:&#x2F;&#x2F;r.cnpmjs.org&#x2F;</span><br><span class="line"></span><br><span class="line">taobao --- https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;</span><br><span class="line"></span><br><span class="line">nj --- https:&#x2F;&#x2F;registry.nodejitsu.com&#x2F;</span><br><span class="line"></span><br><span class="line">rednpm --- https:&#x2F;&#x2F;registry.mirror.cqupt.edu.cn&#x2F;</span><br><span class="line"></span><br><span class="line">npmMirror --- https:&#x2F;&#x2F;skimdb.npmjs.com&#x2F;registry&#x2F;</span><br><span class="line"></span><br><span class="line">deunpm --- http:&#x2F;&#x2F;registry.enpmjs.org&#x2F;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2-使用nrm-换源法"><a href="#5-2-使用nrm-换源法" class="headerlink" title="5.2 使用nrm 换源法"></a>5.2 使用nrm 换源法</h3><p>在使用 npm 的过程中，可能插件安装速度比较慢，我们可能会使用淘宝源对插件进行下载安装。或者在公司内部，有一些私有的插件，需要使用公司的源才可以下载。这种情况，我们就需要设置不同的源来进行下载。每次手动设置相对比较麻烦。而 nrm 可以很好的解决这个问题。</p>
+<h3 id="nrm-的安装"><a href="#nrm-的安装" class="headerlink" title="nrm 的安装"></a>nrm 的安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装 nrm</span><br><span class="line">$ npm install nrm -g</span><br><span class="line">复制代码</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，输入命令 <code>nrm ls</code>，可以看到默认已经有了 6 个源（带 * 号的为当前使用的源）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* npm ---- https:&#x2F;&#x2F;registry.npmjs.org&#x2F;</span><br><span class="line">  cnpm --- http:&#x2F;&#x2F;r.cnpmjs.org&#x2F;</span><br><span class="line">  taobao - https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;</span><br><span class="line">  nj ----- https:&#x2F;&#x2F;registry.nodejitsu.com&#x2F;</span><br><span class="line">  npmMirror  https:&#x2F;&#x2F;skimdb.npmjs.com&#x2F;registry&#x2F;</span><br><span class="line">  edunpm - http:&#x2F;&#x2F;registry.enpmjs.org&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>输入 <code>nrm use taobao</code>，即切换 registry 到 taobao，即可使用淘宝的源进行插件的安装下载了。</p>
+<h3 id="nrm-常用命令"><a href="#nrm-常用命令" class="headerlink" title="nrm 常用命令"></a>nrm 常用命令</h3><ul>
+<li><code>nrm ls</code>              ：查看所有配置好的源以及对应名称</li>
+<li><code>nrm add company http://npm.xxx.cn</code>：添加源，<code>company</code> 是名称，可以自行命名，后面是源的 <code>url</code> 地址</li>
+<li><code>nrm del company</code>     ：删除源，根据名称 <code>company</code> 可以删除对应的源</li>
+<li><code>nrm test [registry]</code> ：测试源的速度，不加对应的 <code>registry</code> 名称，测试所有源的速度，添加对应的名称，比如 <code>company</code>，就是测试 <code>company</code> 对应的源的速度</li>
+<li><code>nrm use company</code>     ：切换源，即可使用 <code>company</code> 对应名称的源</li>
+<li>更多命令在命令行输入 <code>nrm</code> 即可查看</li>
+</ul>
+<h3 id="5-3-安装cnpm"><a href="#5-3-安装cnpm" class="headerlink" title="5.3 安装cnpm"></a>5.3 安装cnpm</h3><p>你可以使用我们定制的 <a href="https://github.com/cnpm/cnpm" target="_blank" rel="noopener">cnpm</a> (gzip 压缩支持) 命令行工具代替默认的 <code>npm</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>最后使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g express</span><br></pre></td></tr></table></figure>
+
+<p>试一下可是否可以运行cnpm。</p>
+<p><img src="http://photo.jomeswang.top/20200605212022.png" alt=""></p>
+
       
     </div>
     
@@ -554,6 +668,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="tag"><i class="fa fa-tag"></i> 环境配置</a>
+          
+            <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+          
+        </div>
+      
 
       
       
@@ -572,10 +694,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/73e70778/" rel="prev" title="node.js 配置和 npm 换源">
-                node.js 配置和 npm 换源 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,8 +759,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,7 +788,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">116</span>
+                  <span class="site-state-item-count">115</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -734,10 +861,6 @@
                   </li>
                 
                   <li>
-                    <a href="/posts/73e70778/" title="node.js 配置和 npm 换源" target="_blank">node.js 配置和 npm 换源</a>
-                  </li>
-                
-                  <li>
                     <a href="/posts/4a17b156/" title="Hello World" target="_blank">Hello World</a>
                   </li>
                 
@@ -747,6 +870,10 @@
                 
                   <li>
                     <a href="/posts/adfcc4bd/" title="竞选。。。" target="_blank">竞选。。。</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/f93d83c7/" title="520, 我又想你们啦" target="_blank">520, 我又想你们啦</a>
                   </li>
                 
               </ul>
@@ -759,6 +886,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#node-js-配置和-npm-换源"><span class="nav-text">node.js 配置和 npm 换源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：下载node-js"><span class="nav-text">一：下载node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二：安装node-js"><span class="nav-text">二：安装node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：测试安装是否成功"><span class="nav-text">三：测试安装是否成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四：配置环境"><span class="nav-text">四：配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五：npm换源"><span class="nav-text">五：npm换源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-直接换源法"><span class="nav-text">5.1 直接换源法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-使用nrm-换源法"><span class="nav-text">5.2 使用nrm 换源法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nrm-的安装"><span class="nav-text">nrm 的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nrm-常用命令"><span class="nav-text">nrm 常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-安装cnpm"><span class="nav-text">5.3 安装cnpm</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
