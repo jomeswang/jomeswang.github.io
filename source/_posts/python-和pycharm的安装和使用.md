@@ -80,7 +80,7 @@ pip use tuna
 
 ## 二：安装Pycharm
 
-1. ### 下载安装toolbox
+### 2.1   下载安装toolbox
 
 进入官网下载toolbox：https://www.jetbrains.com/toolbox-app/
 
@@ -90,13 +90,13 @@ pip use tuna
 
 之后点击运行安装即可。
 
-2. ### 安装pycharm
+### 2.2   安装pycharm
 
 运行刚刚安装的然后
 
 ![](http://photo.jomeswang.top/20200606101013.png)
 
-3. ### 安装的pycharm 是付费版的，需要使用学生邮箱激活使用
+### 2.3 安装的pycharm 是付费版的，需要使用学生邮箱激活使用
 
 打开官网申请：https://www.jetbrains.com/zh-cn/community/education/#students
 
@@ -104,25 +104,26 @@ pip use tuna
 
 2. 接下来打开一款JetBrains Product，激活方式选择输入你的学生账号和密码，确认就可以激活了，应该是可以免费用一年。
 
-3. ### 配置pycharm
 
-   打开安装好的pycharm 
+### 2.4  配置pycharm
 
-   ![](http://photo.jomeswang.top/20200606101734.png)
+打开安装好的pycharm 
 
-   ![](http://photo.jomeswang.top/20200606101827.png)
+![](http://photo.jomeswang.top/20200606101734.png)
 
-   ![](http://photo.jomeswang.top/20200606101944.png)
+![](http://photo.jomeswang.top/20200606101827.png)
 
-   激活完成！！！
+![](http://photo.jomeswang.top/20200606101944.png)
 
-   1. 配置环境
+激活完成！！！
 
-   ![](http://photo.jomeswang.top/20200606102224.png)
+1. 配置环境
 
-   ![](http://photo.jomeswang.top/20200606102251.png)
+![](http://photo.jomeswang.top/20200606102224.png)
 
-   ![](http://photo.jomeswang.top/20200606103729.png)
+![](http://photo.jomeswang.top/20200606102251.png)
+
+![](http://photo.jomeswang.top/20200606103729.png)
 
 在cmd中输入
 
@@ -137,3 +138,4 @@ where python
 ![](http://photo.jomeswang.top/20200606105819.png)
 
 这样就可以了！！
+

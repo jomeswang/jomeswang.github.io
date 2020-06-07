@@ -146,7 +146,7 @@ deunpm --- http://registry.enpmjs.org/
 
 在使用 npm 的过程中，可能插件安装速度比较慢，我们可能会使用淘宝源对插件进行下载安装。或者在公司内部，有一些私有的插件，需要使用公司的源才可以下载。这种情况，我们就需要设置不同的源来进行下载。每次手动设置相对比较麻烦。而 nrm 可以很好的解决这个问题。
 
-### nrm 的安装
+#### 5.2.1 nrm 的安装
 
 ```
 # 全局安装 nrm
@@ -167,7 +167,7 @@ $ npm install nrm -g
 
 输入 `nrm use taobao`，即切换 registry 到 taobao，即可使用淘宝的源进行插件的安装下载了。
 
-### nrm 常用命令
+#### 5.2.2   nrm 常用命令
 
 - `nrm ls`              ：查看所有配置好的源以及对应名称
 - `nrm add company http://npm.xxx.cn`：添加源，`company` 是名称，可以自行命名，后面是源的 `url` 地址
