@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hexo.jomeswang.top/posts/18a1b841/</loc>
+    
+    <lastmod>2020-06-07T03:46:04.507Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hexo.jomeswang.top/posts/e9ec5064/</loc>
     
     <lastmod>2020-06-07T02:16:36.551Z</lastmod>
@@ -72,14 +79,14 @@
   </url>
   
   <url>
-    <loc>https://hexo.jomeswang.top/about/index.html</loc>
+    <loc>https://hexo.jomeswang.top/archives/index.html</loc>
     
     <lastmod>2020-06-06T06:36:26.551Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://hexo.jomeswang.top/archives/index.html</loc>
+    <loc>https://hexo.jomeswang.top/about/index.html</loc>
     
     <lastmod>2020-06-06T06:36:26.551Z</lastmod>
     
@@ -201,13 +208,6 @@
     <loc>https://hexo.jomeswang.top/posts/ffd957ad/</loc>
     
     <lastmod>2020-06-06T06:36:26.543Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hexo.jomeswang.top/posts/18a1b841/</loc>
-    
-    <lastmod>2020-06-06T06:36:26.542Z</lastmod>
     
   </url>
   
