@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hexo.jomeswang.top/"/>
-  <updated>2020-08-04T07:30:15.031Z</updated>
+  <updated>2020-08-11T10:06:59.789Z</updated>
   <id>https://hexo.jomeswang.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vue 兄弟组件传值</title>
+    <link href="https://hexo.jomeswang.top/posts/90831fd6/"/>
+    <id>https://hexo.jomeswang.top/posts/90831fd6/</id>
+    <published>2020-08-11T10:06:11.000Z</published>
+    <updated>2020-08-11T10:06:59.789Z</updated>
+    
+    <content type="html"><![CDATA[<p>在vue开发中总会遇到组件传值问题，今天总结一下兄弟组件之间的传值方法。</p><a id="more"></a><p>1、子传父，父传子</p><p>2、vuex</p><p>3、eventBus</p><p>接下来介绍如何使用eventBus实现兄弟组件传值</p><p>首先我的需求是这样的，页面上由top，left，main，bottom四个组件构成。需要将top中的值传到left中。</p><p><img src="https://img2018.cnblogs.com/blog/1630583/201908/1630583-20190812154020531-1961842869.png" alt="img"></p><p>第一步：创建一个js文件，eventBus.js，位置随便放，我是放在了src目录下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">export default new Vue()</span><br></pre></td></tr></table></figure><p>第二步：在top组件中，引入刚才的js</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;@&#x2F;eventBus.js&#39;</span><br></pre></td></tr></table></figure><p>然后在methods里边定义一个函数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    changesize()&#123;</span><br><span class="line">        eventBus.$emit(&#39;add&#39;,this.arg)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我测试用的是button点击触发changesize函数，然后将arg传出去</p><p>第三步：在left组件中也先让引入eventBus.js，然后使用created生命周期函数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    eventBus.$on(&#39;add&#39;,(message)&#x3D;&gt;&#123;</span><br><span class="line">        &#x2F;&#x2F;一些操作，message就是从top组件传过来的值</span><br><span class="line">        console.log(message)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在vue开发中总会遇到组件传值问题，今天总结一下兄弟组件之间的传值方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://hexo.jomeswang.top/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://hexo.jomeswang.top/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Django REST framework 学习</title>
@@ -482,31 +505,6 @@
     
     
       <category term="js" scheme="https://hexo.jomeswang.top/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>yarn 的安装和换源</title>
-    <link href="https://hexo.jomeswang.top/posts/1d9a2b3e/"/>
-    <id>https://hexo.jomeswang.top/posts/1d9a2b3e/</id>
-    <published>2020-06-06T08:07:48.000Z</published>
-    <updated>2020-06-06T08:15:18.813Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="yarn-的安装和换源"><a href="#yarn-的安装和换源" class="headerlink" title="yarn 的安装和换源"></a>yarn 的安装和换源</h1><a id="more"></a><h2 id="一：介绍"><a href="#一：介绍" class="headerlink" title="一：介绍"></a>一：介绍</h2><h3 id="1-1-Yarn-的简介："><a href="#1-1-Yarn-的简介：" class="headerlink" title="1.1   Yarn 的简介："></a><strong>1.1   Yarn 的简介：</strong></h3><p>​     Yarn是facebook发布的一款取代npm的包管理工具；</p><h3 id="1-2-Yarn的特点："><a href="#1-2-Yarn的特点：" class="headerlink" title="1.2   Yarn的特点："></a><strong>1.2   Yarn的特点：</strong></h3><p>​    1）速度超快—-Yarn缓存了每个下载过的包，所以再次使用时无需重复下载。同时利用并行下载以最大化资源利用率，因此安装快。</p><p>​     2）超级安全—-在执行代码之前，Yarn会通过算法检验每个安装包的完整性。</p><p>​     3）超级可靠—–使用详细、简洁的锁文件格式和明确的安装算法，Yarn能够保证在不同系统上无差异工作。</p><h2 id="二：安装"><a href="#二：安装" class="headerlink" title="二：安装"></a>二：安装</h2><p>进入官网：<a href="https://classic.yarnpkg.com/zh-Hans/docs/install#windows-stable" target="_blank" rel="noopener">https://classic.yarnpkg.com/zh-Hans/docs/install#windows-stable</a></p><p>下载安装程序</p><p>之后点击运行，之后一直点击Next就可以了</p><p><img src="http://photo.jomeswang.top/20200605215052.png" alt=""></p><p>在cmd中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn --version</span><br></pre></td></tr></table></figure><p>看到如下界面即是成功了。</p><p><img src="http://photo.jomeswang.top/20200605215234.png" alt=""></p><h2 id="三：换源"><a href="#三：换源" class="headerlink" title="三：换源"></a>三：换源</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn config get registry  &#x2F;&#x2F; 查看yarn当前镜像源</span><br><span class="line"></span><br><span class="line">yarn config set registry https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;  &#x2F;&#x2F; 设置yarn镜像源为淘宝镜像</span><br></pre></td></tr></table></figure><p><img src="http://photo.jomeswang.top/20200605220028.png" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;yarn-的安装和换源&quot;&gt;&lt;a href=&quot;#yarn-的安装和换源&quot; class=&quot;headerlink&quot; title=&quot;yarn 的安装和换源&quot;&gt;&lt;/a&gt;yarn 的安装和换源&lt;/h1&gt;
-    
-    </summary>
-    
-    
-      <category term="环境配置" scheme="https://hexo.jomeswang.top/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-      <category term="环境配置" scheme="https://hexo.jomeswang.top/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-      <category term="教程" scheme="https://hexo.jomeswang.top/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
