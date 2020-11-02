@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hexo.jomeswang.top/"/>
-  <updated>2020-10-26T14:55:07.918Z</updated>
+  <updated>2020-10-26T14:55:31.131Z</updated>
   <id>https://hexo.jomeswang.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://hexo.jomeswang.top/posts/b4f7e34f/"/>
     <id>https://hexo.jomeswang.top/posts/b4f7e34f/</id>
     <published>2020-10-26T14:45:57.000Z</published>
-    <updated>2020-10-26T14:55:07.918Z</updated>
+    <updated>2020-10-26T14:55:31.131Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>每天一篇学习记录</p></blockquote><a id="more"></a><h3 id="一：-第一步-使用-df-h-查看磁盘空间占用"><a href="#一：-第一步-使用-df-h-查看磁盘空间占用" class="headerlink" title="一： 第一步  使用   df -h        # 查看磁盘空间占用"></a>一： 第一步  使用   <code>df -h</code>        # 查看磁盘空间占用</h3><p><img src="http://photo.jomeswang.top/20201026224925.png" alt=""></p><h3 id="二：-fdisk-l-查看磁盘设备信息"><a href="#二：-fdisk-l-查看磁盘设备信息" class="headerlink" title="二：  fdisk -l 　　# 查看磁盘设备信息"></a>二：  fdisk -l 　　# 查看磁盘设备信息</h3><p><img src="http://photo.jomeswang.top/20201026224933.png" alt=""></p><h3 id="三：-整理磁盘，并且，新增磁盘分区"><a href="#三：-整理磁盘，并且，新增磁盘分区" class="headerlink" title="三： 整理磁盘，并且，新增磁盘分区"></a>三： 整理磁盘，并且，新增磁盘分区</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk　 &#x2F;dev&#x2F;sda　＃进行磁盘操作</span><br></pre></td></tr></table></figure><p><img src="http://photo.jomeswang.top/20201026225016.png" alt=""></p><p><img src="http://photo.jomeswang.top/20201026225026.png" alt=""></p><p><img src="http://photo.jomeswang.top/20201026225050.png" alt=""></p><p><img src="http://photo.jomeswang.top/20201026225104.png" alt=""></p><h3 id="四：-挂载磁盘"><a href="#四：-挂载磁盘" class="headerlink" title="四： 挂载磁盘"></a>四： 挂载磁盘</h3><p>使用命令 sudo mkfs.ext4  /dev/sda2    # 设置分区的文件系统类型</p><p>咱们需要做的就是，将这个磁盘 挂载到某个你想要的位置即可。</p><p>例如：在 home 下新建sda2作为这块磁盘挂载点</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir &#x2F;home&#x2F;sda2</span><br><span class="line">sudo mount &#x2F;dev&#x2F;sda2 &#x2F;home&#x2F;sda2</span><br></pre></td></tr></table></figure><h3 id="五：-设置开机磁盘自动挂载"><a href="#五：-设置开机磁盘自动挂载" class="headerlink" title="五： 设置开机磁盘自动挂载"></a>五： 设置开机磁盘自动挂载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vi &#x2F;etc&#x2F;fstab</span><br><span class="line">添加行  &#x2F;dev&#x2F;sda2     &#x2F;home&#x2F;work   ext4   defaults 0 1</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -64,9 +64,9 @@
       <category term="随笔" scheme="https://hexo.jomeswang.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="1024" scheme="https://hexo.jomeswang.top/tags/1024/"/>
-    
       <category term="随笔" scheme="https://hexo.jomeswang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="1024" scheme="https://hexo.jomeswang.top/tags/1024/"/>
     
   </entry>
   
