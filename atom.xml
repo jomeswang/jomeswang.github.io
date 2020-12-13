@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hexo.jomeswang.top/"/>
-  <updated>2020-11-20T09:29:11.576Z</updated>
+  <updated>2020-12-13T08:23:23.266Z</updated>
   <id>https://hexo.jomeswang.top/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node 虚拟环境</title>
+    <link href="https://hexo.jomeswang.top/posts/c46c956/"/>
+    <id>https://hexo.jomeswang.top/posts/c46c956/</id>
+    <published>2020-12-13T08:21:13.000Z</published>
+    <updated>2020-12-13T08:23:23.266Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>众里寻它千百度漠然回首，那人却在灯火阑珊处</p></blockquote><a id="more"></a><p>Taro有个很麻烦的问题，就是Taro的项目工程对Taro的版本要求比较严格，例如使用1.3.25版本开发的项目，就不能使用1.3.33的版本运行，即小版本无法兼容。</p><p>同时，Taro为了能够跟上各端的前进步伐，自己的版本更新也很快。这很容易导致一个现象，如果本地同时开发两个或多个Taro项目，但它们使用的Taro版本又不一致，每次运行一个项目可能就需要先重新安装一次Taro，而且多个项目不能同时运行。</p><p>为了解决这个问题特意搜索一番，发现一个python的包可以利用：nodeenv。是的你没看错，就是python的，但它实现的是创建node的虚拟环境，与python虚拟环境很类似。</p><p>首先要保证本地环境安装了python，mac及linux系统自带2.x版本的python，windows环境需要自己安装，关于python的话题在此不多说。下面我们介绍如何利用nodeenv解决Taro版本冲突问题。</p><ul><li>安装nodeenv</li></ul><blockquote><p>sudo pip install nodeenv</p></blockquote><ul><li>在当前项目路径下创建虚拟nodeenv环境</li></ul><blockquote><p>nodeenv –node=system taro3.0.7</p></blockquote><p><code>--node=system</code>表示利用当前系统中的node创建虚拟环境，即不独立安装node，且在虚拟环境下能访问到系统node安装的全局工具包。</p><p>如果要安装完全独立的环境，可去掉该参数或把system改为具体的node版本号。由于我们只要是解决Taro问题，所以选择使用系统的node来创建。</p><p><code>taro3.0.7</code>是要创建的虚拟环境的文件夹名称</p><ul><li>启动虚拟环境</li></ul><blockquote><p>.  taro3.0.7/bin/activate</p></blockquote><p>启动后命令行提示符变成这样</p><blockquote><p>(taro3.0.7) $</p></blockquote><ul><li>在虚拟环境下安装指定版本的Taro</li></ul><blockquote><p>(taro3.0.7)  $ npm install -g @tarojs/cli@3.0.7</p></blockquote><p><strong><em>注意，一定要用npm做全局安装，yarn不受虚拟环境影响会安装到系统全局\</em></strong></p><p>安装完成后可查看版本</p><blockquote><p>(taro3.0.7) $ taro -V</p></blockquote><blockquote></blockquote><blockquote><p>👽 Taro v3.0.7</p></blockquote><blockquote></blockquote><blockquote><p>3.0.7</p></blockquote><p>查看taro的安装位置</p><blockquote><p>which taro</p></blockquote><blockquote><p>/Users/konghui/Project/Wosai/dbb-merchant-mini/taro3.0.7/bin/taro</p></blockquote><ul><li>正常启动项目就可以了</li></ul><blockquote><p>(taro3.0.7) $  yarn dev:weapp</p></blockquote><p>所有项目本地的操作使用yarn与npm都可以。</p><ul><li>退出虚拟环境</li></ul><p>在不需要虚拟环境时可直接执行如下命令</p><blockquote><p>(taro3.0.7) $ deactivate_node</p></blockquote><h3 id="附图"><a href="#附图" class="headerlink" title="附图"></a>附图</h3><p><strong>下面是两个不同的项目，分别使用taro1.3.25和3.0.7版本</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tarojs1.3.25版本示意图</span><br></pre></td></tr></table></figure><blockquote><p><img src="https:////upload-images.jianshu.io/upload_images/25030467-5071811a114d40b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/358/format/webp" alt="img"></p><p>1.3.25图片</p></blockquote><blockquote><p><img src="https:////upload-images.jianshu.io/upload_images/25030467-4bf8887524abf704.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/805/format/webp" alt="img"></p><p>1.3.25图片</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tarojs3.0.7版本示意图</span><br></pre></td></tr></table></figure><blockquote><p><img src="https:////upload-images.jianshu.io/upload_images/25030467-b0ce11984d4b294c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/358/format/webp" alt="img"></p><p>3.0.7图片</p></blockquote><blockquote><p><img src="https:////upload-images.jianshu.io/upload_images/25030467-20ca9bac115cc873.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/865/format/webp" alt="img"></p><p>3.0.7图片</p></blockquote><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>项目目录下的的虚拟环境目录只在本地保留即刻，<code>切勿</code>上传到gitlab，把你使用的虚拟环境的目录写到<code>.gitignore</code>里面。</p><p>如我是用taro+版本号的虚拟环境目录，可以在gitignore内加入下面一行代码</p><p>作者：辉_31d6<br>链接：<a href="https://www.jianshu.com/p/7896ec42d904" target="_blank" rel="noopener">https://www.jianshu.com/p/7896ec42d904</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;众里寻它千百度漠然回首，那人却在灯火阑珊处&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="node" scheme="https://hexo.jomeswang.top/categories/node/"/>
+    
+    
+      <category term="node" scheme="https://hexo.jomeswang.top/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习 canvas</title>
+    <link href="https://hexo.jomeswang.top/posts/e8300743/"/>
+    <id>https://hexo.jomeswang.top/posts/e8300743/</id>
+    <published>2020-12-04T15:35:11.000Z</published>
+    <updated>2020-12-05T10:14:41.514Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>万事起头难啊！！！当自己真正放下心去学习的时候，才知道原来一切都是肝就完事了</p></blockquote><a id="more"></a><h2 id="一：微信小程序的canvas"><a href="#一：微信小程序的canvas" class="headerlink" title="一：微信小程序的canvas"></a>一：微信小程序的canvas</h2><h3 id="1-1-使用微信小程序自带的-组件"><a href="#1-1-使用微信小程序自带的-组件" class="headerlink" title="1.1 使用微信小程序自带的 组件"></a>1.1 使用微信小程序自带的 组件</h3><p>小程序内通过静态模板和样式绘制 canvas ，导出图片，可用于生成分享图等场景。</p><h5 id="1-1-1-npm-安装"><a href="#1-1-1-npm-安装" class="headerlink" title="1.1.1.  npm 安装"></a>1.1.1.  npm 安装</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save wxml-to-canvas</span><br></pre></td></tr></table></figure><h4 id="1-1-2-json-组件声明"><a href="#1-1-2-json-组件声明" class="headerlink" title="1.1.2  json 组件声明"></a>1.1.2  json 组件声明</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;usingComponents&quot;: &#123;</span><br><span class="line">    &quot;wxml-to-canvas&quot;: &quot;wxml-to-canvas&quot;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="http://photo.jomeswang.top/20201205001119.png" alt=""></p><h4 id="1-1-3-index-wxml-引入组件"><a href="#1-1-3-index-wxml-引入组件" class="headerlink" title="1.1.3  index.wxml 引入组件"></a>1.1.3  index.wxml 引入组件</h4><p><img src="http://photo.jomeswang.top/20201205001232.png" alt=""></p><h4 id="1-1-4-index-js获取实例"><a href="#1-1-4-index-js获取实例" class="headerlink" title="1.1.4 index.js获取实例"></a>1.1.4 index.js获取实例</h4><p><img src="http://photo.jomeswang.top/20201205001638.png" alt=""></p><p><img src="http://photo.jomeswang.top/20201205001836.png" alt=""></p><h4 id="1-1-5-编写-demo-js-既-要-渲染成-canvas-的-wxml-和-styles"><a href="#1-1-5-编写-demo-js-既-要-渲染成-canvas-的-wxml-和-styles" class="headerlink" title="1.1.5  编写 demo,js 既 要 渲染成 canvas 的 wxml 和 styles"></a>1.1.5  编写 demo,js 既 要 渲染成 canvas 的 wxml 和 styles</h4><p><img src="http://photo.jomeswang.top/20201205002105.png" alt=""></p><h3 id="1-2-使用-wxml2canvas-库"><a href="#1-2-使用-wxml2canvas-库" class="headerlink" title="1.2 使用 wxml2canvas 库"></a>1.2 使用 wxml2canvas 库</h3><p>下载安装库</p><p><img src="http://photo.jomeswang.top/20201205003442.png" alt=""></p><h4 id="1-2-1-使用wxml-格式"><a href="#1-2-1-使用wxml-格式" class="headerlink" title="1.2.1 使用wxml 格式"></a>1.2.1 使用wxml 格式</h4><p><img src="http://photo.jomeswang.top/20201205004006.png" alt=""></p><p><img src="http://photo.jomeswang.top/20201205004023.png" alt=""></p><h4 id="1-2-2-使用json-格式绘画"><a href="#1-2-2-使用json-格式绘画" class="headerlink" title="1.2.2  使用json 格式绘画"></a>1.2.2  使用json 格式绘画</h4><p><img src="http://photo.jomeswang.top/20201205004052.png" alt=""></p><h2 id="二：-网页的canvas"><a href="#二：-网页的canvas" class="headerlink" title="二： 网页的canvas"></a>二： 网页的canvas</h2><h3 id="2-1-使用原生的canvas"><a href="#2-1-使用原生的canvas" class="headerlink" title="2.1 使用原生的canvas"></a>2.1 使用原生的canvas</h3><h4 id="2-1-1-使用canvas-标签"><a href="#2-1-1-使用canvas-标签" class="headerlink" title="2.1.1 使用canvas 标签"></a>2.1.1 使用canvas 标签</h4><p><img src="http://photo.jomeswang.top/20201205181250.png" alt=""></p><h4 id="2-2-2-初始化-canvas"><a href="#2-2-2-初始化-canvas" class="headerlink" title="2.2.2 初始化 canvas"></a>2.2.2 初始化 canvas</h4><p><img src="http://photo.jomeswang.top/20201205181312.png" alt=""></p><h4 id="2-2-3-画线"><a href="#2-2-3-画线" class="headerlink" title="2.2.3 画线"></a>2.2.3 画线</h4><h4 id="2-2-4-画圆"><a href="#2-2-4-画圆" class="headerlink" title="2.2.4 画圆"></a>2.2.4 画圆</h4><h4 id="2-2-5-画矩形"><a href="#2-2-5-画矩形" class="headerlink" title="2.2.5 画矩形"></a>2.2.5 画矩形</h4><h4 id="2-2-6-画图"><a href="#2-2-6-画图" class="headerlink" title="2.2.6 画图"></a>2.2.6 画图</h4>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;万事起头难啊！！！当自己真正放下心去学习的时候，才知道原来一切都是肝就完事了&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="canvas" scheme="https://hexo.jomeswang.top/categories/canvas/"/>
+    
+    
+      <category term="canvas" scheme="https://hexo.jomeswang.top/tags/canvas/"/>
+    
+  </entry>
   
   <entry>
     <title>软件培训 -- 入门VUE</title>
@@ -109,9 +159,9 @@
       <category term="随笔" scheme="https://hexo.jomeswang.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="1024" scheme="https://hexo.jomeswang.top/tags/1024/"/>
-    
       <category term="随笔" scheme="https://hexo.jomeswang.top/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="1024" scheme="https://hexo.jomeswang.top/tags/1024/"/>
     
   </entry>
   
@@ -460,58 +510,6 @@
     
       <category term="随笔" scheme="https://hexo.jomeswang.top/categories/%E9%9A%8F%E7%AC%94/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>vue 兄弟组件传值</title>
-    <link href="https://hexo.jomeswang.top/posts/90831fd6/"/>
-    <id>https://hexo.jomeswang.top/posts/90831fd6/</id>
-    <published>2020-08-11T10:06:11.000Z</published>
-    <updated>2020-08-11T10:07:23.753Z</updated>
-    
-    <content type="html"><![CDATA[<p>在vue开发中总会遇到组件传值问题，今天总结一下兄弟组件之间的传值方法。</p><a id="more"></a><p>1、子传父，父传子</p><p>2、vuex</p><p>3、eventBus</p><p>接下来介绍如何使用eventBus实现兄弟组件传值</p><p>首先我的需求是这样的，页面上由top，left，main，bottom四个组件构成。需要将top中的值传到left中。</p><p><img src="https://img2018.cnblogs.com/blog/1630583/201908/1630583-20190812154020531-1961842869.png" alt="img"></p><p>第一步：创建一个js文件，eventBus.js，位置随便放，我是放在了src目录下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">export default new Vue()</span><br></pre></td></tr></table></figure><p>第二步：在top组件中，引入刚才的js</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#39;@&#x2F;eventBus.js&#39;</span><br></pre></td></tr></table></figure><p>然后在methods里边定义一个函数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods:&#123;</span><br><span class="line">    changesize()&#123;</span><br><span class="line">        eventBus.$emit(&#39;add&#39;,this.arg)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>我测试用的是button点击触发changesize函数，然后将arg传出去</p><p>第三步：在left组件中也先让引入eventBus.js，然后使用created生命周期函数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">created()&#123;</span><br><span class="line">    eventBus.$on(&#39;add&#39;,(message)&#x3D;&gt;&#123;</span><br><span class="line">        &#x2F;&#x2F;一些操作，message就是从top组件传过来的值</span><br><span class="line">        console.log(message)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在vue开发中总会遇到组件传值问题，今天总结一下兄弟组件之间的传值方法。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="https://hexo.jomeswang.top/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://hexo.jomeswang.top/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django REST framework 学习</title>
-    <link href="https://hexo.jomeswang.top/posts/bf8f345a/"/>
-    <id>https://hexo.jomeswang.top/posts/bf8f345a/</id>
-    <published>2020-08-04T06:53:55.000Z</published>
-    <updated>2020-08-04T07:30:15.031Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>不要重复造轮子</p></blockquote><a id="more"></a><p>DRF模式就是高度集成化的 后端模式   可以将 工作简单化。</p><p>比较大的区别就是  有 序列化  有视图集可以简单化工作。</p><p>举一个例子。</p><p>我们将创建一个简单的允许管理员用户查看和编辑系统中的用户和组的API。</p><h2 id="项目设置"><a href="#项目设置" class="headerlink" title="项目设置"></a>项目设置</h2><p>创建一个名为 <code>tutorial</code> 的新django项目，然后启动一个名为 <code>quickstart</code> 的新app。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 创建项目目录</span><br><span class="line">mkdir tutorial</span><br><span class="line">cd tutorial</span><br><span class="line"></span><br><span class="line"># 创建一个virtualenv来隔离我们本地的包依赖关系</span><br><span class="line">virtualenv env</span><br><span class="line">source env&#x2F;bin&#x2F;activate  # 在Windows下使用 &#96;env\Scripts\activate&#96;</span><br><span class="line"></span><br><span class="line"># 在创建的虚拟环境中安装 Django 和 Django REST framework</span><br><span class="line">pip install django</span><br><span class="line">pip install djangorestframework</span><br><span class="line"></span><br><span class="line"># 创建一个新项目和一个单个应用</span><br><span class="line">django-admin.py startproject tutorial .  # 注意结尾的&#39;.&#39;符号</span><br><span class="line">cd tutorial</span><br><span class="line">django-admin.py startapp quickstart</span><br><span class="line">cd ..</span><br></pre></td></tr></table></figure><p>现在第一次同步你的数据库：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py migrate</span><br></pre></td></tr></table></figure><p>我们还要创建一个名为 <code>admin</code> 的初始用户，密码为 <code>password123</code>。我们稍后将在该示例中验证该用户。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python manage.py createsuperuser</span><br></pre></td></tr></table></figure><p>等你建立好一个数据库和初始用户，并准备好开始。打开应用程序的目录，我们就要开始编码了…</p><h2 id="Serializers"><a href="#Serializers" class="headerlink" title="Serializers"></a>Serializers</h2><p>首先我们要定义一些序列化程序。我们创建一个名为 <code>tutorial/quickstart/serializers.py</code>的文件，来用作我们的数据表示。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib.auth.models import User, Group</span><br><span class="line">from rest_framework import serializers</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class UserSerializer(serializers.HyperlinkedModelSerializer):</span><br><span class="line">    class Meta:</span><br><span class="line">        model &#x3D; User</span><br><span class="line">        fields &#x3D; (&#39;url&#39;, &#39;username&#39;, &#39;email&#39;, &#39;groups&#39;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class GroupSerializer(serializers.HyperlinkedModelSerializer):</span><br><span class="line">    class Meta:</span><br><span class="line">        model &#x3D; Group</span><br><span class="line">        fields &#x3D; (&#39;url&#39;, &#39;name&#39;)</span><br></pre></td></tr></table></figure><p>请注意，在这个例子中我们用到了超链接关系，使用 <code>HyperlinkedModelSerializer</code>。你还可以使用主键和各种其他关系，但超链接是好的RESTful设计。</p><h2 id="Views"><a href="#Views" class="headerlink" title="Views"></a>Views</h2><p>好了，我们接下来再写一些视图。打开 <code>tutorial/quickstart/views.py</code> 文件开始写代码了。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from django.contrib.auth.models import User, Group</span><br><span class="line">from rest_framework import viewsets</span><br><span class="line">from tutorial.quickstart.serializers import UserSerializer, GroupSerializer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class UserViewSet(viewsets.ModelViewSet):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    允许用户查看或编辑的API路径。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    queryset &#x3D; User.objects.all().order_by(&#39;-date_joined&#39;)</span><br><span class="line">    serializer_class &#x3D; UserSerializer</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class GroupViewSet(viewsets.ModelViewSet):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    允许组查看或编辑的API路径。</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    queryset &#x3D; Group.objects.all()</span><br><span class="line">    serializer_class &#x3D; GroupSerializer</span><br></pre></td></tr></table></figure><p>不再写多个视图，我们将所有常见行为分组写到叫 <code>ViewSets</code> 的类中。</p><p>如果我们需要，我们可以轻松地将这些细节分解为单个视图，但是使用viewsets可以使视图逻辑组织良好，并且非常简洁。</p><h2 id="URLs"><a href="#URLs" class="headerlink" title="URLs"></a>URLs</h2><p>好的，现在我们在<code>tutorial/urls.py</code>中开始写连接API的URLs。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from django.conf.urls import url, include</span><br><span class="line">from rest_framework import routers</span><br><span class="line">from tutorial.quickstart import views</span><br><span class="line"></span><br><span class="line">router &#x3D; routers.DefaultRouter()</span><br><span class="line">router.register(r&#39;users&#39;, views.UserViewSet)</span><br><span class="line">router.register(r&#39;groups&#39;, views.GroupViewSet)</span><br><span class="line"></span><br><span class="line"># 使用自动URL路由连接我们的API。</span><br><span class="line"># 另外，我们还包括支持浏览器浏览API的登录URL。</span><br><span class="line">urlpatterns &#x3D; [</span><br><span class="line">    url(r&#39;^&#39;, include(router.urls)),</span><br><span class="line">    url(r&#39;^api-auth&#x2F;&#39;, include(&#39;rest_framework.urls&#39;, namespace&#x3D;&#39;rest_framework&#39;))</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>因为我们使用的是viewsets而不是views，所以我们可以通过简单地使用路由器类注册视图来自动生成API的URL conf。</p><p>再次，如果我们需要对API URL进行更多的控制，我们可以简单地将其拉出来使用常规基于类的视图，并明确地编写URL conf。</p><p>最后，我们将包括用于支持浏览器浏览的API的默认登录和注销视图。这是可选的，但如果您的API需要身份验证，并且你想要使用支持浏览器浏览的API，那么它们很有用。</p><h2 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h2><p>我们也想设置一些全局设置。我们想打开分页，我们希望我们的API只能由管理员使用。设置模块都在 <code>tutorial/settings.py</code> 中。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS &#x3D; (</span><br><span class="line">    ...</span><br><span class="line">    &#39;rest_framework&#39;,</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">REST_FRAMEWORK &#x3D; &#123;</span><br><span class="line">    &#39;DEFAULT_PERMISSION_CLASSES&#39;: [</span><br><span class="line">        &#39;rest_framework.permissions.IsAdminUser&#39;,</span><br><span class="line">    ],</span><br><span class="line">    &#39;PAGE_SIZE&#39;: 10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>好了，我们完成了。</p><p>Django REST framework 中文网 :<a href="https://q1mi.github.io/Django-REST-framework-documentation/tutorial/quickstart_zh/" target="_blank" rel="noopener">https://q1mi.github.io/Django-REST-framework-documentation/tutorial/quickstart_zh/</a></p><p> Django REST framework的使用总结：<a href="https://juejin.im/post/6844903869336518664#heading-30" target="_blank" rel="noopener">https://juejin.im/post/6844903869336518664#heading-30</a></p><p>总结：<a href="https://www.atjiang.com/django-rest-tut5-relationships-and-hyperlinked-apis/" target="_blank" rel="noopener">https://www.atjiang.com/django-rest-tut5-relationships-and-hyperlinked-apis/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;不要重复造轮子&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="Django" scheme="https://hexo.jomeswang.top/categories/Django/"/>
-    
-    
-      <category term="python" scheme="https://hexo.jomeswang.top/tags/python/"/>
-    
-      <category term="Django" scheme="https://hexo.jomeswang.top/tags/Django/"/>
-    
-      <category term="DRF" scheme="https://hexo.jomeswang.top/tags/DRF/"/>
     
   </entry>
   
