@@ -130,7 +130,6 @@ backup:
   message: Back up my blog
   repository: 
     github: git@github.com:jomeswang/jomeswang.github.io.git,backup
-    coding: git@e.coding.net:jomeswang/jomeswang.git,backup
 
 
 plugin:
