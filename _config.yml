@@ -121,8 +121,7 @@ deploy:
 - type: git
   repository: 
     github: git@github.com:jomeswang/jomeswang.github.io.git,master
-    coding: git@e.coding.net:jomeswang/jomeswang.git,master
-    ECS:    git@47.115.23.107:/home/git/hexo.git,master
+    ECS:    git@121.37.5.221:/home/git/hexo.git,master
 - type: baidu_url_submitter ## 添加这里内容即可
 
 backup:
