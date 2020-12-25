@@ -2,11 +2,12 @@
 title: JAVA 基础学习
 top: false
 comments: false
-date: 2020-12-17 17:36:54
 categories:
-- JAVA
+  - JAVA
 tags:
-- JAVA
+  - JAVA
+abbrlink: bd97933b
+date: 2020-12-17 17:36:54
 ---
 
 > 不断地更新自己，在新知识中遨游。
