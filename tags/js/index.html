@@ -103,7 +103,7 @@
 <meta name="description" content="每一天都要开心，快乐哦！">
 <meta property="og:type" content="website">
 <meta property="og:title" content="传道士|万物归一">
-<meta property="og:url" content="https://hexo.jomeswang.top/tags/JS/index.html">
+<meta property="og:url" content="https://hexo.jomeswang.top/tags/js/index.html">
 <meta property="og:site_name" content="传道士|万物归一">
 <meta property="og:description" content="每一天都要开心，快乐哦！">
 <meta property="article:author" content="Jomeswang">
@@ -137,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="https://hexo.jomeswang.top/tags/JS/"/>
+  <link rel="canonical" href="https://hexo.jomeswang.top/tags/js/"/>
 
 
 
 
 
-  <title>标签: JS | 传道士|万物归一</title>
+  <title>标签: js | 传道士|万物归一</title>
   
 
 
@@ -394,7 +394,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>JS<small>标签</small>
+        <h2>js<small>标签</small>
         </h2>
       </div>
 
@@ -406,17 +406,129 @@
 
       <div class="my-post-meta">
         <time class="my-post-time" itemprop="dateCreated"
-              datetime="2020-12-24T14:46:51+08:00"
-              content="2020-12-24" >
-          12-24
+              datetime="2020-12-17T15:50:17+08:00"
+              content="2020-12-17" >
+          12-17
         </time>
       </div>
 
       <h3 class="my-post-title">
         
-            <a class="my-post-title-link" href="/posts/b83467fc/" itemprop="url">
+            <a class="my-post-title-link" href="/posts/b3fdae5d/" itemprop="url">
               
-                <span itemprop="name">JS实现深拷贝</span>
+                <span itemprop="name">JS 对象与函数 学习二</span>
+              
+            </a>
+        
+      </h3>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="my-post-header">
+
+      <div class="my-post-meta">
+        <time class="my-post-time" itemprop="dateCreated"
+              datetime="2020-12-17T15:47:57+08:00"
+              content="2020-12-17" >
+          12-17
+        </time>
+      </div>
+
+      <h3 class="my-post-title">
+        
+            <a class="my-post-title-link" href="/posts/deb58f8e/" itemprop="url">
+              
+                <span itemprop="name">JS 基础 学习一</span>
+              
+            </a>
+        
+      </h3>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="my-post-header">
+
+      <div class="my-post-meta">
+        <time class="my-post-time" itemprop="dateCreated"
+              datetime="2020-06-08T21:21:12+08:00"
+              content="2020-06-08" >
+          06-08
+        </time>
+      </div>
+
+      <h3 class="my-post-title">
+        
+            <a class="my-post-title-link" href="/posts/6be5450b/" itemprop="url">
+              
+                <span itemprop="name">js函数,DOM和BOM操作</span>
+              
+            </a>
+        
+      </h3>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="my-post-header">
+
+      <div class="my-post-meta">
+        <time class="my-post-time" itemprop="dateCreated"
+              datetime="2020-06-08T21:19:46+08:00"
+              content="2020-06-08" >
+          06-08
+        </time>
+      </div>
+
+      <h3 class="my-post-title">
+        
+            <a class="my-post-title-link" href="/posts/583d6f5d/" itemprop="url">
+              
+                <span itemprop="name">js的基础语法</span>
+              
+            </a>
+        
+      </h3>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="my-post-header">
+
+      <div class="my-post-meta">
+        <time class="my-post-time" itemprop="dateCreated"
+              datetime="2020-02-19T21:53:46+08:00"
+              content="2020-02-19" >
+          02-19
+        </time>
+      </div>
+
+      <h3 class="my-post-title">
+        
+            <a class="my-post-title-link" href="/posts/a0e6a2de/" itemprop="url">
+              
+                <span itemprop="name">input中blur失去焦点事件与点击事件冲突的解决方法（vue）</span>
               
             </a>
         
@@ -618,7 +730,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">214.4k</span>
+    <span title="Site words total count">215.2k</span>
   
 </div>
 
@@ -1262,100 +1374,6 @@ setInterval("createtime()",250);
                 $element.find('.leancloud-visitors-count').text(counter.get('time'));
               },
               error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-  
-
-  
-
-  
-
-  
-
-
-<!-- 页面动态背景 -->
-  
-
-<!-- 页面点击烟花 -->
-
-
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/clicklove.js"></script>
-
-  <!-- 代码块复制功能 -->
-  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
-  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
-
-
-  <!--share.js-->
-<link rel="stylesheet" href="/dist/css/share.min.css">
-<script src="/dist/js/social-share.min.js"></script>
-
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
-</html>
-         error: function(counter, error) {
                 console.log('Failed to save Visitor num, with error message: ' + error.message);
               }
             });
