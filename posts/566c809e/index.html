@@ -100,12 +100,12 @@
 
 
 
-<meta name="description" content="逐渐打开区块链的神秘的大门  一： 比特币的密码学原理1.1  哈希函数1.1.1  哈希碰撞选取的哈希函数需要 有 collision resistance  即 在常理认为 哈希之后的数不会重复。 1.1.2 哈希单向性即 x-&gt; f(x)  是 单向性的，即f（x） 不可能 得出 x的  (条件： 输入的值范围要足够大，足够随机）所以阔以在源数据之中拼接一个 nounce 值。 1.">
+<meta name="description" content="逐渐打开区块链的神秘的大门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区块链学习一（比特币）">
 <meta property="og:url" content="https://hexo.jomeswang.top/posts/566c809e/index.html">
 <meta property="og:site_name" content="传道士|万物归一">
-<meta property="og:description" content="逐渐打开区块链的神秘的大门  一： 比特币的密码学原理1.1  哈希函数1.1.1  哈希碰撞选取的哈希函数需要 有 collision resistance  即 在常理认为 哈希之后的数不会重复。 1.1.2 哈希单向性即 x-&gt; f(x)  是 单向性的，即f（x） 不可能 得出 x的  (条件： 输入的值范围要足够大，足够随机）所以阔以在源数据之中拼接一个 nounce 值。 1.">
+<meta property="og:description" content="逐渐打开区块链的神秘的大门">
 <meta property="og:image" content="https://photo.jomeswang.top/20210210142642.png">
 <meta property="og:image" content="https://photo.jomeswang.top/20210210144026.png">
 <meta property="og:image" content="https://photo.jomeswang.top/20210210144453.png">
@@ -121,7 +121,7 @@
 <meta property="og:image" content="https://photo.jomeswang.top/20210210214129.png">
 <meta property="og:image" content="https://photo.jomeswang.top/20210210232019.png">
 <meta property="article:published_time" content="2021-02-10T04:32:30.000Z">
-<meta property="article:modified_time" content="2021-02-13T10:44:57.732Z">
+<meta property="article:modified_time" content="2021-02-14T13:44:49.958Z">
 <meta property="article:author" content="Jomeswang">
 <meta property="article:tag" content="区块链">
 <meta property="article:tag" content="比特币">
@@ -573,6 +573,8 @@
         <blockquote>
 <p>逐渐打开区块链的神秘的大门</p>
 </blockquote>
+<a id="more"></a>
+
 <h2 id="一：-比特币的密码学原理"><a href="#一：-比特币的密码学原理" class="headerlink" title="一： 比特币的密码学原理"></a>一： 比特币的密码学原理</h2><h3 id="1-1-哈希函数"><a href="#1-1-哈希函数" class="headerlink" title="1.1  哈希函数"></a>1.1  哈希函数</h3><h4 id="1-1-1-哈希碰撞"><a href="#1-1-1-哈希碰撞" class="headerlink" title="1.1.1  哈希碰撞"></a>1.1.1  哈希碰撞</h4><p>选取的哈希函数需要 有 collision resistance  即 在常理认为 哈希之后的数不会重复。</p>
 <h4 id="1-1-2-哈希单向性"><a href="#1-1-2-哈希单向性" class="headerlink" title="1.1.2 哈希单向性"></a>1.1.2 哈希单向性</h4><p>即 x-&gt; f(x)  是 单向性的，即f（x） 不可能 得出 x的  (条件： 输入的值范围要足够大，足够随机）所以阔以在源数据之中拼接一个 nounce 值。</p>
 <h4 id="1-1-3-puzzle-friendly"><a href="#1-1-3-puzzle-friendly" class="headerlink" title="1.1.3  puzzle friendly"></a>1.1.3  puzzle friendly</h4><p>知道输出，无法主导输入的值的大致范围，需要一个个 的进行计算，计算出NONCE， 在 block header 中有nonce，我们就需要算出这一个 nonce 值满足以下条件。 难以解决，容易验证。</p>
