@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hexo.jomeswang.top/"/>
-  <updated>2021-02-13T10:44:57.728Z</updated>
+  <updated>2021-02-14T13:40:02.296Z</updated>
   <id>https://hexo.jomeswang.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>粤港澳大湾区金融数学建模大赛（一等奖）量化论文</title>
+    <link href="https://hexo.jomeswang.top/posts/4b195fc0/"/>
+    <id>https://hexo.jomeswang.top/posts/4b195fc0/</id>
+    <published>2021-02-14T13:37:50.000Z</published>
+    <updated>2021-02-14T13:40:02.296Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="econmoic-model"><a href="#econmoic-model" class="headerlink" title="econmoic_model"></a>econmoic_model</h1><a id="more"></a><p>粤港澳大湾区金融数学建模一等奖作品(量化模型的建立)</p><p>在这里记录一下比赛时峥嵘的岁月，记录当年疯狂的青春，记录当初无数个挑灯野战的夜晚。</p><p>数据和论文我都放在 这里了哦！！！    地址: <a href="https://github.com/jomeswang/econmoic_model" target="_blank" rel="noopener">https://github.com/jomeswang/econmoic_model</a></p><p>作者： 罗立旺  龚晓雪   张雯</p><p><img src="https://photo.jomeswang.top/20210213224418.png" alt=""></p><ul><li>首次上传于2021.2.14</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;econmoic-model&quot;&gt;&lt;a href=&quot;#econmoic-model&quot; class=&quot;headerlink&quot; title=&quot;econmoic_model&quot;&gt;&lt;/a&gt;econmoic_model&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="建模" scheme="https://hexo.jomeswang.top/categories/%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+      <category term="建模" scheme="https://hexo.jomeswang.top/tags/%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>以太链上发行自己的代币Token</title>
@@ -519,33 +542,6 @@
       <category term="Taro" scheme="https://hexo.jomeswang.top/tags/Taro/"/>
     
       <category term="Mobx" scheme="https://hexo.jomeswang.top/tags/Mobx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot Controller接收参数的方式，@RequestParam，@PathVariable，@RequestBody</title>
-    <link href="https://hexo.jomeswang.top/posts/5fce7a90/"/>
-    <id>https://hexo.jomeswang.top/posts/5fce7a90/</id>
-    <published>2020-12-19T14:35:36.000Z</published>
-    <updated>2020-12-19T14:38:38.723Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>慢慢的思考与总结，终会让你看到不一样的风景</p></blockquote><a id="more"></a><p><strong>第一类：请求路径参数</strong></p><p><strong>1、@PathVariable     获取路径参数。即url/{id}这种形式。</strong></p><p><strong>2、@RequestParam   获取查询参数。即url?name=这种形式</strong></p><p>例：<br>GET<br><a href="http://localhost:8080/demo/123?name=suki_rong" target="_blank" rel="noopener">http://localhost:8080/demo/123?name=suki_rong</a><br>对应的java代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/demo/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo</span><span class="params">(@PathVariable(name = <span class="string">"id"</span>)</span> String id, @<span class="title">RequestParam</span><span class="params">(name = <span class="string">"name"</span>)</span> String name) </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"id="</span>+id);</span><br><span class="line">    System.out.println(<span class="string">"name="</span>+name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出结果：<br>id=123<br>name=suki_rong</p><p><strong>第二类：Body参数</strong></p><p>因为是POST请求，这里用Postman的截图结合代码说明</p><h2 id="1、-RequestBody"><a href="#1、-RequestBody" class="headerlink" title="1、@RequestBody"></a>1、@RequestBody</h2><h3 id="例："><a href="#例：" class="headerlink" title="例："></a>例：</h3><p><img src="http://www.chengxudaren.com/uploads/images/1909/18/8adf56b4fedd066e8accbb3736345045.png" alt="demo1"></p><p>对应的java代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(path = <span class="string">"/demo1"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo1</span><span class="params">(@RequestBody Person person)</span> </span>&#123;</span><br><span class="line">    System.out.println(person.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出结果：<br>name:suki_rong;age=18;hobby:programing</p><p>也可以是这样</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(path = <span class="string">"/demo1"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo1</span><span class="params">(@RequestBody Map&lt;String, String&gt; person)</span> </span>&#123;</span><br><span class="line">    System.out.println(person.get(<span class="string">"name"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出结果：<br>suki_rong</p><h2 id="2、无注解"><a href="#2、无注解" class="headerlink" title="2、无注解"></a>2、无注解</h2><h3 id="例：-1"><a href="#例：-1" class="headerlink" title="例："></a>例：</h3><p><img src="http://www.chengxudaren.com/uploads/images/1909/18/88112dd3ce27a833396b75c017b81cc6.png" alt="demo2"><br>对应的java代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@PostMapping</span>(path = <span class="string">"/demo2"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo2</span><span class="params">(Person person)</span> </span>&#123;</span><br><span class="line">    System.out.println(person.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>输出结果：<br>name:suki_rong;age=18;hobby:programing</p><p><strong>Person类</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">long</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> String hobby;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"name:"</span>+name+<span class="string">";age="</span>+age+<span class="string">";hobby:"</span>+hobby;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// getters and setters</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="第三类：请求头参数以及Cookie：-RequestHeader-，-CookieValue"><a href="#第三类：请求头参数以及Cookie：-RequestHeader-，-CookieValue" class="headerlink" title="第三类：请求头参数以及Cookie：@RequestHeader ，@CookieValue"></a>第三类：请求头参数以及Cookie：@RequestHeader ，@CookieValue</h2><h3 id="例：-2"><a href="#例：-2" class="headerlink" title="例："></a>例：</h3><p>java代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/demo3"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo3</span><span class="params">(@RequestHeader(name = <span class="string">"myHeader"</span>)</span> String myHeader,</span></span><br><span class="line"><span class="function">        @<span class="title">CookieValue</span><span class="params">(name = <span class="string">"myCookie"</span>)</span> String myCookie) </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"myHeader="</span> + myHeader);</span><br><span class="line">    System.out.println(<span class="string">"myCookie="</span> + myCookie);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>也可以这样</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/demo3"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">demo3</span><span class="params">(HttpServletRequest request)</span> </span>&#123;</span><br><span class="line">    System.out.println(request.getHeader(<span class="string">"myHeader"</span>));</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : request.getCookies()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"myCookie"</span>.equals(cookie.getName())) &#123;</span><br><span class="line">            System.out.println(cookie.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;慢慢的思考与总结，终会让你看到不一样的风景&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="Spring Boot" scheme="https://hexo.jomeswang.top/categories/Spring-Boot/"/>
-    
-      <category term="Java" scheme="https://hexo.jomeswang.top/categories/Spring-Boot/Java/"/>
-    
-    
-      <category term="Spring Boot" scheme="https://hexo.jomeswang.top/tags/Spring-Boot/"/>
     
   </entry>
   
