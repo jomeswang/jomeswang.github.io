@@ -5,8 +5,12 @@
 
 
 <div id="top"></div>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script>AV.initialize("dFtraLC9No0f9cAyolmlwtc9-gzGzoHsz", "IeFjgH3bToPk2ShTSKLmQRbM");</script>
+<script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+<script>AV.init({
+  appId: "{{theme.leancloud_visitors.app_id}}",
+  appKey: "{{theme.leancloud_visitors.app_key}}",
+  serverURL: "{{theme.leancloud_visitors.server_url}}"
+});</script>
 <script type="text/javascript">
   var time=0
   var title=""

@@ -539,6 +539,7 @@ leancloud_visitors:
   enable: true 
   app_id: dFtraLC9No0f9cAyolmlwtc9-gzGzoHsz  
   app_key: IeFjgH3bToPk2ShTSKLmQRbM
+  server_url: https://dftralc9.lc-cn-n1-shared.com
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
