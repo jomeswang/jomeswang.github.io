@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+  
+  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script>
+  AV.init({
+    appId: "dFtraLC9No0f9cAyolmlwtc9-gzGzoHsz",
+    appKey: "IeFjgH3bToPk2ShTSKLmQRbM",
+    serverURL: "https://dftralc9.lc-cn-n1-shared.com"
+  });
+  const query = new AV.Query('Comment');
+  </script>
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://https://jomeswang.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-corner-indicator.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker_32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker_16.ico?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="python,django,宝塔面板," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="传道士|万物归一" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="一、服务器安装宝塔面板并进行基础设置宝塔面板有很多实用的功能，具体可以去宝塔官网查看。我们的服务器使用的是 centos8 的系统，所以安装 linux 免费版的宝塔。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署django 到宝塔服务器上">
+<meta property="og:url" content="https://hexo.jomeswang.top/posts/c2d74008/index.html">
+<meta property="og:site_name" content="传道士|万物归一">
+<meta property="og:description" content="一、服务器安装宝塔面板并进行基础设置宝塔面板有很多实用的功能，具体可以去宝塔官网查看。我们的服务器使用的是 centos8 的系统，所以安装 linux 免费版的宝塔。">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220250.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220325.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220341.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220400.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220416.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220427.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220446.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220500.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220520.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406220630.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406221116.png">
+<meta property="og:image" content="http://photo.jomeswang.top/20200406230854.png">
+<meta property="article:published_time" content="2020-03-15T15:43:10.000Z">
+<meta property="article:modified_time" content="2020-06-06T06:36:26.550Z">
+<meta property="article:author" content="Jomeswang">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="django">
+<meta property="article:tag" content="宝塔面板">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://photo.jomeswang.top/20200406220250.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://hexo.jomeswang.top/posts/c2d74008/"/>
+
+
+
+
+
+  <title>部署django 到宝塔服务器上 | 传道士|万物归一</title>
+  
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166762448-1"></script> -->
+<script>
+  // window.dataLayer = window.dataLayer || [];
+  // function gtag(){dataLayer.push(arguments);}
+  // gtag('js', new Date());
+
+  // gtag('config', 'UA-166762448-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      // var hm = document.createElement("script");
+      // hm.src = "https://hm.baidu.com/hm.js?1732319e98cbcf7688b29b3aa73c24b8";
+      // var s = document.getElementsByTagName("script")[0];
+      // s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/jomeswang" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"  ><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">传道士|万物归一</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">快乐的宅男</h1>
+      
+
+
+    <!-- 滚动文字始  -->
+      <div id="binft" style="color: #191970"; ></div>
+          <script>
+            var binft = function (r) {
+              function t() {
+                return b[Math.floor(Math.random() * b.length)]
+              }  
+              function e() {
+                return String.fromCharCode(94 * Math.random() + 33)
+              }
+              function n(r) {
+                for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                  var l = document.createElement("span");
+                  l.textContent = e(), l.style.color = t(), n.appendChild(l)
+                }
+                return n
+              }
+              function i() {
+                var t = o[c.skillI];
+                c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+              }
+              var l = "",
+              o = ["图难于其易，为大于其细。", "天下之难事，必作于易。","天下之大事，必作于细。", "道生一，一生二。","二生三，三生万物。","昨夜西风凋碧树。","独上高楼，望尽天涯路。","衣带渐宽终不悔，为伊消得人憔悴。","众里寻他千百度，蓦然回首","那人却在，灯火阑珊处。"].map(function (r) {
+              return r + ""
+              }),
+              a = 2,
+              g = 1,
+              s = 5,
+              d = 75,
+              b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+              c = {
+                text: "",
+                prefixP: -s,
+                skillI: 0,
+                skillP: 0,
+                direction: "forward",
+                delay: a,
+                step: g
+              };
+              i()
+              };
+              binft(document.getElementById('binft'));
+          </script>
+  </div>
+
+<!-- 滚动文字终  -->
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-top">
+          <a href="/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            阅读排行
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hexo.jomeswang.top/posts/c2d74008/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jomeswang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://photo.jomeswang.top/20200405170507.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="传道士|万物归一">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">部署django 到宝塔服务器上</h2>
+        
+
+        <div class="post-meta">
+
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-15T23:43:10+08:00">
+                2020-03-15
+              </time>
+            
+
+            
+
+            
+
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/c2d74008/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/c2d74008/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/c2d74008/" class="leancloud_visitors" data-flag-title="部署django 到宝塔服务器上">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.2k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、服务器安装宝塔面板并进行基础设置"><a href="#一、服务器安装宝塔面板并进行基础设置" class="headerlink" title="一、服务器安装宝塔面板并进行基础设置"></a>一、服务器安装宝塔面板并进行基础设置</h2><p>宝塔面板有很多实用的功能，具体可以去<a href="https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttps%3A%2F%2Fwww.bt.cn%2F" target="_blank" rel="noopener">宝塔官网</a>查看。我们的服务器使用的是 centos8 的系统，所以安装 linux 免费版的宝塔。</p>
+<a id="more"></a>
+
+<p>安装方法很简单，远程到服务器，输入命令进行安装即可</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># 安装命令</span></span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:<span class="comment">//download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh</span></span><br></pre></td></tr></table></figure>
+
+<p>中途会有一次确认，按照操作提示输入 y 即可。</p>
+<p>安装成功后，控制台会显示出宝塔面板的登录地址、用户名、密码。如下图所示，将内容记录好。</p>
+<p><img src="http://photo.jomeswang.top/20200406220250.png" alt=""></p>
+<p>进行登录后，会提示推荐安装套件，直接关闭即可。然后点击左侧菜单栏中的面板设置，调整面板的 端口、安全入口、用户名及密码。修改完成后，记得点击最下方的保存。</p>
+<p>注：安全入口：是拼接在登录地址之后的。之前系统会自动设置一个随机字符，更改安全入口后，将登录地址中的随机字符换成你更改后的内容。例如：安装后的登录地址为： <a href="https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2F10.10.10.10%3A8888%2Ff5165b61" target="_blank" rel="noopener">http://10.10.10.10:8888/f5165b61</a> 修改安全入口的内容为： /btmb 以后宝塔面板的登录地址变为：<a href="https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2F10.10.10.10%3A8888%2Fbtmb" target="_blank" rel="noopener">http://10.10.10.10:8888/btmb</a></p>
+<p><img src="http://photo.jomeswang.top/20200406220325.png" alt=""></p>
+<h2 id="二、安装环境包"><a href="#二、安装环境包" class="headerlink" title="二、安装环境包"></a>二、安装环境包</h2><p>宝塔的基础设置搞完了，接下来我们安装环境部署的一些必要软件程序：python、nginx、mysql（如果用到了就安装）<br> <strong>注意：这里我们用的是Django3的版本，从Django2.0起就不支持mysql5.5了，所以这里要安装高版本的mysql，推荐<code>mysql5.6</code></strong></p>
+<p>在宝塔左侧菜单栏 点击 软件商店，第一页我们就可以看到nginx，点击安装选择急速安装即可。</p>
+<p><img src="http://photo.jomeswang.top/20200406220341.png" alt=""></p>
+<p>与此同时，我们选择 宝塔插件 类别，在该类别下 选择 Python项目管理器 进行安装</p>
+<p><img src="http://photo.jomeswang.top/20200406220400.png" alt=""></p>
+<p>安装成功后，会有一个 首页显示 的开关，我们打开这个开关，记得nginx也要打开这个哦。这个时候 我们在首页就可以看到了，因为后面我们会经常使用，所以最好要展示在首页。</p>
+<p><img src="http://photo.jomeswang.top/20200406220416.png" alt=""></p>
+<p>接下来，我们该安装 python 了，在首页点击 python项目管理器，会出现一个弹窗，点击版本管理，选择一下你项目开发时使用的 python 版本。我使用的是 python 3.6.5 所以我安装这个版本。</p>
+<p>注：python 2.7.5 显示已安装，这是系统自带的，我们不用管他。</p>
+<p><img src="http://photo.jomeswang.top/20200406220427.png" alt=""></p>
+<h2 id="三、上传项目文件并创建python项目"><a href="#三、上传项目文件并创建python项目" class="headerlink" title="三、上传项目文件并创建python项目"></a>三、上传项目文件并创建python项目</h2><p>在上传项目文件的时候，我们需要先配置好项目所有的环境依赖包，所以，在本地开发的时候建议使用虚拟环境，这样我们创建依赖文件的时候，能减少引入一些不必要的包。在本地项目环境目录中(如果是虚拟环境，需要激活虚拟环境再进入项目目录)【django项目目录，即是在manage.py文件所处的路径】输入下方命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line"><span class="comment"># 注意当前是 pip 还是 pip3</span></span><br></pre></td></tr></table></figure>
+
+<p>会生成一个 requirements.txt 文件，里面就会包含我们当前环境下所有的python包。</p>
+<p>接下来，打开宝塔面板，点击 文件 ，</p>
+<p>此时注意路径需要在/www/wwwroot/下</p>
+<p><img src="http://photo.jomeswang.top/20200406220446.png" alt=""></p>
+<p>点击上传按钮，选择目录，将我们项目的整个目录都上传上来<em>（可以不用上传venv目录，这个是虚拟环境目录，会自动生成）。</em> 我的项目在电脑路径为D:/xzbcx_1.11，此时上传就选择django_test目录。上传弹窗需要加载一会才能展示出文件,之后点击弹窗底部的开始上传，在右上角有一个进度条，等上传完成后就可以关闭该弹窗。</p>
+<p><img src="http://photo.jomeswang.top/20200406220500.png" alt=""></p>
+<p>项目文件大的话上传时间就会比较长，是的，我上传了三十多分钟。</p>
+<p>好了，现在我们开始创建 python 项目。打开首页的 python 项目管理器，点击 添加项目。填充数据：</p>
+<p><img src="http://photo.jomeswang.top/20200406220520.png" alt=""></p>
+<ul>
+<li>项目名称： 自定义就行，你开心就好</li>
+<li>路径： 定位到项目目录即可</li>
+<li>Python 版本： 选择你项目对应的 python 版本</li>
+<li>框架： 选择 django</li>
+<li>启动方式： uswgi（自测了一下只有uswgi启动方式可行，其他的都没用，添加后服务启动不起来，除非自己去服务器手动启动）</li>
+<li>启动文件/文件加： 定位到 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2Fwsgi.py" target="_blank" rel="noopener">wsgi.py</a> 所在的路径</li>
+<li>端口： 自定义就行，你开心就好，注意不要和系统端口冲突，设置1024端口号之后的，不然就算你开心也没用。</li>
+<li>勾选上 是否安装模块依赖 与 开机启动</li>
+</ul>
+<p>点击确定，然后等待创建。</p>
+<h5 id="设置配置文件"><a href="#设置配置文件" class="headerlink" title="设置配置文件"></a>设置配置文件</h5><p>注意： 选择的框架是 django 的时候，不需要设置</p>
+<p>创建成功后，点击配置，增加一行wsgi.py的位置（<code>注意此步必做，否则会爆 Internal Server Error</code><br>如果出现的是Internal Server Error，则应该是uwsgi的配置问题。<br>如果出现Server Error (500)则表示在其他方面出现了问题。<br>另外，经测试，如果数据库连接错误也会显示Server Error (500)。 ）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsgi-file &#x3D; 你的文件路径</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://photo.jomeswang.top/20200406220630.png" alt=""></p>
+<p><code>502 Bad Gateway nginx错误的解决方法：</code></p>
+<p>这里有一个坑，改了上面的代码之后，有时会提示端口已经被占用，需要更改端口。<br>有时会造成这里改了端口，而nginx那里没有改，出现上面的错误。</p>
+<p>这时只要保证二者的端口一致就可以了。</p>
+<h2 id="四、创建并同步数据库"><a href="#四、创建并同步数据库" class="headerlink" title="四、创建并同步数据库"></a>四、创建并同步数据库</h2><h3 id="4-1-MYSQL-数据库"><a href="#4-1-MYSQL-数据库" class="headerlink" title="4.1 MYSQL 数据库"></a>4.1 MYSQL 数据库</h3><p>​    在宝塔面板左边菜单选择数据库，然后添加一个数据库：</p>
+<p>创建完数据库后，把你项目中的数据库导出然后上传。如果你不从本地同步数据库导入，也可以直接在服务器上根据django规则来重新生成数据库。生成数据库步骤如下：</p>
+<ul>
+<li>打开宝塔SSH终端</li>
+<li>定位到项目目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/wwwroot/xxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入虚拟环境</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> xxx_venv/bin/activate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同步数据库</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">manage</span><span class="selector-class">.py</span> <span class="selector-tag">makemigrations</span></span><br><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">manage</span><span class="selector-class">.py</span> <span class="selector-tag">migrate</span></span><br></pre></td></tr></table></figure>
+
+<p>创建完数据库之后，宝塔会自动生成用户名和一个随机密码</p>
+<p>为了能连接数据库，这个时候需要把项目中的数据库配置修改一下。进入setting.py文件进行编辑，将下面的<code>NAME</code>、<code>USER</code>和<code>PASSWORD</code>修改成上图中的对应值之后保存。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'数据库名称'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'用户名'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'数据库密码'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">''</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-sqlite3数据库"><a href="#4-2-sqlite3数据库" class="headerlink" title="4.2.sqlite3数据库"></a>4.2.sqlite3数据库</h3><p> 发现服务器本身的sqlite3数据库版本较低，为3.7 但django2.2版本以上的最低sqlite3版本为3.8以上，所以有两种方法解决</p>
+<h4 id="4-2-1-降django版本（最简单的方法）"><a href="#4-2-1-降django版本（最简单的方法）" class="headerlink" title="4.2.1 降django版本（最简单的方法）"></a>4.2.1 降django版本（最简单的方法）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">卸载django:   pip uninstall django</span><br><span class="line">安装低版本：   pip install django&#x3D;&#x3D;2.1.8</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-2-更新sqlite3版本"><a href="#4-2-2-更新sqlite3版本" class="headerlink" title="4.2.2 更新sqlite3版本"></a>4.2.2 更新sqlite3版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">＃更新SQLite 3</span><br><span class="line">＃获取源代码（在主目录中运行）</span><br><span class="line">[root@djangoServer ~]# cd ~</span><br><span class="line">[root@djangoServer ~]# wget https:&#x2F;&#x2F;www.sqlite.org&#x2F;2019&#x2F;sqlite-autoconf-3270200.tar.gz</span><br><span class="line">[root@djangoServer ~]# tar -zxvf sqlite-autoconf-3270200.tar.gz</span><br><span class="line"> </span><br><span class="line">＃构建并安装</span><br><span class="line">[root@djangoServer ~]# cd sqlite-autoconf-3270200</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# .&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;sqlite</span><br><span class="line">[root@djangoServer sqlite-autoconf-3270200]# make &amp;&amp; make install</span><br><span class="line"> </span><br><span class="line">＃检查版本</span><br><span class="line">## 最新安装的sqlite3版本</span><br><span class="line">[root@djangoServer ~]# &#x2F;usr&#x2F;local&#x2F;sqlite&#x2F;bin&#x2F;sqlite3 --version</span><br><span class="line">3.27.2 2019-02-25 16:06:06 bd49a8271d650fa89e446b42e513b595a717b9212c91dd384aab871fc1d0f6d7</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">## Centos7自带的sqlite3版本</span><br><span class="line">[root@djangoServer ~]# &#x2F;usr&#x2F;bin&#x2F;sqlite3 --version</span><br><span class="line">3.7.17 2013-05-20 00:56:22 118a3b35693b134d56ebd780123b7fd6f1497668</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">## 可以看到sqlite3的版本还是旧版本，那么需要更新一下。</span><br><span class="line">[root@djangoServer ~]# sqlite3 --version</span><br><span class="line">3.7.17 2013-05-20 00:56:22 118a3b35693b134d56ebd780123b7fd6f1497668</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">## 更改旧的sqlite3</span><br><span class="line">[root@djangoServer ~]# mv &#x2F;usr&#x2F;bin&#x2F;sqlite3  &#x2F;usr&#x2F;bin&#x2F;sqlite3_old</span><br><span class="line"> </span><br><span class="line">## 软链接将新的sqlite3设置到&#x2F;usr&#x2F;bin目录下</span><br><span class="line">[root@djangoServer ~]# ln -s &#x2F;usr&#x2F;local&#x2F;sqlite&#x2F;bin&#x2F;sqlite3   &#x2F;usr&#x2F;bin&#x2F;sqlite3</span><br><span class="line"> </span><br><span class="line">## 查看当前全局sqlite3的版本</span><br><span class="line">[root@djangoServer ~]# sqlite3 --version</span><br><span class="line">3.27.2 2019-02-25 16:06:06 bd49a8271d650fa89e446b42e513b595a717b9212c91dd384aab871fc1d0f6d7</span><br><span class="line">[root@djangoServer ~]# </span><br><span class="line"> </span><br><span class="line">＃将路径传递给共享库</span><br><span class="line"># 设置开机自启动执行，可以将下面的export语句写入 ~&#x2F;.bashrc 文件中，如果如果你想立即生效，可以执行source 〜&#x2F;.bashrc 将在每次启动终端时执行</span><br><span class="line">[root@djangoServer ~]# export LD_LIBRARY_PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;sqlite&#x2F;lib</span><br><span class="line">[root@djangoServer ~]# vim ~&#x2F;.bashrc</span><br><span class="line"></span><br><span class="line">    # .bashrc</span><br><span class="line"></span><br><span class="line">    # User specific aliases and functions</span><br><span class="line"></span><br><span class="line">    alias rm&#x3D;&#39;rm -i&#39;</span><br><span class="line">    alias cp&#x3D;&#39;cp -i&#39;</span><br><span class="line">    alias mv&#x3D;&#39;mv -i&#39;</span><br><span class="line"></span><br><span class="line">    # Source global definitions</span><br><span class="line">    if [ -f &#x2F;etc&#x2F;bashrc ]; then</span><br><span class="line">            . &#x2F;etc&#x2F;bashrc</span><br><span class="line">    fi</span><br><span class="line">    . &quot;&#x2F;root&#x2F;.acme.sh&#x2F;acme.sh.env&quot;</span><br><span class="line">    # 在这里加上这一行，位置要对</span><br><span class="line">    export LD_LIBRARY_PATH&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;sqlite&#x2F;lib&quot;</span><br><span class="line">    export PATH&#x3D;~&#x2F;.pyenv&#x2F;bin:$PATH</span><br><span class="line">    </span><br><span class="line"> [root@djangoServer ~]# source ~&#x2F;.bashrc</span><br><span class="line"> [root@djangoServer ~]# python3</span><br><span class="line">Python 3.6.8 (default, Aug  7 2019, 17:28:10) </span><br><span class="line">[GCC 4.8.5 20150623 (Red Hat 4.8.5-39)] on linux</span><br><span class="line">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span><br><span class="line">&gt;&gt;&gt; import sqlite3</span><br><span class="line">&gt;&gt;&gt; sqlite3.sqlite_version</span><br><span class="line">&#39;3.27.2&#39;</span><br><span class="line"># 成功完成，踩坑许多，特来记录</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、检查项目是否运行成功"><a href="#五、检查项目是否运行成功" class="headerlink" title="五、检查项目是否运行成功"></a>五、检查项目是否运行成功</h2><p>经过上面的操作之后，项目已经在本地服务器运行起来了，这个时候先检查一下项目运行的状况，是否有报错。</p>
+<p>在面板中Python项目管理器 ，点击右侧的日志选项，查看你项目的运行状况，我这边项目的日志如下：</p>
+<p><img src="http://photo.jomeswang.top/20200406221116.png" alt=""></p>
+<p>发现有报错，查阅资料发现是Django2.2之后内部的一个版本限制在作怪，相关文章在<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fblog.csdn.net%2Fweixin_45476498%2Farticle%2Fdetails%2F100098297" target="_blank" rel="noopener">这里</a>查看，解决方案如下：</p>
+<ul>
+<li>找到 <code>venv(虚拟环境路径)/lib/python/site-packages/django/db/backends/mysql/base.py</code> </li>
+<li>注释掉下面两行代码</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">version = Database.version_info</span><br><span class="line"><span class="comment"># if version &lt; (1, 3, 13):</span></span><br><span class="line"><span class="comment">#     raise ImproperlyConfigured('mysqlclient 1.3.13 or newer is required; you have %s.' % Database.__version__)</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启python项目</li>
+</ul>
+<p>继续观察日志，直到没有新的报错日志出现就说明项目运行成功了！</p>
+<h2 id="六、关闭DEBUG模式，调整静态设置"><a href="#六、关闭DEBUG模式，调整静态设置" class="headerlink" title="六、关闭DEBUG模式，调整静态设置"></a>六、关闭DEBUG模式，调整静态设置</h2><p>现在我们通过 侧边栏 文件 菜单 进入项目文件，找到 <a href="https://links.jianshu.com/go?to=https%3A%2F%2Flink.zhihu.com%2F%3Ftarget%3Dhttp%3A%2F%2Fsetting.py" target="_blank" rel="noopener">setting.py</a> 文件，进行编辑。</p>
+<p>DEBUG模式设置为False，ALLOWED_HOST 添加 ‘*’</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DEBUG = <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line">ALLOWED_HOSTS = [<span class="string">'*'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>配置静态文件地址为<code>/home/xxx_static/static/</code>，后面会统一把静态文件移至该目录</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">STATICFILES_DIR = [</span><br><span class="line">    os.path.<span class="keyword">join</span>(BASE_DIR,<span class="string">'static'</span>),</span><br><span class="line">]</span><br><span class="line">STATIC_ROOT = <span class="string">'/home/xxx_static/static/'</span></span><br></pre></td></tr></table></figure>
+
+<p>这里也有一个坑，我之前弄好之后，访问网站老是提示：Bad Request (400)，后来一检查，才发现自己的ALLOWED_HOSTS这里设置有问题。修改之后，在python项目管理器中重启一下就好了。</p>
+<h2 id="七、设置网站服务，并配置nginx代理"><a href="#七、设置网站服务，并配置nginx代理" class="headerlink" title="七、设置网站服务，并配置nginx代理"></a>七、设置网站服务，并配置nginx代理</h2><p>上述操作，我们已经在内部启动了，接下来就是设置成网站服务，提供外部访问，并设置 nginx 代理加载静态文件。</p>
+<p>在 python 项目管理器 中点击 映射，设置域名 或者外网IP<code>（注意端口号要与之前的管理器上的端口号一致否则会爆400error）</code>。映射成功后在面板侧边栏 网站 菜单中查看。（此时已经可以在外部访问了。但是是没有静态文件的）</p>
+<p>在网站中点击我们刚才映射出的域名或ip，会出现一个弹窗，选择 反向代理-》配置文件</p>
+<p>找个缝隙，来添加静态文件和媒体资源的配置。</p>
+<p>关于静态文件：就是存放css，js文件的位置。django框架中以static命名的。</p>
+<p>关于媒体资源：比如用户上传图片的存放位置，一般命名有 media。 你设置的什么名字就写什么名字。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location /<span class="keyword">static</span>/ &#123;</span><br><span class="line">    root /home/xzbcx1_static/;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">location /media/ &#123;</span><br><span class="line">    <span class="keyword">alias</span> /www/wwwroot/xzbcx1<span class="number">.11</span>/media/;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按照文件路径设置即可，只需要替换红色框内的，换成你的路径，其他的不用动。如果保存的时候出现报错，就把空格啥的删除一下。</p>
+<p><img src="http://photo.jomeswang.top/20200406230854.png" alt=""></p>
+<p>完成之后需要在项目中执行以下如下命名收集admin后台的静态文件，不然通过<code>uwsgi</code>服务启动的django服务，会找不到admin的样式文件导致样式失效。</p>
+<ul>
+<li>进入项目根目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/wwwroot/xxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入虚拟环境</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> xxx_venv/bin/activate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行如下命令（该命令将收集项目中所有静态资源，转移到上面配置的<code>/home/xxx_static/static/</code>目录）</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">python</span> <span class="selector-tag">manage</span><span class="selector-class">.py</span> <span class="selector-tag">collectstatic</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启python项目和nginx服务</li>
+</ul>
+<p>到此，万事大吉！可以通过你设置的域名或ip进行访问了。</p>
+<p>如果不行尝试在虚拟环境下手动执行：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">newsgirl<span class="literal">-d</span> -<span class="literal">-ini</span> /www/wwwroot/boxdata/uwsgi.ini <span class="literal">-w</span> boxdata.wsgi.application</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="https://blog.csdn.net/qq_31024823/article/details/87703974" target="_blank" rel="noopener">Django+Nginx+uWSGI部署到服务器Django admin后台样式消失</a></p>
+<p><a href="https://blog.dyboy.cn/program/144.html#title-9" target="_blank" rel="noopener">宝塔面板成功部署Django项目流程</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+    </div>
+
+     <!-- 相关文章推荐 -->
+    
+        
+
+  <div class="popular-posts-header">
+    <i class="fa fa-graduation-cap"></i>
+    相关文章
+  </div>
+
+ <details>
+   <summary>点击查看</summary>
+     <ul class="popular-posts">
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\848a9d34\" rel="bookmark">Django 入门之后台管理</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\470d3cd3\" rel="bookmark">Django 入门之模板</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\8427434f\" rel="bookmark">Django  模型之定义属性</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\8a5cf313\" rel="bookmark">Django 模型之查询函数和条件</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\b97af40\" rel="bookmark">Django 模型之模型类查询</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\19a59d6d\" rel="bookmark">Django 模型之 简介</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\e1a974bc\" rel="bookmark">Django 入门之视图</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\ef702095\" rel="bookmark">Django 入门之设计模型 </a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\4d06c6c3\" rel="bookmark">python django 入门</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\bf8f345a\" rel="bookmark">Django REST framework 学习</a></div>
+         
+       </li>
+     
+     </ul>
+ </details>
+
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/django/" rel="tag"><i class="fa fa-tag"></i> django</a>
+          
+            <a href="/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/" rel="tag"><i class="fa fa-tag"></i> 宝塔面板</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/3f457dd8/" rel="next" title="白熊网盘，白嫖网盘">
+                <i class="fa fa-chevron-left"></i> 白熊网盘，白嫖网盘
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/e43ebf58/" rel="prev" title="Docker 的使用和部署（Daocloud）">
+                Docker 的使用和部署（Daocloud） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+
+
+
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+    
+      
+        <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://photo.jomeswang.top/20200405170507.png"
+                alt="Jomeswang" />
+            
+              <p class="site-author-name" itemprop="name">Jomeswang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">190</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">103</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jomeswang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+         
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <!-- modify icon to fire by szw -->
+                <i class="fa fa-history fa-" aria-hidden="true"></i>
+                近期文章
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                
+                  <li>
+                    <a href="/posts/6c0bcfea/" title="转载：前端开发的瓶颈" target="_blank">转载：前端开发的瓶颈</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/4b195fc0/" title="粤港澳大湾区金融数学建模大赛（一等奖）量化论文" target="_blank">粤港澳大湾区金融数学建模大赛（一等奖）量化论文</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/4f7564f/" title="以太链上发行自己的代币Token" target="_blank">以太链上发行自己的代币Token</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/22ff3d83/" title="2020-年春节总结" target="_blank">2020-年春节总结</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/4a21ea90/" title="区块链学习二(以太坊)" target="_blank">区块链学习二(以太坊)</a>
+                  </li>
+                
+              </ul>
+            </div>
+           
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、服务器安装宝塔面板并进行基础设置"><span class="nav-text">一、服务器安装宝塔面板并进行基础设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装环境包"><span class="nav-text">二、安装环境包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、上传项目文件并创建python项目"><span class="nav-text">三、上传项目文件并创建python项目</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#设置配置文件"><span class="nav-text">设置配置文件</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、创建并同步数据库"><span class="nav-text">四、创建并同步数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-MYSQL-数据库"><span class="nav-text">4.1 MYSQL 数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-sqlite3数据库"><span class="nav-text">4.2.sqlite3数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-降django版本（最简单的方法）"><span class="nav-text">4.2.1 降django版本（最简单的方法）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-更新sqlite3版本"><span class="nav-text">4.2.2 更新sqlite3版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、检查项目是否运行成功"><span class="nav-text">五、检查项目是否运行成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、关闭DEBUG模式，调整静态设置"><span class="nav-text">六、关闭DEBUG模式，调整静态设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七、设置网站服务，并配置nginx代理"><span class="nav-text">七、设置网站服务，并配置nginx代理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jomeswang</span>
+
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">230.7k</span>
+  
+</div>
+
+
+
+<div id="denglu" style="vertical-align:middle;margin:0 auto;justify-content: center;
+display: flex" > 
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<a style="display: flex" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener" >
+<img src="http://photo.jomeswang.top/20200404100532.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50px" height="28px" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
+"> 
+<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener" style="color: #ffd700; margin-left:5px">又拍云CDN支持</a> 
+</a>
+</div> 
+<style scoped>
+#denglu
+img{
+  height: 28px !important
+}
+#denglu{
+   height: 28px !important
+}
+@media only screen and (max-width: 600px) {
+#denglu
+img{
+  height: 28px !important
+}
+#denglu{
+  font-size: 8px !important;
+  height: 28px !important
+}
+}
+
+</style>
+
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("12/31/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'dFtraLC9No0f9cAyolmlwtc9-gzGzoHsz',
+        appKey: 'IeFjgH3bToPk2ShTSKLmQRbM',
+        placeholder: '快来“打”我',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .then(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .catch(function ( error) {
+          console.log("Error: " + error);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find().then(function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save()
+            .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            })
+            .catch(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save()   
+            .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            })
+            .catch(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          }
+        })
+        .catch(function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+     //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+      //  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面动态背景 -->
+  
+
+<!-- 页面点击烟花 -->
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+  <!--share.js-->
+<link rel="stylesheet" href="/dist/css/share.min.css">
+<script src="/dist/js/social-share.min.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+</html>

@@ -1,0 +1,2615 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+  
+  <script src="//code.bdstatic.com/npm/leancloud-storage@4.12.0/dist/av-min.js"></script>
+  <script>
+  AV.init({
+    appId: "dFtraLC9No0f9cAyolmlwtc9-gzGzoHsz",
+    appKey: "IeFjgH3bToPk2ShTSKLmQRbM",
+    serverURL: "https://dftralc9.lc-cn-n1-shared.com"
+  });
+  const query = new AV.Query('Comment');
+  </script>
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://https://jomeswang.github.io/"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-corner-indicator.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hacker_32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/hacker_16.ico?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="传道士|万物归一" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Linux-vi–终端中的编辑器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux vi--终端中的编辑器">
+<meta property="og:url" content="https://hexo.jomeswang.top/posts/e38d5fb9/index.html">
+<meta property="og:site_name" content="传道士|万物归一">
+<meta property="og:description" content="Linux-vi–终端中的编辑器">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/27/3webkV.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/27/3weqYT.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/27/3weTwq.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/27/3we4yj.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/27/3wefSg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/27/3weRfS.md.png">
+<meta property="article:published_time" content="2020-02-26T14:57:09.000Z">
+<meta property="article:modified_time" content="2020-06-06T06:36:26.500Z">
+<meta property="article:author" content="Jomeswang">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/27/3webkV.md.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://hexo.jomeswang.top/posts/e38d5fb9/"/>
+
+
+
+
+
+  <title>Linux vi--终端中的编辑器 | 传道士|万物归一</title>
+  
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-166762448-1"></script> -->
+<script>
+  // window.dataLayer = window.dataLayer || [];
+  // function gtag(){dataLayer.push(arguments);}
+  // gtag('js', new Date());
+
+  // gtag('config', 'UA-166762448-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      // var hm = document.createElement("script");
+      // hm.src = "https://hm.baidu.com/hm.js?1732319e98cbcf7688b29b3aa73c24b8";
+      // var s = document.getElementsByTagName("script")[0];
+      // s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+<a href="https://github.com/jomeswang" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"  ><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">传道士|万物归一</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">快乐的宅男</h1>
+      
+
+
+    <!-- 滚动文字始  -->
+      <div id="binft" style="color: #191970"; ></div>
+          <script>
+            var binft = function (r) {
+              function t() {
+                return b[Math.floor(Math.random() * b.length)]
+              }  
+              function e() {
+                return String.fromCharCode(94 * Math.random() + 33)
+              }
+              function n(r) {
+                for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                  var l = document.createElement("span");
+                  l.textContent = e(), l.style.color = t(), n.appendChild(l)
+                }
+                return n
+              }
+              function i() {
+                var t = o[c.skillI];
+                c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+              }
+              var l = "",
+              o = ["图难于其易，为大于其细。", "天下之难事，必作于易。","天下之大事，必作于细。", "道生一，一生二。","二生三，三生万物。","昨夜西风凋碧树。","独上高楼，望尽天涯路。","衣带渐宽终不悔，为伊消得人憔悴。","众里寻他千百度，蓦然回首","那人却在，灯火阑珊处。"].map(function (r) {
+              return r + ""
+              }),
+              a = 2,
+              g = 1,
+              s = 5,
+              d = 75,
+              b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+              c = {
+                text: "",
+                prefixP: -s,
+                skillI: 0,
+                skillP: 0,
+                direction: "forward",
+                delay: a,
+                step: g
+              };
+              i()
+              };
+              binft(document.getElementById('binft'));
+          </script>
+  </div>
+
+<!-- 滚动文字终  -->
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            友链
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-top">
+          <a href="/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            阅读排行
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hexo.jomeswang.top/posts/e38d5fb9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jomeswang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://photo.jomeswang.top/20200405170507.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="传道士|万物归一">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Linux vi--终端中的编辑器</h2>
+        
+
+        <div class="post-meta">
+
+          
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-26T22:57:09+08:00">
+                2020-02-26
+              </time>
+            
+
+            
+
+            
+
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/e38d5fb9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/posts/e38d5fb9/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/e38d5fb9/" class="leancloud_visitors" data-flag-title="Linux vi--终端中的编辑器">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.1k字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  15分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux-vi–终端中的编辑器"><a href="#Linux-vi–终端中的编辑器" class="headerlink" title="Linux-vi–终端中的编辑器"></a>Linux-vi–终端中的编辑器</h1><hr/>
+<a id="more"></a>
+
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
+<li><code>vi</code> 简介</li>
+<li>打开和新建文件</li>
+<li>三种工作模式</li>
+<li>常用命令</li>
+<li>分屏命令</li>
+<li>常用命令速查图</li>
+</ul>
+<h2 id="01-vi-简介"><a href="#01-vi-简介" class="headerlink" title="01. vi 简介"></a>01. <code>vi</code> 简介</h2><h3 id="1-1-学习-vi-的目的"><a href="#1-1-学习-vi-的目的" class="headerlink" title="1.1 学习 vi 的目的"></a>1.1 学习 <code>vi</code> 的目的</h3><ul>
+<li>在工作中，要对 <strong>服务器</strong> 上的文件进行 <strong>简单</strong> 的修改，可以使用 <code>ssh</code> 远程登录到服务器上，并且使用 <code>vi</code> 进行快速的编辑即可</li>
+<li>常见需要修改的文件包括：<ul>
+<li><strong>源程序</strong></li>
+<li><strong>配置文件</strong>，例如 <code>ssh</code> 的配置文件 <code>~/.ssh/config</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>在没有图形界面的环境下，要编辑文件，<code>vi</code> 是最佳选择！</li>
+<li>每一个要使用 Linux 的程序员，都应该或多或少的学习一些 <code>vi</code> 的常用命令</li>
+</ul>
+</blockquote>
+<h3 id="1-2-vi-和-vim"><a href="#1-2-vi-和-vim" class="headerlink" title="1.2 vi 和 vim"></a>1.2 vi 和 vim</h3><ul>
+<li>在很多 <code>Linux</code> 发行版中，直接把 <code>vi</code> 做成 <code>vim</code> 的软连接</li>
+</ul>
+<h4 id="vi"><a href="#vi" class="headerlink" title="vi"></a>vi</h4><ul>
+<li><code>vi</code> 是 <code>Visual interface</code> 的简称，是 <code>Linux</code> 中 <strong>最经典</strong> 的文本编辑器</li>
+<li><code>vi</code> 的核心设计思想 —— <strong>让程序员的手指始终保持在键盘的核心区域，就能完成所有的编辑操作</strong></li>
+</ul>
+<p><a href="https://imgchr.com/i/3webkV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/27/3webkV.md.png" alt="3webkV.md.png"></a></p>
+<ul>
+<li><code>vi</code> 的特点：<ul>
+<li><strong>没有图形界面</strong> 的 <strong>功能强大</strong> 的编辑器</li>
+<li>只能是编辑 <strong>文本内容</strong>，不能对字体、段落进行排版</li>
+<li><strong>不支持鼠标操作</strong></li>
+<li><strong>没有菜单</strong></li>
+<li><strong>只有命令</strong></li>
+</ul>
+</li>
+<li><code>vi</code> 编辑器在 <strong>系统管理</strong>、<strong>服务器管理</strong> 编辑文件时，<strong>其功能永远不是图形界面的编辑器能比拟的</strong></li>
+</ul>
+<h4 id="vim"><a href="#vim" class="headerlink" title="vim"></a><code>vim</code></h4><p><strong>vim = vi improved</strong></p>
+<ul>
+<li><code>vim</code> 是从 <code>vi</code> 发展出来的一个文本编辑器，支持 <strong>代码补全</strong>、<strong>编译</strong> 及 <strong>错误跳转</strong> 等方便编程的功能特别丰富，在程序员中被广泛使用，被称为 <strong>编辑器之神</strong></li>
+</ul>
+<h4 id="查询软连接命令（知道）"><a href="#查询软连接命令（知道）" class="headerlink" title="查询软连接命令（知道）"></a>查询软连接命令（知道）</h4><ul>
+<li>在很多 <code>Linux</code> 发行版中直接把 <code>vi</code> 做成 <code>vim</code> 的软连接</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查找 vi 的运行文件</span></span><br><span class="line"></span><br><span class="line">$ <span class="built_in">which</span> vi</span><br><span class="line">$ ls -l /usr/bin/vi</span><br><span class="line">$ ls -l /etc/alternatives/vi</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找 vim 的运行文件</span></span><br><span class="line">$ <span class="built_in">which</span> vim</span><br><span class="line">$ ls -l /usr/bin/vim</span><br><span class="line">$ ls -l /etc/alternatives/vim</span><br><span class="line">$ ls -l /usr/bin/vim.basic</span><br></pre></td></tr></table></figure>
+
+<h2 id="02-打开和新建文件"><a href="#02-打开和新建文件" class="headerlink" title="02. 打开和新建文件"></a>02. 打开和新建文件</h2><ul>
+<li>在终端中输入 <code>vi</code> <strong>在后面跟上文件名</strong> 即可</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果文件已经存在，会直接打开该文件</li>
+<li>如果文件不存在，会新建一个文件</li>
+</ul>
+<h3 id="2-1-打开文件并且定位行"><a href="#2-1-打开文件并且定位行" class="headerlink" title="2.1 打开文件并且定位行"></a>2.1 打开文件并且定位行</h3><ul>
+<li><p>在日常工作中，有可能会遇到 <strong>打开一个文件，并定位到指定行</strong> 的情况</p>
+</li>
+<li><p>例如：在开发时，<strong>知道某一行代码有错误</strong>，可以 <strong>快速定位</strong> 到出错代码的位置</p>
+</li>
+<li><p>这个时候，可以使用以下命令打开文件</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi 文件名 +行数</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>提示：如果只带上 <code>+</code> 而不指定行号，会直接定位到文件末尾</p>
+</blockquote>
+<h3 id="2-2-异常处理"><a href="#2-2-异常处理" class="headerlink" title="2.2 异常处理"></a>2.2 异常处理</h3><ul>
+<li>如果 <code>vi</code> 异常退出，在磁盘上可能会保存有 <strong>交换文件</strong></li>
+<li>下次再使用 <code>vi</code> 编辑该文件时，会看到以下屏幕信息，按下字母 <code>d</code> 可以 <strong>删除交换文件</strong> 即可</li>
+</ul>
+<blockquote>
+<p>提示：按下键盘时，注意关闭输入法</p>
+</blockquote>
+<p><a href="https://imgchr.com/i/3weqYT" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/27/3weqYT.md.png" alt="3weqYT.md.png"></a></p>
+<h2 id="03-三种工作模式"><a href="#03-三种工作模式" class="headerlink" title="03. 三种工作模式"></a>03. 三种工作模式</h2><ul>
+<li><p><code>vi</code> 有三种基本工作模式：</p>
+<ol>
+<li><strong>命令模式</strong><ul>
+<li><strong>打开文件首先进入命令模式</strong>，是使用 <code>vi</code> 的 <strong>入口</strong></li>
+<li>通过 <strong>命令</strong> 对文件进行常规的编辑操作，例如：<strong>定位</strong>、<strong>翻页</strong>、<strong>复制</strong>、<strong>粘贴</strong>、<strong>删除</strong>……</li>
+<li>在其他图形编辑器下，通过 <strong>快捷键</strong> 或者 <strong>鼠标</strong> 实现的操作，都在 <strong>命令模式</strong> 下实现</li>
+</ul>
+</li>
+<li><strong>末行模式</strong> —— 执行 <strong>保存</strong>、<strong>退出</strong> 等操作 <ul>
+<li>要退出 <code>vi</code> 返回到控制台，需要在末行模式下输入命令</li>
+<li><strong>末行模式</strong> 是 <code>vi</code> 的 <strong>出口</strong></li>
+</ul>
+</li>
+<li><strong>编辑模式</strong> —— 正常的编辑文字</li>
+</ol>
+</li>
+</ul>
+<p><a href="https://imgchr.com/i/3weTwq" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/27/3weTwq.md.png" alt="3weTwq.md.png"></a></p>
+<blockquote>
+<p>提示：在 <code>Touch Bar</code> 的 Mac 电脑上 ，按 <code>ESC</code> 不方便，可以使用 <code>CTRL + [</code> 替代</p>
+</blockquote>
+<h3 id="末行模式命令"><a href="#末行模式命令" class="headerlink" title="末行模式命令"></a>末行模式命令</h3><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w</td>
+<td align="center">write</td>
+<td>保存</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">quit</td>
+<td>退出，如果没有保存，不允许退出</td>
+</tr>
+<tr>
+<td align="center">q!</td>
+<td align="center">quit</td>
+<td>强行退出，不保存退出</td>
+</tr>
+<tr>
+<td align="center">wq</td>
+<td align="center">write &amp; quit</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center"></td>
+<td>保存并退出</td>
+</tr>
+</tbody></table>
+<h2 id="04-常用命令"><a href="#04-常用命令" class="headerlink" title="04. 常用命令"></a>04. 常用命令</h2><h3 id="命令线路图"><a href="#命令线路图" class="headerlink" title="命令线路图"></a>命令线路图</h3><ol start="0">
+<li>重复次数<ul>
+<li>在命令模式下，<strong>先输入一个数字</strong>，<strong>再跟上一个命令</strong>，可以让该命令 <strong>重复执行指定次数</strong> </li>
+</ul>
+</li>
+<li>移动和选择（<strong>多练</strong>）<ul>
+<li><code>vi</code> 之所以快，关键在于 <strong>能够快速定位到要编辑的代码行</strong></li>
+<li><strong>移动命令</strong> 能够 和 <strong>编辑操作</strong> 命令 <strong>组合使用</strong></li>
+</ul>
+</li>
+<li>编辑操作<ul>
+<li><strong>删除</strong>、<strong>复制</strong>、<strong>粘贴</strong>、<strong>替换</strong>、<strong>缩排</strong></li>
+</ul>
+</li>
+<li>撤销和重复</li>
+<li>查找替换</li>
+<li>编辑</li>
+</ol>
+<h4 id="学习提示"><a href="#学习提示" class="headerlink" title="学习提示"></a>学习提示</h4><ol>
+<li><code>vi</code> 的命令较多，<strong>不要期望一下子全部记住</strong>，个别命令忘记了，只是会影响编辑速度而已</li>
+<li>在使用 <code>vi</code> 命令时，注意 <strong>关闭中文输入法</strong></li>
+</ol>
+<h3 id="4-1-移动（基本）"><a href="#4-1-移动（基本）" class="headerlink" title="4.1 移动（基本）"></a>4.1 移动（基本）</h3><ul>
+<li>要熟练使用 <code>vi</code>，首先应该学会怎么在 <strong>命令模式</strong> 下样快速移动光标</li>
+<li><strong>编辑操作命令</strong>，能够和 <strong>移动命令</strong> 结合在一起使用</li>
+</ul>
+<h4 id="1-上、下、左、右"><a href="#1-上、下、左、右" class="headerlink" title="1) 上、下、左、右"></a>1) 上、下、左、右</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>功能</th>
+<th align="center">手指</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">h</td>
+<td>向左</td>
+<td align="center">食指</td>
+</tr>
+<tr>
+<td align="center">j</td>
+<td>向下</td>
+<td align="center">食指</td>
+</tr>
+<tr>
+<td align="center">k</td>
+<td>向上</td>
+<td align="center">中指</td>
+</tr>
+<tr>
+<td align="center">l</td>
+<td>向右</td>
+<td align="center">无名指</td>
+</tr>
+</tbody></table>
+<p><a href="https://imgchr.com/i/3we4yj" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/27/3we4yj.md.png" alt="3we4yj.md.png"></a></p>
+<h4 id="2-行内移动"><a href="#2-行内移动" class="headerlink" title="2) 行内移动"></a>2) 行内移动</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w</td>
+<td align="center">word</td>
+<td>向后移动一个单词</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">back</td>
+<td>向前移动一个单词</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center"></td>
+<td>行首</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center"></td>
+<td>行首，第一个不是空白字符的位置</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center"></td>
+<td>行尾</td>
+</tr>
+</tbody></table>
+<h4 id="3-行数移动"><a href="#3-行数移动" class="headerlink" title="3) 行数移动"></a>3) 行数移动</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">gg</td>
+<td align="center">go</td>
+<td>文件顶部</td>
+</tr>
+<tr>
+<td align="center">G</td>
+<td align="center">go</td>
+<td>文件末尾</td>
+</tr>
+<tr>
+<td align="center">数字gg</td>
+<td align="center">go</td>
+<td>移动到 数字 对应行数</td>
+</tr>
+<tr>
+<td align="center">数字G</td>
+<td align="center">go</td>
+<td>移动到 数字 对应行数</td>
+</tr>
+<tr>
+<td align="center">:数字</td>
+<td align="center"></td>
+<td>移动到 数字 对应行数</td>
+</tr>
+</tbody></table>
+<h4 id="4-屏幕移动"><a href="#4-屏幕移动" class="headerlink" title="4) 屏幕移动"></a>4) 屏幕移动</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Ctrl + b</td>
+<td align="center">back</td>
+<td>向上翻页</td>
+</tr>
+<tr>
+<td align="center">Ctrl + f</td>
+<td align="center">forward</td>
+<td>向下翻页</td>
+</tr>
+<tr>
+<td align="center">H</td>
+<td align="center">Head</td>
+<td>屏幕顶部</td>
+</tr>
+<tr>
+<td align="center">M</td>
+<td align="center">Middle</td>
+<td>屏幕中间</td>
+</tr>
+<tr>
+<td align="center">L</td>
+<td align="center">Low</td>
+<td>屏幕底部</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-移动（程序）"><a href="#4-2-移动（程序）" class="headerlink" title="4.2 移动（程序）"></a>4.2 移动（程序）</h3><h4 id="1-段落移动"><a href="#1-段落移动" class="headerlink" title="1) 段落移动"></a>1) 段落移动</h4><ul>
+<li><code>vi</code> 中使用 空行 来区分段落</li>
+<li>在程序开发时，通常 <strong>一段功能相关的代码会写在一起</strong> —— 之间没有空行</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">{</td>
+<td>上一段</td>
+</tr>
+<tr>
+<td align="center">}</td>
+<td>下一段</td>
+</tr>
+</tbody></table>
+<h4 id="2-括号切换"><a href="#2-括号切换" class="headerlink" title="2) 括号切换"></a>2) 括号切换</h4><ul>
+<li>在程序世界中，<code>()</code>、<code>[]</code>、<code>{}</code> 使用频率很高，而且 <strong>都是成对出现的</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">%</td>
+<td>括号匹配及切换</td>
+</tr>
+</tbody></table>
+<h4 id="3-标记"><a href="#3-标记" class="headerlink" title="3) 标记"></a>3) 标记</h4><ul>
+<li>在开发时，某一块代码可能<strong>需要稍后处理</strong>，例如：编辑、查看</li>
+<li>此时先使用 <code>m</code> 增加一个标记，这样可以 <strong>在需要时快速地跳转回来</strong> 或者 <strong>执行其他编辑操作</strong></li>
+<li><strong>标记名称</strong> 可以是 <code>a~z</code> 或者 <code>A~Z</code> 之间的任意 <strong>一个</strong> 字母</li>
+<li>添加了标记的 <strong>行如果被删除</strong>，<strong>标记同时被删除</strong></li>
+<li>如果 <strong>在其他行添加了相同名称的标记</strong>，<strong>之前添加的标记也会被替换掉</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mx</td>
+<td align="center">mark</td>
+<td>添加标记 x，x 是 a<del>z 或者 A</del>Z 之间的任意一个字母</td>
+</tr>
+<tr>
+<td align="center">‘x</td>
+<td align="center"></td>
+<td>直接定位到标记 x 所在位置</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-选中文本（可视模式）"><a href="#4-3-选中文本（可视模式）" class="headerlink" title="4.3 选中文本（可视模式）"></a>4.3 选中文本（可视模式）</h3><ul>
+<li>学习 <code>复制</code> 命令前，应该先学会 <strong>怎么样选中 要复制的代码</strong></li>
+<li>在 <code>vi</code> 中要选择文本，需要先使用 <code>Visual</code> 命令切换到 <strong>可视模式</strong></li>
+<li><code>vi</code> 中提供了 <strong>三种</strong> 可视模式，可以方便程序员选择 <strong>选中文本的方式</strong></li>
+<li>按 <code>ESC</code> 可以放弃选中，返回到 <strong>命令模式</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>模式</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">v</td>
+<td>可视模式</td>
+<td>从光标位置开始按照正常模式选择文本</td>
+</tr>
+<tr>
+<td align="center">V</td>
+<td>可视行模式</td>
+<td>选中光标经过的完整行</td>
+</tr>
+<tr>
+<td align="center">Ctrl + v</td>
+<td>可视块模式</td>
+<td>垂直方向选中文本</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>可视模式</strong>下，可以和 <strong>移动命令</strong> 连用，例如：<code>ggVG</code> 能够选中所有内容</li>
+</ul>
+<h3 id="4-4-撤销和恢复撤销"><a href="#4-4-撤销和恢复撤销" class="headerlink" title="4.4 撤销和恢复撤销"></a>4.4 撤销和恢复撤销</h3><ul>
+<li>在学习编辑命令之前，先要知道怎样撤销之前一次 <strong>错误的</strong> 编辑动作！</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">u</td>
+<td align="center">undo</td>
+<td>撤销上次命令</td>
+</tr>
+<tr>
+<td align="center">CTRL + r</td>
+<td align="center">redo</td>
+<td>恢复撤销的命令</td>
+</tr>
+</tbody></table>
+<h3 id="4-5-删除文本"><a href="#4-5-删除文本" class="headerlink" title="4.5 删除文本"></a>4.5 删除文本</h3><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">x</td>
+<td align="center">cut</td>
+<td>删除光标所在字符，或者选中文字</td>
+</tr>
+<tr>
+<td align="center">d(移动命令)</td>
+<td align="center">delete</td>
+<td>删除移动命令对应的内容</td>
+</tr>
+<tr>
+<td align="center">dd</td>
+<td align="center">delete</td>
+<td>删除光标所在行，可以 ndd 复制多行</td>
+</tr>
+<tr>
+<td align="center">D</td>
+<td align="center">delete</td>
+<td>删除至行尾</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：如果使用 <strong>可视模式</strong> 已经选中了一段文本，那么无论使用 <code>d</code> 还是 <code>x</code>，都可以删除选中文本</p>
+</blockquote>
+<ul>
+<li>删除命令可以和 <strong>移动命令</strong> 连用，以下是常见的组合命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* dw        # 从光标位置删除到单词末尾</span><br><span class="line">* d0        # 从光标位置删除到一行的起始位置</span><br><span class="line">* d&#125;        # 从光标位置删除到段落结尾</span><br><span class="line">* ndd       # 从光标位置向下连续删除 n 行</span><br><span class="line">* d代码行G   # 从光标所在行 删除到 指定代码行 之间的所有代码</span><br><span class="line">* d&#39;a       # 从光标所在行 删除到 标记a 之间的所有代码</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-6-复制、粘贴"><a href="#4-6-复制、粘贴" class="headerlink" title="4.6 复制、粘贴"></a>4.6 复制、粘贴</h3><ul>
+<li><code>vi</code> 中提供有一个 <strong>被复制文本的缓冲区</strong><ul>
+<li><strong>复制</strong> 命令会将选中的文字保存在缓冲区 </li>
+<li><strong>删除</strong> 命令删除的文字会被保存在缓冲区</li>
+<li>在需要的位置，使用 <strong>粘贴</strong> 命令可以将缓冲区的文字插入到光标所在位置</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">y(移动命令)</td>
+<td align="center">copy</td>
+<td>复制</td>
+</tr>
+<tr>
+<td align="center">yy</td>
+<td align="center">copy</td>
+<td>复制一行，可以 nyy 复制多行</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="center">paste</td>
+<td>粘贴</td>
+</tr>
+</tbody></table>
+<p><strong>提示</strong></p>
+<ul>
+<li>命令 <code>d</code>、<code>x</code> 类似于图形界面的 <strong>剪切操作</strong> —— <code>CTRL + X</code></li>
+<li>命令 <code>y</code> 类似于图形界面的 <strong>复制操作</strong> —— <code>CTRL + C</code></li>
+<li>命令 <code>p</code> 类似于图形界面的 <strong>粘贴操作</strong> —— <code>CTRL + V</code></li>
+<li><code>vi</code> 中的 <strong>文本缓冲区同样只有一个</strong>，如果后续做过 <strong>复制、剪切</strong> 操作，之前缓冲区中的内容会被替换</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul>
+<li><code>vi</code> 中的 <strong>文本缓冲区</strong> 和系统的 <strong>剪贴板</strong> 不是同一个</li>
+<li>所以在其他软件中使用 <code>CTRL + C</code> 复制的内容，不能在 <code>vi</code> 中通过 <code>P</code> 命令粘贴</li>
+<li>可以在 <strong>编辑模式</strong> 下使用 <strong>鼠标右键粘贴</strong></li>
+</ul>
+<h3 id="4-7-替换"><a href="#4-7-替换" class="headerlink" title="4.7 替换"></a>4.7 替换</h3><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+<th>工作模式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">r</td>
+<td align="center">replace</td>
+<td>替换当前字符</td>
+<td>命令模式</td>
+</tr>
+<tr>
+<td align="center">R</td>
+<td align="center">replace</td>
+<td>替换当前行光标后的字符</td>
+<td>替换模式</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>R</code> 命令可以进入 <strong>替换模式</strong>，替换完成后，按下 <code>ESC</code> 可以回到 <strong>命令模式</strong></li>
+<li><strong>替换命令</strong> 的作用就是不用进入 <strong>编辑模式</strong>，对文件进行 <strong>轻量级的修改</strong></li>
+</ul>
+<h3 id="4-8-缩排和重复执行"><a href="#4-8-缩排和重复执行" class="headerlink" title="4.8 缩排和重复执行"></a>4.8 缩排和重复执行</h3><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&gt;&gt;</td>
+<td>向右增加缩进</td>
+</tr>
+<tr>
+<td align="center">&lt;&lt;</td>
+<td>向左减少缩进</td>
+</tr>
+<tr>
+<td align="center">.</td>
+<td>重复上次命令</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>缩排命令</strong> 在开发程序时，<strong>统一增加代码的缩进</strong> 比较有用！<ul>
+<li>一次性 <strong>在选中代码前增加 4 个空格</strong>，就叫做 <strong>增加缩进</strong></li>
+<li>一次性 <strong>在选中代码前删除 4 个空格</strong>，就叫做 <strong>减少缩进</strong></li>
+</ul>
+</li>
+<li>在 <strong>可视模式</strong> 下，缩排命令只需要使用 <strong>一个</strong> <code>&gt;</code> 或者 <code>&lt;</code> </li>
+</ul>
+<blockquote>
+<p>在程序中，<strong>缩进</strong> 通常用来表示代码的归属关系</p>
+<ul>
+<li>前面空格越少，代码的级别越高</li>
+<li>前面空格越多，代码的级别越低</li>
+</ul>
+</blockquote>
+<h3 id="4-9-查找"><a href="#4-9-查找" class="headerlink" title="4.9 查找"></a>4.9 查找</h3><h4 id="常规查找"><a href="#常规查找" class="headerlink" title="常规查找"></a>常规查找</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/str</td>
+<td>查找 str</td>
+</tr>
+</tbody></table>
+<ul>
+<li>查找到指定内容之后，使用 <code>Next</code> 查找下一个出现的位置：<ul>
+<li><code>n</code>: 查找下一个</li>
+<li><code>N</code>: 查找上一个</li>
+</ul>
+</li>
+<li>如果不想看到高亮显示，可以随便查找一个文件中不存在的内容即可</li>
+</ul>
+<h4 id="单词快速匹配"><a href="#单词快速匹配" class="headerlink" title="单词快速匹配"></a>单词快速匹配</h4><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td>向后查找当前光标所在单词</td>
+</tr>
+<tr>
+<td align="center">#</td>
+<td>向前查找当前光标所在单词</td>
+</tr>
+</tbody></table>
+<ul>
+<li>在开发中，通过单词快速匹配，可以快速看到这个单词在其他什么位置使用过</li>
+</ul>
+<h3 id="4-10-查找并替换"><a href="#4-10-查找并替换" class="headerlink" title="4.10 查找并替换"></a>4.10 查找并替换</h3><ul>
+<li>在 <code>vi</code> 中查找和替换命令需要在 <strong>末行模式</strong> 下执行</li>
+<li>记忆命令格式：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s&#x2F;&#x2F;&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-全局替换"><a href="#1-全局替换" class="headerlink" title="1) 全局替换"></a>1) 全局替换</h4><ul>
+<li><strong>一次性</strong>替换文件中的 <strong>所有出现的旧文本</strong></li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s&#x2F;旧文本&#x2F;新文本&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-可视区域替换"><a href="#2-可视区域替换" class="headerlink" title="2) 可视区域替换"></a>2) 可视区域替换</h4><ul>
+<li><strong>先选中</strong> 要替换文字的 <strong>范围</strong></li>
+<li>命令格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s&#x2F;旧文本&#x2F;新文本&#x2F;g</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-确认替换"><a href="#3-确认替换" class="headerlink" title="3) 确认替换"></a>3) 确认替换</h4><ul>
+<li>如果把末尾的 <code>g</code> 改成 <code>gc</code> 在替换的时候，会有提示！<strong>推荐使用！</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s&#x2F;旧文本&#x2F;新文本&#x2F;gc</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>y</code> - <code>yes</code> 替换</li>
+<li><code>n</code> - <code>no</code> 不替换</li>
+<li><code>a</code> - <code>all</code> 替换所有</li>
+<li><code>q</code> - <code>quit</code> 退出替换</li>
+<li><code>l</code> - <code>last</code> 最后一个，并把光标移动到行首</li>
+<li><code>^E</code> 向下滚屏</li>
+<li><code>^Y</code> 向上滚屏</li>
+</ol>
+<h3 id="4-11-插入命令"><a href="#4-11-插入命令" class="headerlink" title="4.11 插入命令"></a>4.11 插入命令</h3><ul>
+<li>在 <code>vi</code> 中除了常用的 <code>i</code> 进入 <strong>编辑模式</strong> 外，还提供了以下命令同样可以进入编辑模式：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+<th align="center">常用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">i</td>
+<td align="center">insert</td>
+<td>在当前字符前插入文本</td>
+<td align="center">常用</td>
+</tr>
+<tr>
+<td align="center">I</td>
+<td align="center">insert</td>
+<td>在行首插入文本</td>
+<td align="center">较常用</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">append</td>
+<td>在当前字符后添加文本</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">A</td>
+<td align="center">append</td>
+<td>在行末添加文本</td>
+<td align="center">较常用</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="center"></td>
+<td>在当前行后面插入一空行</td>
+<td align="center">常用</td>
+</tr>
+<tr>
+<td align="center">O</td>
+<td align="center"></td>
+<td>在当前行前面插入一空行</td>
+<td align="center">常用</td>
+</tr>
+</tbody></table>
+<p><a href="https://imgchr.com/i/3wefSg" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/27/3wefSg.png" alt="3wefSg.png"></a></p>
+<h4 id="演练-1-——-编辑命令和数字连用"><a href="#演练-1-——-编辑命令和数字连用" class="headerlink" title="演练 1 —— 编辑命令和数字连用"></a>演练 1 —— 编辑命令和数字连用</h4><ul>
+<li>在开发中，可能会遇到连续输入 <code>N</code> 个同样的字符</li>
+</ul>
+<blockquote>
+<p>在 <code>Python</code> 中有简单的方法，但是其他语言中通常需要自己输入</p>
+</blockquote>
+<ul>
+<li>例如：<code>**********</code> 连续 10 个星号</li>
+</ul>
+<p>要实现这个效果可以在 <strong>命令模式</strong> 下</p>
+<ol>
+<li>输入 <code>10</code>，表示要重复 10 次</li>
+<li>输入 <code>i</code> 进入 <strong>编辑模式</strong></li>
+<li>输入 <code>*</code> 也就是重复的文字</li>
+<li>按下 <code>ESC</code> 返回到 <strong>命令模式</strong>，返回之后 <code>vi</code> 就会把第 <code>2、3</code> 两步的操作重复 <code>10</code> 次</li>
+</ol>
+<blockquote>
+<p>提示：正常开发时，在 <strong>进入编辑模式之前，不要按数字</strong></p>
+</blockquote>
+<h4 id="演练-2-——-利用-可视块-给多行代码增加注释"><a href="#演练-2-——-利用-可视块-给多行代码增加注释" class="headerlink" title="演练 2 —— 利用 可视块 给多行代码增加注释"></a>演练 2 —— 利用 可视块 给多行代码增加注释</h4><ul>
+<li>在开发中，可能会遇到一次性给多行代码 <strong>增加注释</strong> 的情况</li>
+</ul>
+<blockquote>
+<p>在 <code>Python</code> 中，要给代码增加注释，可以在代码前增加一个 <code>#</code></p>
+</blockquote>
+<p>要实现这个效果可以在 <strong>命令模式</strong> 下</p>
+<ol>
+<li>移动到要添加注释的 <strong>第 1 行代码</strong>，按 <code>^</code> 来到行首</li>
+<li>按 <code>CTRL + v</code> 进入 <strong>可视块</strong> 模式</li>
+<li>使用 <code>j</code> 向下连续选中要添加的代码行</li>
+<li>输入 <code>I</code> 进入 <strong>编辑模式</strong>，并在 <strong>行首插入</strong>，注意：一定要使用 <strong>I</strong></li>
+<li>输入 <code>#</code> 也就是注释符号</li>
+<li>按下 <code>ESC</code> 返回到 <strong>命令模式</strong>，返回之后 <code>vi</code> 会在之前选中的每一行代码 <strong>前</strong> 插入 <code>#</code></li>
+</ol>
+<h2 id="05-分屏命令"><a href="#05-分屏命令" class="headerlink" title="05. 分屏命令"></a>05. 分屏命令</h2><ul>
+<li>属于 <code>vi</code> 的高级命令 —— 可以 <strong>同时编辑和查看多个文件</strong></li>
+</ul>
+<h3 id="5-1-末行命令扩展"><a href="#5-1-末行命令扩展" class="headerlink" title="5.1 末行命令扩展"></a>5.1 末行命令扩展</h3><p><strong>末行命令</strong> 主要是针对文件进行操作的：<strong>保存</strong>、<strong>退出</strong>、<strong>保存&amp;退出</strong>、<strong>搜索&amp;替换</strong>、<strong>另存</strong>、<strong>新建</strong>、<strong>浏览文件</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:e .</td>
+<td align="center">edit</td>
+<td>会打开内置的文件浏览器，浏览要当前目录下的文件</td>
+</tr>
+<tr>
+<td align="center">:n 文件名</td>
+<td align="center">new</td>
+<td>新建文件</td>
+</tr>
+<tr>
+<td align="center">:w 文件名</td>
+<td align="center">write</td>
+<td>另存为，但是仍然编辑当前文件，并不会切换文件</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>提示：切换文件之前，必须保证当前这个文件已经被保存！</p>
+</blockquote>
+<ul>
+<li>已经学习过的 <strong>末行命令</strong>：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:w</td>
+<td align="center">write</td>
+<td>保存</td>
+</tr>
+<tr>
+<td align="center">:q</td>
+<td align="center">quit</td>
+<td>退出，如果没有保存，不允许退出</td>
+</tr>
+<tr>
+<td align="center">:q!</td>
+<td align="center">quit</td>
+<td>强行退出，不保存退出</td>
+</tr>
+<tr>
+<td align="center">:wq</td>
+<td align="center">write &amp; quit</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td align="center">:x</td>
+<td align="center"></td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td align="center">:%s///gc</td>
+<td align="center"></td>
+<td>确认搜索并替换</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>在实际开发中，可以使用 <code>w</code> 命令 <strong>阶段性的备份代码</strong></p>
+</blockquote>
+<h3 id="5-2-分屏命令"><a href="#5-2-分屏命令" class="headerlink" title="5.2 分屏命令"></a>5.2 分屏命令</h3><ul>
+<li>使用 <strong>分屏命令</strong>，可以 <strong>同时编辑和查看多个文件</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:sp [文件名]</td>
+<td align="center">split</td>
+<td>横向增加分屏</td>
+</tr>
+<tr>
+<td align="center">:vsp [文件名]</td>
+<td align="center">vertical split</td>
+<td>纵向增加分屏</td>
+</tr>
+</tbody></table>
+<h4 id="1-切换分屏窗口"><a href="#1-切换分屏窗口" class="headerlink" title="1) 切换分屏窗口"></a>1) 切换分屏窗口</h4><blockquote>
+<p>分屏窗口都是基于 <code>CTRL + W</code> 这个快捷键的，<code>w</code> 对应的英文单词是 <code>window</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">w</td>
+<td align="center">window</td>
+<td>切换到下一个窗口</td>
+</tr>
+<tr>
+<td align="center">r</td>
+<td align="center">reverse</td>
+<td>互换窗口</td>
+</tr>
+<tr>
+<td align="center">c</td>
+<td align="center">close</td>
+<td>关闭当前窗口，但是不能关闭最后一个窗口</td>
+</tr>
+<tr>
+<td align="center">q</td>
+<td align="center">quit</td>
+<td>退出当前窗口，如果是最后一个窗口，则关闭 vi</td>
+</tr>
+<tr>
+<td align="center">o</td>
+<td align="center">other</td>
+<td>关闭其他窗口</td>
+</tr>
+</tbody></table>
+<h4 id="2-调整窗口大小"><a href="#2-调整窗口大小" class="headerlink" title="2) 调整窗口大小"></a>2) 调整窗口大小</h4><blockquote>
+<p>分屏窗口都是基于 <code>CTRL + W</code> 这个快捷键的，<code>w</code> 对应的英文单词是 <code>window</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">英文</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">+</td>
+<td align="center"></td>
+<td>增加窗口高度</td>
+</tr>
+<tr>
+<td align="center">-</td>
+<td align="center"></td>
+<td>减少窗口高度</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center"></td>
+<td>增加窗口宽度</td>
+</tr>
+<tr>
+<td align="center">&lt;</td>
+<td align="center"></td>
+<td>减少窗口宽度</td>
+</tr>
+<tr>
+<td align="center">=</td>
+<td align="center"></td>
+<td>等分窗口大小</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>调整窗口宽高的命令可以和数字连用，例如：<code>5 CTRL + W +</code> 连续 5 次增加高度</p>
+</blockquote>
+<h2 id="06-常用命令速查图"><a href="#06-常用命令速查图" class="headerlink" title="06. 常用命令速查图"></a>06. 常用命令速查图</h2><p><a href="https://imgchr.com/i/3weRfS" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2020/02/27/3weRfS.md.png" alt="3weRfS.md.png"></a></p>
+<h3 id="vimrc"><a href="#vimrc" class="headerlink" title="vimrc"></a>vimrc</h3><ul>
+<li><code>vimrc</code> 是 <code>vim</code> 的配置文件，可以设置 vim 的配置，包括：<strong>热键</strong>、<strong>配色</strong>、<strong>语法高亮</strong>、<strong>插件</strong> 等</li>
+<li><code>Linux</code> 中 <code>vimrc</code> 有两个位置，<strong>家目录下的配置文件优先级更高</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;etc&#x2F;vim&#x2F;vimrc</span><br><span class="line">~&#x2F;.vimrc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常用的插件有：<ul>
+<li>代码补全</li>
+<li>代码折叠</li>
+<li>搜索</li>
+<li>Git 集成</li>
+<li>……</li>
+</ul>
+</li>
+<li>网上有很多高手已经配置好的针对 <code>python</code> 开发的 <code>vimrc</code> 文件，可以下载过来直接使用，或者等大家多 <code>Linux</code> 比较熟悉后，再行学习！</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
+      
+    </div>
+
+     <!-- 相关文章推荐 -->
+    
+        
+
+  <div class="popular-posts-header">
+    <i class="fa fa-graduation-cap"></i>
+    相关文章
+  </div>
+
+ <details>
+   <summary>点击查看</summary>
+     <ul class="popular-posts">
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\b4f7e34f\" rel="bookmark">Ubuntu 挂载硬盘</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\ff24eac4\" rel="bookmark">Linux Centos创建新用户</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\f066349a\" rel="bookmark">Linux 之 打包，安装，查找</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\3b5592a6\" rel="bookmark">Linux 系统信息相关命令</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\3838fe96\" rel="bookmark">Linux用户权限常用命令</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\840169a3\" rel="bookmark">Linux 远程管理常用命令</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\9dc01b13\" rel="bookmark">Linux文件和目录常用命令</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\78412606\" rel="bookmark">Linux 终端命令格式</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\7dac4fd8\" rel="bookmark">常用 Linux 命令的基本使用</a></div>
+         
+       </li>
+     
+       <li class="popular-posts-item">
+         
+         
+         <div class="popular-posts-title"><a href="\posts\e3bd03ae\" rel="bookmark">Linux 科普背景2</a></div>
+         
+       </li>
+     
+     </ul>
+ </details>
+
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/3838fe96/" rel="next" title="Linux用户权限常用命令">
+                <i class="fa fa-chevron-left"></i> Linux用户权限常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/3b5592a6/" rel="prev" title="Linux 系统信息相关命令">
+                Linux 系统信息相关命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+
+
+
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+    
+      
+        <div
+  data-weibo-title="分享到微博"
+  data-qq-title="分享到QQ"
+  data-douban-title="分享到豆瓣"
+  class="social-share"
+  class="share-component"
+
+
+
+  data-disabled="qzone,google+,linkedin"
+  data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣...">
+   分享到：
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://photo.jomeswang.top/20200405170507.png"
+                alt="Jomeswang" />
+            
+              <p class="site-author-name" itemprop="name">Jomeswang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">190</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">103</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/jomeswang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+         
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <!-- modify icon to fire by szw -->
+                <i class="fa fa-history fa-" aria-hidden="true"></i>
+                近期文章
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                
+                  <li>
+                    <a href="/posts/6c0bcfea/" title="转载：前端开发的瓶颈" target="_blank">转载：前端开发的瓶颈</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/4b195fc0/" title="粤港澳大湾区金融数学建模大赛（一等奖）量化论文" target="_blank">粤港澳大湾区金融数学建模大赛（一等奖）量化论文</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/4f7564f/" title="以太链上发行自己的代币Token" target="_blank">以太链上发行自己的代币Token</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/22ff3d83/" title="2020-年春节总结" target="_blank">2020-年春节总结</a>
+                  </li>
+                
+                  <li>
+                    <a href="/posts/4a21ea90/" title="区块链学习二(以太坊)" target="_blank">区块链学习二(以太坊)</a>
+                  </li>
+                
+              </ul>
+            </div>
+           
+
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-vi–终端中的编辑器"><span class="nav-text">Linux-vi–终端中的编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目标"><span class="nav-text">目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01-vi-简介"><span class="nav-text">01. vi 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-学习-vi-的目的"><span class="nav-text">1.1 学习 vi 的目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-vi-和-vim"><span class="nav-text">1.2 vi 和 vim</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#vi"><span class="nav-text">vi</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim"><span class="nav-text">vim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询软连接命令（知道）"><span class="nav-text">查询软连接命令（知道）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#02-打开和新建文件"><span class="nav-text">02. 打开和新建文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-打开文件并且定位行"><span class="nav-text">2.1 打开文件并且定位行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-异常处理"><span class="nav-text">2.2 异常处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#03-三种工作模式"><span class="nav-text">03. 三种工作模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#末行模式命令"><span class="nav-text">末行模式命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#04-常用命令"><span class="nav-text">04. 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令线路图"><span class="nav-text">命令线路图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习提示"><span class="nav-text">学习提示</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-移动（基本）"><span class="nav-text">4.1 移动（基本）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-上、下、左、右"><span class="nav-text">1) 上、下、左、右</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-行内移动"><span class="nav-text">2) 行内移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-行数移动"><span class="nav-text">3) 行数移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-屏幕移动"><span class="nav-text">4) 屏幕移动</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-移动（程序）"><span class="nav-text">4.2 移动（程序）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-段落移动"><span class="nav-text">1) 段落移动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-括号切换"><span class="nav-text">2) 括号切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-标记"><span class="nav-text">3) 标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-选中文本（可视模式）"><span class="nav-text">4.3 选中文本（可视模式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-撤销和恢复撤销"><span class="nav-text">4.4 撤销和恢复撤销</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-删除文本"><span class="nav-text">4.5 删除文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-复制、粘贴"><span class="nav-text">4.6 复制、粘贴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-替换"><span class="nav-text">4.7 替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-缩排和重复执行"><span class="nav-text">4.8 缩排和重复执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-9-查找"><span class="nav-text">4.9 查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常规查找"><span class="nav-text">常规查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单词快速匹配"><span class="nav-text">单词快速匹配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-10-查找并替换"><span class="nav-text">4.10 查找并替换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-全局替换"><span class="nav-text">1) 全局替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-可视区域替换"><span class="nav-text">2) 可视区域替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-确认替换"><span class="nav-text">3) 确认替换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-11-插入命令"><span class="nav-text">4.11 插入命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#演练-1-——-编辑命令和数字连用"><span class="nav-text">演练 1 —— 编辑命令和数字连用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#演练-2-——-利用-可视块-给多行代码增加注释"><span class="nav-text">演练 2 —— 利用 可视块 给多行代码增加注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#05-分屏命令"><span class="nav-text">05. 分屏命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-末行命令扩展"><span class="nav-text">5.1 末行命令扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-分屏命令"><span class="nav-text">5.2 分屏命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-切换分屏窗口"><span class="nav-text">1) 切换分屏窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-调整窗口大小"><span class="nav-text">2) 调整窗口大小</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#06-常用命令速查图"><span class="nav-text">06. 常用命令速查图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vimrc"><span class="nav-text">vimrc</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jomeswang</span>
+
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">230.7k</span>
+  
+</div>
+
+
+
+<div id="denglu" style="vertical-align:middle;margin:0 auto;justify-content: center;
+display: flex" > 
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<a style="display: flex" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener" >
+<img src="http://photo.jomeswang.top/20200404100532.png" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"  width="50px" height="28px" style="margin: 0; margin-left: 6px; border :0;vertical-align:middle;
+"> 
+<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener" style="color: #ffd700; margin-left:5px">又拍云CDN支持</a> 
+</a>
+</div> 
+<style scoped>
+#denglu
+img{
+  height: 28px !important
+}
+#denglu{
+   height: 28px !important
+}
+@media only screen and (max-width: 600px) {
+#denglu
+img{
+  height: 28px !important
+}
+#denglu{
+  font-size: 8px !important;
+  height: 28px !important
+}
+}
+
+</style>
+
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("12/31/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
+
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+<script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'dFtraLC9No0f9cAyolmlwtc9-gzGzoHsz',
+        appKey: 'IeFjgH3bToPk2ShTSKLmQRbM',
+        placeholder: '快来“打”我',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .then(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .catch(function ( error) {
+          console.log("Error: " + error);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find().then(function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save()
+            .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            })
+            .catch(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save()   
+            .then(function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            })
+            .catch(function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              });
+          }
+        })
+        .catch(function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+     //   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+      //  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<!-- 页面动态背景 -->
+  
+
+<!-- 页面点击烟花 -->
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+
+  <!--share.js-->
+<link rel="stylesheet" href="/dist/css/share.min.css">
+<script src="/dist/js/social-share.min.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+</html>
